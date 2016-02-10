@@ -195,7 +195,7 @@ contract Random{
     //todo remove - important
     function getSeedA() returns (uint256) 
     {
-        return seedA;
+        if (msg.sender == owner) return seedA;
     } 
     
     function getSeedAHash() returns (bytes32) 
@@ -220,7 +220,7 @@ contract Random{
     
     function getSeedC() returns (uint256) 
     {
-        return seedC;
+        if (msg.sender == owner) return seedC;
     }   
     	
     function getDieResult() returns (uint256) 
