@@ -1,0 +1,180 @@
+<html>
+<head>
+	<title>Etherflipr - Provably fair gambling</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--<link rel="icon" href="imgs/favicon.png">-->
+
+
+
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+
+	<script src="assets/js/web3.min.js"></script>
+
+
+
+	<script src="assets/js/jquery-1.12.0.min.js"></script>
+	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+
+	<script src="assets/js/etherflip.js"></script>
+
+</head>
+
+<body>
+<div class="header clearfix">
+	<div class="header-logo"><h1>Etherflipr</h1></div>
+	<div class="header-balance">
+		<div class="inner">
+			<nav>
+				<div class="balance-wrap">
+						<span class="balance-container">
+							<span class="green">Wallet</span> <strong class="account"></strong>
+						</span>
+				</div>
+				<div class="balance-wrap">
+						<span class="balance-container">
+							<span class="green">Balance</span> <strong class="balance"></strong> Ether
+						</span>
+				</div>
+
+			</nav>
+
+		</div>
+		<div>
+	</div>
+</div>
+</div>
+
+<div class="jumbotron-container">
+	<div class="jumbotron">
+		<h3 class="green generating-normal">Accepting bets (<a href="#the_game">?</a>)</h3>
+		<h3 class="orange generating-wait">Not accepting bets (<a href="#the_game">?</a>)</h3>
+		<div class="bet-container">
+			<h5>Set wager</h5>
+			<div class="pre-paid-container">
+				<button id="1" class="choose pre-paid" value="1">
+					<strong>1</strong>
+				</button>
+				<button id="2" class="choose pre-paid" value="2">
+					<strong>2</strong>
+				</button>
+				<button id="5" class="choose pre-paid" value="5">
+					<strong>5</strong>
+				</button>
+				<button id="10" class="choose pre-paid" value="10">
+					<strong>10</strong>
+				</button>
+				<button id="25" class="choose pre-paid" value="25">
+					<strong>25</strong>
+				</button>
+				<button id="50" class="choose pre-paid" value="50">
+					<strong>50</strong>
+				</button>
+			</div>
+			<input id="the-bet" class="ether bet-amount" type=text" placeholder="Wager"></input>
+			<h5>Roll low (1-49) or high (50-100)</h5>
+				<button id="Low" class="choose bet-choice">
+					<strong>Low</strong>
+					<p><span class="prediction">49</span> and lower</p>
+				</button>
+				<button id="High" class="choose bet-choice">
+					<strong>High</strong>
+					<p><span class="prediction">50</span> and higher</p>
+				</button>
+			<button id="place-bet" class="choose place-bet">
+				<strong>ROLL</strong>
+			</button>
+			<button id="reset" class="choose place-bet">
+				<strong>RESET - DEV</strong>
+			</button>
+			</div>
+			<br/><p><strong>Provably fair (<a href="#provably_fair">?</a>)</strong></p>
+			<p id="seedA_hash"></p>
+			<em class="seedA-hash">This is the sha3 encrypted hash of seedA. It is a number we cannot change after your bet. We display this so you can check SeedA does in fact generate this SeedA hash. We will reveal SeedA after the bet has been decided. Since we cannot change this number nor know what number you will put in or know the number of SeedC (a future blockhash), the deciding number is completely random (1-100) and impossible to be known to anyone.</em>
+			<!--<h5>Payout address - pays 1.9 to 1</h5>
+			<input type="text" class="payout-address account"></input>-->
+		</div>
+	<div class="jumbotron">
+		<h3>Bet slip</h3>
+		<div class="your-bet-container">
+			<h5>High or Low</h5>
+			<input type="text" id="bet-number" disabled></input>
+			<h5>Wager</h5>
+			<input type="text" class="bet-amount" disabled></input>
+			<h5>Potential payout</h5>
+			<input type="text" class="bet-payout" disabled></input>
+			<!--<h5>Payout address (1 pays 1.9)</h5>
+			<input type=text"></input>-->
+		</div>
+	</div>
+	<div  class="jumbotron">
+		<div class="result-container">
+
+			<h3 class="green generating-normal">Place your bet...</h3>
+			<h3 class="orange generating-wait">Rolling die...</h3>
+			<h3 class="orange generating-confirm">Confirming...</h3>
+			<div class="orange generating-wait" ><input type="text" id='blocks-to-go' disabled value="Waiting for blocks..."></input></div>
+			<div class="generating-normal"><img src="assets/images/ajax-loader.gif"/> </div>
+			<div class="generating-wait"><img src="assets/images/ajax-loader-wait.gif"/> </div>
+			<input type="text" id="result"></input>
+			<p class="" id=''>Latest result</p>
+			<h2 class="green" id="win"> WIN</h2>
+			<h2 class="red" id="lose">NO WIN</h2>
+			<!--<p><strong>How is the outcome determined?</strong></p>
+			<p>(SeedA + SeedB + SeedC / (2 ^ 256 / 100)) +1</p>
+			<p>SeedA = Our number choice 1-100</p>
+			<p>SeedB = Your number choice 1-100</p>
+			<p>SeedC = Hash of block in a future time</p>
+			</p>Before any bets are place, we have already selected a number between 1-100. This is called SeedA.</p>
+			</p>We provide the sha3 encrypted version of SeedA before you bet, to prove we do not change the number after you choose your number/</p>
+			<p>Once you submit your bet.</p>-->
+		</div>
+	</div>
+	<!--<div class="jumbotron">
+		<button id="loadDataButton">
+			Refresh data
+		</button>
+		<h5>Coinbase Address: </h5>
+		<strong class="account"></strong>
+		<h5>Balance:</h5>
+		<strong class="balance"></strong>
+		<h5>Latest Block Number:</h5>
+		<strong id="latestBlock"></strong>
+		<h5>Latest Block Timestamp:</h5>
+		<strong id="latestBlockTimestamp"></strong>
+		<h5>Latest Block Hash: </h5>
+		<strong id="latestBlockHash"></strong>
+		<h5>Contract String: </h5>
+		<strong id="contractString"></strong>
+
+	</div>-->
+</div>
+<div class="jumbotron-container">
+	<div class="full">
+		<h2><a name="the_game">The Game</a></h2>
+		<p>You are betting on the result of a 100 sided die roll. The result of the die roll is either a low roll range (1-49) or a high roll range (50-100).</p>
+		<p>If the number you submit is within the result range; low range numbers are (1-49), high range numbers are (50-100) you are paid 1.9 to 1 instantly.</p>
+		<p>If the number you submit is outside the result range you are not paid.</p>
+
+		<h2><a name="the_result">How is the result decided?</a></h2>
+		<p>((SeedA + SeedB + SeedC) / (2 ^ 256 / 100) ) +1 = result</p>
+		<p>SeedA = SeedA is set before you place your bet, and we cannot change it. See <a href="#provably_fair">'provably fair'</a> below for more details. 1st dice rolled. </p>
+		<p>SeedB = Your number choice 1-100. 2nd dice rolled.</p>
+		<p>SeedC = Hash of block in a future time. 3rd dice rolled.</p>
+		<p>Before any bets are placed, we have already generated a number from a previous block hash. This is SeedA.</p>
+		<p>Once you submit your bet (SeedB), the Etherflipr contract waits for a mumber of new Ethereum blocks to be mined and we use a future block hash from which SeedC generated, therefore SeedC is impossible for us or you to know prior to the submission of the bet as the block did not yet exist.</p>
+		<p>Etherflipr pays 1.9 to 1 if the number you submitted is within the resulting range, either 'high' or 'low'.</p>
+		<p>The chance of the dice roll being either high or low is 50/50.</p>
+		<h2><a name="provably_fair">Provably Fair</a></h2>
+		<p>We provide the sha3 encrypted version of SeedA ('SeedA Hash') before and after each bet for you to check, to prove that we do not (and could not - mathematical impossibility) change SeedA after you submit your bet.</p>
+		<h2><a name="the_terms">Terms</a></h2>
+		<p>Etherflipr is only for entertainment purposes. Please be aware Etherflipr is in beta mode and as such you should take care when handling your bets, any loss due to malfunction of the game, codebase, networks or likewise will not result in a refund and Etherflipr is not repsonsible or liable for anything that occurs as a result, directly or in-directly from interacting with the contract.</p>
+		<p>Etherflipr is not liable for any loss of funds you or any entity incurs as a result of using this service.</p>
+		<p>Refunds are not possible and will not be considered under any circumstances what-so-ever, so only risk what you can afford.</p>
+		<p>By using this website you agree to these terms if you have read them or not.</p>
+		<p>Any detection of potential misuse of the game will result in your address being banned from playing. You have been warned.</p>
+	</div>
+</div>
+</body>
+
+</html>
