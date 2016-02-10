@@ -29,6 +29,7 @@ $(document).ready(function() {
   var _sendNumber;
   var _result;
   var _blockNumber;
+  var _blockNumberDisplay;
   var _blockNumberOriginal;
   var _account;
   var _balance;
@@ -44,7 +45,7 @@ $(document).ready(function() {
   var _blockCheck;
   var _resetAndDisplayResult;
   var _resetGameUI;
-  var _blockCheckIntervalWaitTime = 5000;
+  var _blockCheckIntervalWaitTime = 1000;
 
   var _testValue = 10;
   var _sendNumber = 98;
@@ -109,11 +110,15 @@ $(document).ready(function() {
     _balance = web3.eth.getBalance(_account);
     _balanceDisplay = _balance*.000000000000000001;
 
-    $( '.balance' ).text( _balanceDisplay.toString(10));
+    var str = _balanceDisplay.toString(10);
+    var _balanceDisplayDecimalSplit = str.split(".");
+    var _balanceDisplayDecimal = _balanceDisplayDecimalSplit[0];
+
+    $('.balance').text(_balanceDisplayDecimal);
 
     //get latest block number
-    _blockNumber = web3.eth.blockNumber;
-    $( '#latestBlock' ).text( _blockNumber);
+    _blockNumberDisplay = web3.eth.blockNumber;
+    $( '#latestBlock' ).text( _blockNumberDisplay);
 
     //get latest block timestamp
    /* var _blockTimeStamp = web3.eth.block.timestamp;
@@ -129,19 +134,20 @@ $(document).ready(function() {
   function updateBalance() {
     //get account
     _account = web3.eth.coinbase;
-    $( '.balance' ).text( _balanceDisplay.toString(10));
-  }
+    _balanceDisplay = _balance*.000000000000000001;
 
-  function updateBalanceFaux() {
-    //get account
-    $( '.balance' ).text( _balanceDisplay.toString(10) - _betValue);
+    var str = _balanceDisplay.toString(10);
+    var _balanceDisplayDecimalSplit = str.split(".");
+    var _balanceDisplayDecimal = _balanceDisplayDecimalSplit[0];
+
+    $('.balance').text(_balanceDisplayDecimal);
   }
 
   //reset when buton is clicked
   function clearAll() {
     _account = "";
     _balance = "";
-    _blockNumber = "";
+    _blockNumberDisplay = "";
     _blockTimeStamp = "";
 
   }
@@ -155,11 +161,14 @@ $(document).ready(function() {
       //console.log(_sendNumber);
      // console.log(_betValue);
 
+    //init setInterval again
+    _blockCheck;
+
     $("#win").hide();
     $("#lose").hide();
 
     //send bet
-    etherflip.rand.sendTransaction(_sendNumber,{from: web3.eth.accounts[0], value: web3.toWei(_testValue, 'ether'), to: _contractAddress, gas: 500000,  data: web3.fromAscii('Etherflip.io bet on block#' + _blockNumber )})
+    etherflip.rand.sendTransaction(_sendNumber,{from: web3.eth.accounts[0], value: web3.toWei(_testValue, 'ether'), to: _contractAddress, gas: 500000,  data: web3.fromAscii('Etherflip.io bet on block#' + _blockNumberDisplay )})
 
     console.log("bet");
 
@@ -169,8 +178,7 @@ $(document).ready(function() {
     //setTimeout(function(){ genSeedC() }, 90000);
     _blockCheck = setInterval(function(){ genSeedC() }, _blockCheckIntervalWaitTime);
 
-
-    updateBalanceFaux();
+    //updateBalanceFaux();
 
     showLoading();
 
@@ -184,7 +192,7 @@ $(document).ready(function() {
 
     _blockNumber = web3.eth.blockNumber;
 
-    console.log("Current block nunber" + _blockNumber);
+    console.log("Current block nunber #" + _blockNumber);
     _blocksToGo = _blockNumber - _blockNumberOriginal;
     _blocksToGoDisplay = _blockGoal - (_blockNumber - _blockNumberOriginal);
 
@@ -196,7 +204,7 @@ $(document).ready(function() {
       console.log("block number reached - generating seedC - 4 blocks until reveal number");
 
      //stop checking blocks
-      clearInterval(_blockCheck);
+     clearInterval(_blockCheck);
 
       //reveal
       etherflip.reveal.sendTransaction(_sendNumber,{from:web3.eth.accounts[0], to:_contractAddress, gas: 500000, data: web3.fromAscii('reveal')})
@@ -206,6 +214,11 @@ $(document).ready(function() {
       _resetAndDisplayResult = setInterval(function(){ displayResult() }, _blockCheckIntervalWaitTime);
 
       _blockNumberRevealOriginal = web3.eth.blockNumber;
+
+      _blocksToGo;
+      _blockNumberOriginal;
+      _blockNumber;
+
     }
 
 
@@ -214,7 +227,7 @@ $(document).ready(function() {
   function displayResult() {
 
     _blockNumberReveal = web3.eth.blockNumber;
-    console.log("Current block nunber" + _blockNumberReveal);
+    console.log("Current block nunber #" + _blockNumberReveal);
     _blocksToGoReveal = _blockNumberReveal - _blockNumberRevealOriginal;
     _blocksToGoDisplayReveal = _blockGoal - (_blockNumberReveal - _blockNumberRevealOriginal);
 
@@ -230,18 +243,21 @@ $(document).ready(function() {
 
       loadData();
       //hideLoading();
+
       //stop checking blocks
       clearInterval(_resetAndDisplayResult);
 
       //init reveal number count
       _blockNumberResetOriginal = web3.eth.blockNumber;
       _resetGameUI = setInterval(function(){ resetGameUI() }, _blockCheckIntervalWaitTime);
+
+      _blocksToGoReveal = _blockGoal;
     }
 
     function resetGameUI() {
 
       _blockNumberReset = web3.eth.blockNumber;
-      console.log("Current block nunber" + _blockNumberReset);
+      console.log("Current block nunber #" + _blockNumberReset);
       _blocksToGoReset = _blockNumberReset - _blockNumberResetOriginal;
       _blocksToGoDisplayReset = _blockGoalReset - (_blockNumberReset - _blockNumberResetOriginal);
 
@@ -276,6 +292,11 @@ $(document).ready(function() {
 
         //reset blocks waiting output
         $('#blocks-to-go').val('Waiting for blocks...');
+
+        //stop checking blocks
+        clearInterval(_resetGameUI);
+
+        _blocksToGoReset = _blockGoalReset;
       }
 
     }
