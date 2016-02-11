@@ -1,3 +1,5 @@
+* { Box-sizing: Border-box }
+
 html,body{
 	background-color:#111;
 	width:100%;
@@ -43,7 +45,7 @@ a{
 }
 
 h5{
-	margin:11px 0;
+	margin:11px 0;cursor: progress;
 }
 
 input{
@@ -56,11 +58,16 @@ input{
 	color:#eee;
 	margin-bottom: 5px;
 	text-align: center;
-
+	width: 70%;
 }
 
 .jumbotron-container{
-	margin:20px 0 20px;
+	margin:20px 0;
+	min-height: 10px;
+	height:auto !important;
+	height: 10px;
+	width: 100%;
+	float: left;
 }
 
 .jumbotron{
@@ -68,6 +75,9 @@ input{
 	float:left;
 	height:100%;
 	text-align: center;
+	min-height: 10px;
+	height:auto !important;
+	height: 10px;
 }
 
 .bets{
@@ -75,20 +85,12 @@ input{
 }
 
 
-
-
-.seedA-hash{
-	display: none;
-	visibility: hidden;
-}
-
 em{
-	font-size: 14px;
+	font-size: 16px;
 }
 
 
 #result{
-
 }
 
 .green{
@@ -132,6 +134,7 @@ em{
 	width: 222px;
 	margin-top:25px;
 	height:40px;
+	width:70%;
 }
 
 
@@ -181,5 +184,81 @@ button:hover{
 
 
 .clearfix{clear:both;}
+
+.mobile-only{
+	display: none;
+	visibility: hidden;
+}
+
+
+
+@media only screen and (max-width : 1000px) {
+
+	.header-logo {
+		width:100%;
+		text-align: center;
+	}
+
+	.header-logo h1 {
+		float: none;
+		line-height: 50px;
+		margin: 0 20px;
+	}
+
+	.header-balance {
+		float: none;
+		width: 100%;
+		font-size: 12px;
+		text-align: center!important;
+	}
+
+	.header-balance .inner{
+		float: none;
+		text-align: center;
+		padding-top: 0px;
+	}
+
+	.jumbotron-container{
+		width:100%;
+		float:left;
+		padding: 0 10px;
+		min-height: 10px;
+		height:auto !important;
+		height: 10px;
+	}
+
+	.jumbotron {
+		width: 100%;
+		float: left;
+		margin-bottom:30px;
+		height:auto;
+	}
+
+	input{
+		width:100%;
+		float: left;
+		margin-bottom: 25px;
+	}
+	.place-bet{
+		width:100%;
+	}
+
+	.bet-slip{
+		display: none;
+	}
+
+	.full {
+		padding: 0 10px;
+	}
+
+	button{
+		background: #eee!important;
+	}
+
+	.mobile-only{
+		display: block!important;
+		visibility: visible!important;
+	}
+}
 
 

@@ -1,28 +1,30 @@
 <html>
 <head>
-	<title>Etherflipr - Provably fair gambling</title>
+	<title>Etheroll :: Provably fair gambling</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<!--<link rel="icon" href="imgs/favicon.png">-->
-
-
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
-
 	<script src="assets/js/web3.min.js"></script>
-
-
-
 	<script src="assets/js/jquery-1.12.0.min.js"></script>
 	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-
 	<script src="assets/js/etherflip.js"></script>
 
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-320691-30', 'auto');
+		ga('send', 'pageview');
+
+	</script>
 </head>
 
 <body>
 <div class="header clearfix">
-	<div class="header-logo"><h1>Etherflipr</h1></div>
+	<div class="header-logo"><h1>Etheroll</h1></div>
 	<div class="header-balance">
 		<div class="inner">
 			<nav>
@@ -48,9 +50,10 @@
 <div class="jumbotron-container">
 	<div class="jumbotron">
 		<h3 class="green generating-normal">Accepting bets (<a href="#the_game">?</a>)</h3>
-		<h3 class="orange generating-wait">Not accepting bets (<a href="#the_game">?</a>)</h3>
+		<h3 class="red generating-wait">Roll in progress (<a href="#roll_in_progress">?</a>)</h3>
+		<p class="mobile-only">You are seeing this message likely because you are viewing Etheroll on a mobile device. This Dapp requires you to be running a local testnet version of Ethereum Blockchain for it to work. Please try on a desktop environment running a local testnet node.</p>
 		<div class="bet-container">
-			<h5>Set wager</h5>
+			<h5>Select or type your wager (1-100)</h5>
 			<div class="pre-paid-container">
 				<button id="1" class="choose pre-paid" value="1">
 					<strong>1</strong>
@@ -71,40 +74,31 @@
 					<strong>50</strong>
 				</button>
 			</div>
-			<input id="the-bet" class="ether bet-amount" type=text" placeholder="Wager"></input>
-			<h5>Roll low (1-49) or high (50-100)</h5>
-				<button id="Low" class="choose bet-choice">
+			<input id="the-bet" type="number" pattern="[0-100]" min="1" max="100" class="bet-amount"  placeholder="Enter wager"></input>
+			<h5>Enter your number between 1-100</h5>
+			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" ></input>
+				<!--<button id="Low" class="choose bet-choice">
 					<strong>Low</strong>
 					<p><span class="prediction">49</span> and lower</p>
 				</button>
 				<button id="High" class="choose bet-choice">
 					<strong>High</strong>
 					<p><span class="prediction">50</span> and higher</p>
-				</button>
+				</button>-->
 			<button id="place-bet" class="choose place-bet">
 				<strong>ROLL</strong>
 			</button>
-			<button id="reset" class="choose place-bet">
-				<strong>RESET - DEV</strong>
-			</button>
 			</div>
-			<br/><p><strong>Provably fair (<a href="#provably_fair">?</a>)</strong></p>
-			<p id="seedA_hash"></p>
-			<em class="seedA-hash">This is the sha3 encrypted hash of seedA. It is a number we cannot change after your bet. We display this so you can check SeedA does in fact generate this SeedA hash. We will reveal SeedA after the bet has been decided. Since we cannot change this number nor know what number you will put in or know the number of SeedC (a future blockhash), the deciding number is completely random (1-100) and impossible to be known to anyone.</em>
-			<!--<h5>Payout address - pays 1.9 to 1</h5>
-			<input type="text" class="payout-address account"></input>-->
 		</div>
-	<div class="jumbotron">
-		<h3>Bet slip</h3>
+	<div class="jumbotron bet-slip">
+		<h3 id="title-bet-slip">Bet slip</h3>
 		<div class="your-bet-container">
-			<h5>High or Low</h5>
-			<input type="text" id="bet-number" disabled></input>
-			<h5>Wager</h5>
-			<input type="text" class="bet-amount" disabled></input>
+			<h5>Your number</h5>
+			<input type="text" id="bet-number" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set"></input>
+			<h5>Bet Cost (gas not incl)</h5>
+			<input type="text" class="bet-amount" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set"> </input>
 			<h5>Potential payout</h5>
-			<input type="text" class="bet-payout" disabled></input>
-			<!--<h5>Payout address (1 pays 1.9)</h5>
-			<input type=text"></input>-->
+			<input type="text" class="bet-payout" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set"></input>
 		</div>
 	</div>
 	<div  class="jumbotron">
@@ -112,22 +106,14 @@
 
 			<h3 class="green generating-normal">Place your bet...</h3>
 			<h3 class="orange generating-wait">Rolling die...</h3>
-			<h3 class="orange generating-confirm">confirming result...</h3>
+			<h3 class="green generating-confirm">Paying winners...</h3>
 			<div class="orange generating-wait" ><input type="text" id='blocks-to-go' disabled value="Waiting for blocks..."></input></div>
-			<div class="generating-normal"><img src="assets/images/ajax-loader.gif"/> </div>
-			<div class="generating-wait"><img src="assets/images/ajax-loader-wait.gif"/> </div>
-			<input type="text" id="result"></input>
+			<div class="generating-normal"><img src="assets/images/ajax-loader1.gif"/> </div>
+			<div class="generating-wait"><img src="assets/images/ajax-loader-wait1.gif"/> </div>
+			<input type="text" id="result" disabled></input>
 			<p class="" id=''>Latest result</p>
-			<h2 class="green" id="win"> WIN</h2>
+			<h2 class="green" id="win">YOU WIN</h2>
 			<h2 class="red" id="lose">NO WIN</h2>
-			<!--<p><strong>How is the outcome determined?</strong></p>
-			<p>(SeedA + SeedB + SeedC / (2 ^ 256 / 100)) +1</p>
-			<p>SeedA = Our number choice 1-100</p>
-			<p>SeedB = Your number choice 1-100</p>
-			<p>SeedC = Hash of block in a future time</p>
-			</p>Before any bets are place, we have already selected a number between 1-100. This is called SeedA.</p>
-			</p>We provide the sha3 encrypted version of SeedA before you bet, to prove we do not change the number after you choose your number/</p>
-			<p>Once you submit your bet.</p>-->
 		</div>
 	</div>
 	<!--<div class="jumbotron">
@@ -151,30 +137,59 @@
 </div>
 <div class="jumbotron-container">
 	<div class="full">
-		<h2><a name="the_game">The Game</a></h2>
+		<p class="green"><strong>Provably fair (<a href="#provably_fair">?</a>)</strong></p>
+		<p class="green" id="seedA_hash">SHA3 of SeedA:</p>
+		<div id="seedA_hashSHA3"></div>
+		<p class="green" id="seedA">SeedA:</p>
+		<div id="seedA"></div>
+		<p class="green" id="seedA_hash">Bet created at block:</p>
+		<div id="seedA_hashBlock"></div>
+		<p class="green" id="betBlock">SeedB (your number) created at block:</p>
+		<div id="betBlockID"></div>
+	</div>
+</div>
+<div class="jumbotron-container">
+	<div class="full">
+		<h2><a class="red" name="the_game">!!!WARNING!!!</a></h2>
+		<p>This is only an alpha release of my Dapp and it will only run if you are running your own testnet version of the Ethereum blockchain. THERE IS NO REAL ETHER INVOLVED.</p>
+		<p>This project is only for me to learn Ethereum until it is safe to be on the livenet. </p>
+		<p>Whilst you will not win or lose real Ether using Etheroll you may win or lose some fake Ether.</p>
+		<p>At this point in time I can only payout whats in my testnet balance which is less than 1000 Ether so please keep bets small.</p>
+		<h2><a class="green" name="the_game">How to play</a></h2>
 		<p>You are betting on the result of a 100 sided die roll. The result of the die roll is either a low roll range (1-49) or a high roll range (50-100).</p>
 		<p>If the number you submit is within the result range; low range numbers are (1-49), high range numbers are (50-100) you are paid 1.9 to 1 instantly.</p>
 		<p>If the number you submit is outside the result range you are not paid.</p>
 
-		<h2><a name="the_result">How is the result decided?</a></h2>
+		<h2><a class="green" name="the_result">How is the result decided?</a></h2>
 		<p>((SeedA + SeedB + SeedC) / (2 ^ 256 / 100) ) +1 = result</p>
-		<p>SeedA = SeedA is set before you place your bet, and we cannot change it. See <a href="#provably_fair">'provably fair'</a> below for more details. 1st dice rolled. </p>
+		<p>SeedA = Is set before you place your bet, and we cannot change it. Basically; when you make a bet the contract will retrieve and store the blockhash of the <em>parent block</em> relative to the block you made your bet on. The contract then uses that as our SeedA number. See <a href="#provably_fair">'provably fair'</a> below for more details. 1st dice rolled. </p>
 		<p>SeedB = Your number choice 1-100. 2nd dice rolled.</p>
 		<p>SeedC = Hash of block in a future time. 3rd dice rolled.</p>
 		<p>Before any bets are placed, we have already generated a number from a previous block hash. This is SeedA.</p>
-		<p>Once you submit your bet (SeedB), the Etherflipr contract waits for a mumber of new Ethereum blocks to be mined and we use a future block hash from which SeedC generated, therefore SeedC is impossible for us or you to know prior to the submission of the bet as the block did not yet exist.</p>
-		<p>Etherflipr pays 1.9 to 1 if the number you submitted is within the resulting range, either 'high' or 'low'.</p>
+		<p>Once you submit your bet (SeedB), the Etheroll contract waits for a mumber of new Ethereum blocks to be mined and we use a future block hash from which SeedC generated, therefore SeedC is impossible for us or you to know prior to the submission of the bet as the block did not yet exist.</p>
+		<p>Etheroll pays 1.9 to 1 if the number you submitted is within the resulting range, either 'high' or 'low'.</p>
 		<p>The chance of the dice roll being either high or low is 50/50.</p>
-		<h2><a name="provably_fair">Provably Fair</a></h2>
-		<p>We provide the sha3 encrypted version of SeedA ('SeedA Hash') before and after each bet for you to check, to prove that we do not (and could not - mathematical impossibility) change SeedA after you submit your bet.</p>
-		<h2><a name="the_terms">Terms</a></h2>
-		<p>Etherflipr is only for entertainment purposes. Please be aware Etherflipr is in beta mode and as such you should take care when handling your bets, any loss due to malfunction of the game, codebase, networks or likewise will not result in a refund and Etherflipr is not repsonsible or liable for anything that occurs as a result, directly or in-directly from interacting with the contract.</p>
-		<p>Etherflipr is not liable for any loss of funds you or any entity incurs as a result of using this service.</p>
+		<h2><a class="green" name="provably_fair">Provably Fair</a></h2>
+		<p>SeedA is generated by the block hash of the block previous to your bet. At the time you make your bet, we simply get the current block -1 from the Ethereum Blockchain and we pull the block hash information from that block to use as SeedA. Because of the way the Blockchain works, we can only provide this SeedA hash to you after you have made your bet, as the contract does not save the information on the block previous to your betting block until 1 more block is created.</p>
+		<p>However; you can still check the block # and compare its block hash/sha3 using any good block explorer to confirm that we did indeed use the number we said we did (a number that already existed before you made your bet). We provide the sha3 encrypted version of SeedA ('SHA3 of SeedA'). This is to prove that we do not (and could not - mathematical impossibility) change SeedA after you submit your bet. This means Etheroll will always have picked a number before you pick yours.</p>
+		<h2><a class="green" name="the_terms">Technical</a></h2>
+		<h3 class="red">!!!!ONLY RUN ETHEROLL ON THE TESTNET!!!!!</h3>
+		<p>This Dapp will only work if you are connected to the testnet. Run Etheroll from the testnet ONLY. You will not be able to connect to it otherwise and I will not be responsible for any lost funds as a consequence of using the livenet. The testnet is not dealing with real Ether and I am still trying to work things out. I am a sole developer and have built this just for my own fun and as a way for me to learn Ethereum/Solidity/Web3. As such I am ONLY running this Dapp on the test net version of the network. </p>
+		<p>There are some issues still at the moment - not more than one person can play at a time. Errors may occur if other users try to play whilst a game is already in progress. Be aware. You may lose fake Ether. You may win fake Ether. You have been warned. Good luck.</p>
+		<p>Because Ethereum is still being heavily developed and we do not have the Mist browser, if you want to play Etheroll, for the moment you will need to run your own node (testnet) and connect to Etheroll by instantiating your node with the following:</p>
+		<p>geth --testnet --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p>
+		<p>This will start your node with cross-domain access to etheroll.com and 'unlock' your account so Etheroll (you still need to provide Geth with your password upon entering this command) can view your testnet balance and so you can place bets - real bets - fake money.</p>
+		<p>If you land at the site and it says "Bet in progress" wait until a new result shows and then refresh the page to make your bet.</p>
+		<p>There are bugs. This is only for fun at the moment. I hope to have it bug free and optimised eventually in a good enough state to be able to run on the livenet with real Ether.</p>
+		<h2><a class="green" name="roll_in_progress">Roll in progress</a></h2>
+		<p>If you see this upon entering Etheroll it means somebody is already in the middle of a die roll. Wait a couple of minutes (about 10 blocks) and try refreshing the page to make your bets. I am still ironing out things. In fact I have not even done the washing yet. REMEMBER: THIS ONLY RUNS ON THE TESTNET. NO REAL ETHER IS INVOLVED.</p>
+		<h2><a class="green" name="the_terms">Terms</a></h2>
+		<p>Etheroll is only for entertainment purposes. Please be aware Etheroll is in alpha mode and as such you should take care when handling your bets, any loss due to malfunction of the game, codebase, networks or likewise will not result in a refund and Etheroll is not repsonsible or liable for anything that occurs as a result, directly or in-directly from interacting with the contract.</p>
+		<p>Etheroll is not liable for any loss of funds you or any entity incurs as a result of using this service.</p>
 		<p>Refunds are not possible and will not be considered under any circumstances what-so-ever, so only risk what you can afford.</p>
 		<p>By using this website you agree to these terms if you have read them or not.</p>
 		<p>Any detection of potential misuse of the game will result in your address being banned from playing. You have been warned.</p>
 	</div>
 </div>
 </body>
-
 </html>

@@ -58,13 +58,19 @@ contract Random{
     bool public high;
         
     //win state
-    bool public win;   
+    bool public win;  
+
+	//msg.sender
+	uint256 internal msgSender;
     
     //turns input data into a 100-sided 'die' by dividing by ceil(2 ^ 256 / 100)
     uint256 public FACTOR = 1157920892373161954235709850086879078532699846656405640394575840079131296399;
     
     //generate random number
     function rand ( uint256 seedBUserParam ) atStage(Stages.AcceptingBets) returns (uint256){
+	
+		//user address
+		msgSender = msg.sender;
 
         //user bet value
         uint256 betValue = msg.value;
@@ -115,7 +121,8 @@ contract Random{
     //generate random number
     function reveal( uint256 seedBUserParam2 ) atStage(Stages.Reveal) returns (uint256){ 
         
-        //if (stage != Stages.AcceptingBets && stage != Stages.Finished){
+        //limit to one game at a time for alpha phase. beta:1 to many
+		if (msg.sender == msgSender){
         
 			//todo important
 			//need to restrict to msg.sender of rand
@@ -174,6 +181,10 @@ contract Random{
 			}
             
         }
+		
+		//if (msg.sender == msgSender){
+		//	throw;
+		//}
         
     } 
     
