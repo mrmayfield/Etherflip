@@ -6,7 +6,7 @@ contract Random{
         Finished
     }
     
-    // This is the current stage.
+    //this is the current stage.
     Stages public stage = Stages.AcceptingBets;
     
     modifier atStage(Stages _stage) {
@@ -61,10 +61,11 @@ contract Random{
     bool public win;  
 
 	//msg.sender
-	uint256 internal msgSender;
+	uint256 public msgSender;
     
     //turns input data into a 100-sided 'die' by dividing by ceil(2 ^ 256 / 100)
     uint256 public FACTOR = 1157920892373161954235709850086879078532699846656405640394575840079131296399;
+
     
     //generate random number
     function rand ( uint256 seedBUserParam ) atStage(Stages.AcceptingBets) returns (uint256){

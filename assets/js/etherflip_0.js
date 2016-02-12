@@ -7,10 +7,9 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 $(document).ready(function() {
 
   //yea lots of mess and dupes yummyy
-  var _contractAddress = '0xf15146e61780e9e15a004532b943630b64a52358';
+  var _contractAddress = '0xfd30edfab6e30124bb4718e14969f15f1554cd06';
   //contract abi
-  var abi = [{"constant":false,"inputs":[],"name":"getSeedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"rand","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam2","type":"uint256"}],"name":"LateBets","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"getNumberAtPosition","type":"uint256"}],"name":"getEntrants","outputs":[{"name":"entrantInfo","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"ResetStage","outputs":[],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"},{"name":"rewardValue","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"}];
-
+  var abi = [{"constant":false,"inputs":[],"name":"getSeedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"rand","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam2","type":"uint256"}],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ResetStage","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"}];
   //creation of contract object
   var _etherFlip = web3.eth.contract(abi);
   //initiate contract for an address
@@ -32,10 +31,10 @@ $(document).ready(function() {
   var _seedA;
 
   //blocks to wait until generate seedC from future block
-  var _blockGoal = 2;
+  var _blockGoal = 4;
 
   //blocks to wait to reset game UI
-  var _blockGoalReset = 1;
+  var _blockGoalReset = 2;
 
   var _blockCheck;
   var _resetAndDisplayResult;
@@ -109,15 +108,10 @@ $(document).ready(function() {
   });
 
   //if game already in progress freeze UI
-  if((etherflip.stage() == 1) ){
-    showLoading();
-    //disableRoll();
-  }
-  if((etherflip.stage() == 2) ) {
+  if((etherflip.stage() == 1) || (etherflip.stage() == 2) ){
     showLoading();
     disableRoll();
-  }
-  else{
+  }else{
     $('.generating-normal').show();
     enableRoll();
     hideLoading();
@@ -217,45 +211,20 @@ $(document).ready(function() {
       $("#win").hide();
       $("#lose").hide();
 
-      if((etherflip.stage() == 0) ) {
-        showLoading();
-        disableRoll();
-        //send bet
-        etherflip.rand.sendTransaction(_seedB, {
-          from: web3.eth.accounts[0],
-          value: web3.toWei(_betValue, 'ether'),
-          to: _contractAddress,
-          gas: 500000,
-          data: web3.fromAscii('Etheroll.com bet created at block ' + web3.eth.blockNumber)
-        })
-      }
-      if((etherflip.stage() == 1) ) {
-        showLoading();
-        //send bet
-        etherflip.AcceptingLateBets.sendTransaction(_seedB, {
-          from: web3.eth.accounts[0],
-          value: web3.toWei(_betValue, 'ether'),
-          to: _contractAddress,
-          gas: 500000,
-          data: web3.fromAscii('Etheroll.com bet created at block ' + web3.eth.blockNumber)
-        })
-      }
-      if((etherflip.stage() == 2) ){
-        showLoading();
-        disableRoll();
-      }else{
-        $('.generating-normal').show();
-        enableRoll();
-        hideLoading();
-      }
-
-
+      //send bet
+      etherflip.rand.sendTransaction(_seedB, {
+        from: web3.eth.accounts[0],
+        value: web3.toWei(_betValue, 'ether'),
+        to: _contractAddress,
+        gas: 500000,
+        data: web3.fromAscii('Etheroll.com bet created at block ' + web3.eth.blockNumber)
+      })
 
       //get latest block number
       _betBlockNumberDisplay = web3.eth.blockNumber;
       $( '#betBlockID' ).text(_betBlockNumberDisplay);
 
-      //$( '#seedA_hashBlock' ).text(_betBlockNumberDisplay -1);
+      $( '#seedA_hashBlock' ).text(_betBlockNumberDisplay -1);
       //console.log("bet");
 
       //set result UI empty
@@ -263,9 +232,9 @@ $(document).ready(function() {
 
       _blockCheck = setInterval(function () {genSeedC()}, _blockCheckIntervalWaitTime);
 
-      //showLoading();
+      showLoading();
 
-      //disableRoll();
+      disableRoll();
 
       _blockNumberOriginal = web3.eth.blockNumber;
 
@@ -292,7 +261,7 @@ $(document).ready(function() {
      clearInterval(_blockCheck);
 
       //reveal
-      etherflip.LateBets.sendTransaction(_seedB,{from:web3.eth.accounts[0], to:_contractAddress, gas: 500000, data: web3.fromAscii('LateBets')})
+      etherflip.reveal.sendTransaction(_seedB,{from:web3.eth.accounts[0], to:_contractAddress, gas: 500000, data: web3.fromAscii('reveal')})
       updateBalance();
 
       //init reveal number count
@@ -357,21 +326,21 @@ $(document).ready(function() {
         hideLoading();
 
         //display win/no win UI
-/*        if((_result > 49 && _seedB > 49) || (_result < 50 && _seedB < 50)){
+        if((_result > 49 && _seedB > 49) || (_result < 50 && _seedB < 50)){
           $("#win").show();
           $("#lose").hide();
           $('.bet-payout').removeClass('red');
           $('.bet-payout').addClass('green');
           //console.log('winner');
-        }*/
+        }
 
-/*        if((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)){
+        if((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)){
           $("#win").hide();
           $("#lose").show();
           $('.bet-payout').removeClass('green');
           $('.bet-payout').addClass('red');
           //console.log('loser');
-        }*/
+        }
 
         //hide 'confirming'
         $('.generating-confirm').hide();
@@ -405,17 +374,12 @@ $(document).ready(function() {
   function showLoading(){
     $('.generating-wait').show();
     $('.generating-normal').hide();
-    $('.place-bet').addClass('red');
-    $('.place-bet').removeClass('green');
-
 
   }
 
   function hideLoading(){
     $('.generating-normal').show();
     $('.generating-wait').hide();
-    $('.place-bet').addClass('green');
-    $('.place-bet').removeClass('red');
   }
 
   function disableRoll(){
