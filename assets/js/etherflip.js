@@ -57,7 +57,7 @@ $(document).ready(function() {
 
   var _getLastGameData;
   //init last games data
-  _getLastGameData = setInterval(function(){ getDieResult() }, _getLastGameDataInterval);
+
 
   //generate new data
   $("#loadDataButton").click(function() {
