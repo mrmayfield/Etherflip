@@ -135,11 +135,11 @@ $(document).ready(function() {
 
 
     if((_result < 50) && ($("#bet-number").val() < 50)){
-      $('.htmlCont').addClass('green-bkgd');
+      $('.body').addClass('green-bkgd');
     }
 
     if((_result > 49) && ($("#bet-number").val() > 49)){
-      $('.htmlCont').addClass('red-bkgd');
+      $('.body').addClass('red-bkgd');
     }
 
   }

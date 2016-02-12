@@ -99,7 +99,7 @@ em{
 
 
 .green-bkgd{
-	background-color:#DCFF9B;
+	background-color:#DCFF9B!important;
 }
 
 .red{
@@ -107,7 +107,7 @@ em{
 }
 
 .red-bkgd{
-	background-color:#c20000;
+	background-color:#c20000!important;
 }
 
 .orange{
@@ -115,7 +115,7 @@ em{
 }
 
 .orange-bkgd{
-	background:#fc9100;
+	background:#fc9100!important;
 }
 
 .bets .choose {
