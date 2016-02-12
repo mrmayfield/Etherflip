@@ -97,14 +97,26 @@ em{
 	color:#DCFF9B;
 }
 
+
+.green-bkgd{
+	background-color:#DCFF9B;
+}
+
 .red{
 	color:#c20000;
+}
+
+.red-bkgd{
+	background-color:#c20000;
 }
 
 .orange{
 	color:#fc9100;
 }
 
+.orange-bkgd{
+	background:#fc9100;
+}
 
 .bets .choose {
 	width: 115px;

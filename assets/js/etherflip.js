@@ -132,6 +132,16 @@ $(document).ready(function() {
     //display result
     $("#result").val(_result);
     console.log('die result: ' + _result);
+
+
+    if((_result < 50) && ($("#bet-number").val() < 50)){
+      $('.htmlCont').addClass('green-bkgd');
+    }
+
+    if((_result > 49) && ($("#bet-number").val() > 49)){
+      $('.htmlCont').addClass('red-bkgd');
+    }
+
   }
 
   //get latest getSeedAHash
@@ -209,6 +219,10 @@ $(document).ready(function() {
 
   //place bet
   $("#place-bet").click(function() {
+
+    $('.htmlCont').removeClass('red-bkgd');
+    $('.htmlCont').removeClass('red-bkgd');
+    $('.htmlCont').addClass('orange-bkgd');
 
     if(($('#the-bet').val() != '') && ($('#seedB').val() != '') && ($('#the-bet').val() < 101) && ($('#seedB').val() < 101)  && ($('#the-bet').val() > 0) && ($('#seedB').val() > 0)) {
 
