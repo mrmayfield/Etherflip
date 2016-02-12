@@ -295,6 +295,10 @@ $(document).ready(function() {
 
       $("#seedA_hashSHA3").text('');
 
+      $('.body').removeClass('red-bkgd');
+      $('.body').removeClass('red-bkgd');
+      $('.body').removeClass('red-bkgd');
+
       showLoading();
       disableRoll();
 
