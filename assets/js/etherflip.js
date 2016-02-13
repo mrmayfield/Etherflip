@@ -128,7 +128,7 @@ $(document).ready(function() {
   _Stage0BetsOpen.watch(function(error, result){
     // call.
     if (!error)
-      //enableRoll();
+      disableRoll();
       showLoading();
       etherflip.reveal.sendTransaction(10, {from: web3.eth.accounts[0],to: _contractAddress,gas: 500000,data: web3.fromAscii('LateBets')});
       console.log('Stage 0 accepting late bets' + result);
@@ -245,11 +245,11 @@ $(document).ready(function() {
     $("#the-bet").attr('disabled','disabled');
     $("#seedB").attr('disabled','disabled');
     $(".pre-paid").attr('disabled','disabled');
-
-
     //set bet slip to show locked in
     $('#title-bet-slip').removeClass('red');
     $('#title-bet-slip').addClass('green');
+    $('input').addClass('not-allowed');
+    $('button').addClass('not-allowed');
 
     updateBalance();
   }
@@ -267,7 +267,8 @@ $(document).ready(function() {
     $("#seedB").removeAttr('disabled');
     $(".pre-paid").removeAttr('disabled');
     $("#the-bet").removeAttr('disabled');
-
+    $('input').removeClass('not-allowed');
+    $('button').removeClass('not-allowed');
     updateBalance();
 
   }

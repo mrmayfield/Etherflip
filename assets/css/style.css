@@ -132,16 +132,15 @@ em{
 }
 
 .red-bkgd{
-	background-color:#c20000;
+	background-color:red!important;
 }
 
 .orange-bkgd{
-	background-color:#fc9100;
+	background-color:orange!important;
 }
-/*
 .green-bkgd{
-	background-color:#DCFF9B;
-}*/
+	background-color:green!important;
+}
 
 .orange{
 	color:#fc9100;
@@ -233,6 +232,15 @@ button:hover{
 .mobile-only{
 	display: none;
 	visibility: hidden;
+}
+
+.bet-slip{
+	border-left: 1px solid #1c1d1f;
+	border-right: 1px solid #1c1d1f;
+}
+
+.not-allowed{
+	cursor: not-allowed;
 }
 
 
