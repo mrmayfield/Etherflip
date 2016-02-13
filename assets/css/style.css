@@ -1,5 +1,20 @@
 * { Box-sizing: Border-box }
 
+@-webkit-keyframes yellow-fade {
+	0% {background: #DCFF9B;}
+	100% {background: none;}
+}
+
+@keyframes yellow-fade {
+	0% {background: #DCFF9B;}
+	100% {background: none;}
+}
+
+.highlight {
+	-webkit-animation: yellow-fade 2s ease-in 1;
+	animation: yellow-fade 2s ease-in 1;
+}
+
 html,body{
 	background-color:#111;
 	width:100%;

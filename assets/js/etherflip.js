@@ -1,13 +1,17 @@
+
 if(typeof web3 !== 'undefined')
   web3 = new Web3(web3.currentProvider);
 else
-web3 = new Web3();
+  web3 = new Web3();
 web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+
 
 $(document).ready(function() {
 
+
+
   //yea lots of mess and dupes yummyy
-  var _contractAddress = '0x1c5744912a4d85654328650d61015bd3c3d3efca';
+  var _contractAddress = '0x820f1c631e369e9d2bd39e7335c09ae0fe0080d1';
   //contract abi
   var abi = [{"constant":false,"inputs":[],"name":"getSeedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"rand","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"getNumberAtPosition","type":"uint256"}],"name":"getEntrants","outputs":[{"name":"entrantInfo","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam2","type":"uint256"}],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"},{"name":"rewardValue","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"Stage0BetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"readyForNewPlayers","type":"event"}];
 
@@ -29,31 +33,15 @@ $(document).ready(function() {
   var _blocksToGo;
   var _seedAHash;
   var _seedA;
-  var _blockGoal = 6;
-  var _blockGoalReset = 2;
-  var _blockCheck;
-  var _resetAndDisplayResult;
-  var _resetGameUI;
   var _betBlockNumberDisplay;
-  var _blockCheckIntervalWaitTime = 5000;
   var _seedB;
-  var _blockNumberRevealOriginal;
   var _seedBInput;
 
-  //event listeners;
-  //var Stage0AcceptingLateBets = etherFlip.Stage0AcceptingLateBets();
-  //var Stage0AcceptingLateBets = etherFlip.Stage0AcceptingLateBets();
 
-  var Stage0BetsOpen = etherflip.Stage0BetsOpen();
-  var Stage1BetsClosed = etherflip.Stage1BetsClosed();
-  var Stage1BetsDecided = etherflip.Stage1BetsDecided();
-  var readyForNewPlayers =  etherflip.readyForNewPlayers();
-
-
-
-
-
-
+  var _Stage0BetsOpen = etherflip.Stage0BetsOpen();
+  var _Stage1BetsClosed = etherflip.Stage1BetsClosed();
+  var _Stage1BetsDecided = etherflip.Stage1BetsDecided();
+  var _readyForNewPlayers =  etherflip.readyForNewPlayers();
 
   //change bets UI
   var myInput = $('#the-bet');
@@ -122,10 +110,10 @@ $(document).ready(function() {
 
       $("#seedA_hashSHA3").text('');
 
-      if(_blocksToGo < 2) {
+      /*if(_blocksToGo < 2) {
         //$('#blocks-to-go').val(_blocksToGoDisplay + ' Waiting for blocks');
         $('#blocks-to-go').val('Waiting for blocks...');
-      }
+      }*/
 
         showLoading();
         disableRoll();
@@ -137,10 +125,10 @@ $(document).ready(function() {
 
 
   // watch for changes
-  Stage0BetsOpen.watch(function(error, result){
+  _Stage0BetsOpen.watch(function(error, result){
     // call.
     if (!error)
-      enableRoll();
+      //enableRoll();
       showLoading();
       etherflip.reveal.sendTransaction(10, {from: web3.eth.accounts[0],to: _contractAddress,gas: 500000,data: web3.fromAscii('LateBets')});
       console.log('Stage 0 accepting late bets' + result);
@@ -148,7 +136,7 @@ $(document).ready(function() {
   });
 
   // watch for changes
-  Stage1BetsClosed.watch(function(error, result){
+  _Stage1BetsClosed.watch(function(error, result){
     // result will contain various information
     // including the argumets given to the Deposit
     $('#blocks-to-go').val('No more bets please...');
@@ -158,7 +146,7 @@ $(document).ready(function() {
       disableRoll();
       showLoading();
       //invoke contract function resetstage - sets contract back to 0 stage
-        etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 200000});
+        etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
 
       //update GUI
       getSeedA();
@@ -184,7 +172,7 @@ $(document).ready(function() {
 
   });
 
-  Stage1BetsDecided.watch(function(error, result){
+  _Stage1BetsDecided.watch(function(error, result){
     // result will contain various information
     // including the argumets given to the Deposit
     // call.
@@ -194,10 +182,11 @@ $(document).ready(function() {
       etherflip.reveal.sendTransaction(10, {from: web3.eth.accounts[0],to: _contractAddress,gas: 500000,data: web3.fromAscii('LateBets')});
       console.log('Stage 0 accepting late bets' + result);
       $('#blocks-to-go').val('Paying winners...');
+      $('#result').addClass('highlight');
   });
 
 
-  readyForNewPlayers.watch(function(error, result){
+  _readyForNewPlayers.watch(function(error, result){
     // result will contain various information
     // including the argumets given to the Deposit
     // call.
@@ -207,6 +196,7 @@ $(document).ready(function() {
       loadData();
       console.log('Stage 0 accepting late bets' + result);
     $('#blocks-to-go').val('No more bets...');
+    $('#result').removeClass('highlight');
   });
 
 
@@ -229,7 +219,7 @@ $(document).ready(function() {
   function hideLoading(){
     $('.generating-normal').show();
     $('.generating-wait').hide();
-    $('.place-bet').addClass('green');
+    //$('.place-bet').addClass('green');
     $('.place-bet').removeClass('red');
   }
 
@@ -283,6 +273,7 @@ $(document).ready(function() {
     _result = etherflip.dieResult.call();
     //display result
     $("#result").val(_result);
+
     console.log('die result: ' + _result);
 
 

@@ -143,13 +143,10 @@ contract Random{
 
 
 
-            nextStage();
 
-            Stage0BetsOpen();
         }
-
-
-
+        nextStage();
+        Stage0BetsOpen();
     }
 
     //generate random number
