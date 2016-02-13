@@ -1,6 +1,16 @@
 contract Random{
 
-enum Stages {
+    event Stage0BetsOpen();
+
+    event Stage1BetsOpen();
+
+    event Stage1BetsClosed();
+
+    event Stage1BetsDecided();
+
+    event readyForNewPlayers();
+
+    enum Stages {
         betsOpen,
             reveal,
             reset
@@ -131,7 +141,11 @@ enum Stages {
 
             blockNumberAtInit = block.number;
 
+
+
             nextStage();
+
+            Stage0BetsOpen();
         }
 
 
@@ -141,7 +155,11 @@ enum Stages {
     //generate random number
     function reveal( uint256 seedBUserParam2 ) atStage(Stages.reveal) returns (uint256){
 
+        Stage1BetsOpen();
+
         if (block.number >= blockNumberAtInit+2){
+
+            Stage1BetsClosed();
 
             acceptNoMoreBets = true;
 
@@ -171,6 +189,7 @@ enum Stages {
                 }
 
                 delete funders;
+                Stage1BetsDecided();
                 nextStage();
             }
 
@@ -191,6 +210,7 @@ enum Stages {
                 }
 
                 delete funders;
+                Stage1BetsDecided();
                 nextStage();
 
             }
@@ -202,7 +222,9 @@ enum Stages {
         blockNumberAtInit;
         //if ( block.number > blockNumberAtDecide + 2){
         initialSeedSet = false;
+        readyForNewPlayers();
         stage = Stages(uint(0));
+
         //}
     }
 
