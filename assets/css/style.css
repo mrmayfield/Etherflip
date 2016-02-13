@@ -1,18 +1,33 @@
 * { Box-sizing: Border-box }
 
-@-webkit-keyframes yellow-fade {
+@-webkit-keyframes green-fade {
 	0% {background: #DCFF9B;}
 	100% {background: none;}
 }
 
-@keyframes yellow-fade {
+@keyframes green-fade {
 	0% {background: #DCFF9B;}
+	100% {background: none;}
+}
+
+@-webkit-keyframes red-fade {
+	0% {background: #c20000;}
+	100% {background: none;}
+}
+
+@keyframes red-fade {
+	0% {background: #c20000;}
 	100% {background: none;}
 }
 
 .highlight {
-	-webkit-animation: yellow-fade 2s ease-in 1;
-	animation: yellow-fade 2s ease-in 1;
+	-webkit-animation: green-fade 2s ease-in 1;
+	animation: green-fade 2s ease-in 1;
+}
+
+.highlight-red {
+	-webkit-animation: red-fade 2s ease-in 1;
+	animation: red-fade 2s ease-in 1;
 }
 
 html,body{

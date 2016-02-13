@@ -153,12 +153,13 @@ $(document).ready(function() {
       updateBalance();
       loadData();
 
-      //display win/no win UI
+      //WINNERS
       if ((_result > 49 && _seedB > 49) || (_result < 50 && _seedB < 50)) {
         $("#win").show();
         $("#lose").hide();
         $('.bet-payout').removeClass('red');
         $('.bet-payout').addClass('green');
+        $('#result').addClass('highlight');
       }
 
       if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)) {
@@ -166,7 +167,17 @@ $(document).ready(function() {
         $("#lose").show();
         $('.bet-payout').removeClass('green');
         $('.bet-payout').addClass('red');
+        $('#result').addClass('highlight-red');
       }
+
+      //LOSERS
+      /*if ((_result > 49 && _seedB < 50) || (_result < 50 && _seedB > 50)) {
+        $("#win").hide();
+        $("#lose").show();
+        $('.bet-payout').removeClass('green');
+        $('.bet-payout').addClass('red');
+        $('#result').addClass('highlight-red');
+      }*/
 
       console.log('Stage 1 bets closed' + result);
 
@@ -182,7 +193,7 @@ $(document).ready(function() {
       etherflip.reveal.sendTransaction(10, {from: web3.eth.accounts[0],to: _contractAddress,gas: 500000,data: web3.fromAscii('LateBets')});
       console.log('Stage 0 accepting late bets' + result);
       $('#blocks-to-go').val('Paying winners...');
-      $('#result').addClass('highlight');
+
   });
 
 
@@ -195,8 +206,9 @@ $(document).ready(function() {
       hideLoading();
       loadData();
       console.log('Stage 0 accepting late bets' + result);
-    $('#blocks-to-go').val('No more bets...');
+    $('#blocks-to-go').val('Rolling up...');
     $('#result').removeClass('highlight');
+    $('#result').removeClass('highlight-red');
   });
 
 
@@ -275,15 +287,6 @@ $(document).ready(function() {
     $("#result").val(_result);
 
     console.log('die result: ' + _result);
-
-
-    if((_result < 50) && ($("#bet-number").val() < 50)){
-      $('.body').addClass('green-bkgd');
-    }
-
-    if((_result > 49) && ($("#bet-number").val() > 49)){
-      $('.body').addClass('red-bkgd');
-    }
 
   }
 
