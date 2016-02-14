@@ -125,7 +125,7 @@ $(document).ready(function() {
       showLoading();
       disableRoll();
 
-      setTimeout(rand, 30000);
+      setTimeout(rand, 20000);
 
 
 
@@ -143,7 +143,8 @@ function rand(){
       disableRoll();
       showLoading();
       //optimise / strengthen this!!
-      setTimeout(etherflip.reveal.sendTransaction(1,{from: web3.eth.accounts[0],to: _contractAddress,gas: 500000}), 30000);
+      getSeedAHash();
+      setTimeout(etherflip.reveal.sendTransaction(1,{from: web3.eth.accounts[0],to: _contractAddress,gas: 500000}), 20000);
 
       $('#blocks-to-go').val('Rolling up...');
   });
@@ -158,6 +159,7 @@ function rand(){
 
       //update GUI
       getSeedA();
+      getSeedAHash();
       updateBalance();
       loadData();
 

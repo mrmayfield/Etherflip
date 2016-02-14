@@ -50,9 +50,9 @@ contract Random{
 
     //seedB
     uint public seedB;
-    
+
     //luckyNumber
-    uint public luckyNumber;     
+    uint public luckyNumber;
 
     //seedBHash
     bytes32 public seedBStage1Hash;
@@ -101,23 +101,20 @@ contract Random{
     address seedInitAddress;
 
     bool acceptNoMoreBets;
-    
+
         //generate random number
-    function newEntrant( uint seedBUserParam ){
-        
-        luckyNumber = seedBUserParam;
-        seedB = seedBUserParam;
-        
-        //user address
-        uint betValue = msg.value;
+    function newEntrant( uint seedBUserParam ) atStage(Stages.betsOpen){
 
-        rewardValue = (betValue)+(betValue*90/100);
+            luckyNumber = seedBUserParam;
+            seedB = seedBUserParam;
 
-        //if(!initialSeedSet){
-        funders.push( Funder({addr:  msg.sender, amount: betValue, Number: luckyNumber, rewardValue: rewardValue}));    
+            //user address
+            uint betValue = msg.value;
 
-        //if (initialSeedSet != true){rand(luckyNumber);}
-        
+            rewardValue = (betValue)+(betValue*90/100);
+
+            funders.push( Funder({addr:  msg.sender, amount: betValue, Number: luckyNumber, rewardValue: rewardValue}));
+
     }
 
     //generate random number
@@ -138,10 +135,6 @@ contract Random{
 
             blockNumberAtInit = block.number;
 
-
-
-
-        
         nextStage();
         Stage0BetsOpen();
     }
@@ -206,7 +199,7 @@ contract Random{
                 delete funders;
                 Stage1BetsDecided();
                 nextStage();
-                
+
 
             }
         }
@@ -240,9 +233,9 @@ contract Random{
     }
 
     //todo remove - important
-    function getSeedA() returns (uint256)
+    function getSeedA() atStage(Stages.reveal) returns (uint256)
     {
-        if (msg.sender == owner) return seedA;
+        return seedA;
     }
 
     function getSeedAHash() returns (bytes32)
@@ -278,7 +271,7 @@ contract Random{
     function ownerResetGame()
     {
         if (msg.sender == owner){
-            
+
             //reset stages
             stage = Stages(uint(0));
 

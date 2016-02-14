@@ -2,6 +2,10 @@
 <html class="body">
 <head>
 	<title> :: Etheroll :: </title>
+	<description></description>
+	<meta name="description" content="Provably fair, de-centralized Ether gambling running on the Ethereum network. Pays 1.9 to 1.." />
+	<meta name="keywords" content="ethereum, ether, gambling, ethereum gambling, de-centralized, de-centralised, gamble, Dapp, provably fair" />
+	<meta name="robots" content="index,follow" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -146,23 +150,24 @@
 		<p class="green"><strong>Provably fair - work in progress... (<a href="#provably_fair">?</a>)</strong></p>
 		<p class="green" id="seedA_hash">SHA3 of SeedA:</p>
 		<div id="seedA_hashSHA3"></div>
-		<p class="green" id="seedA">SeedA:</p>
+		<p class="green">SeedA:</p>
 		<div id="seedA"></div>
 		<p class="green" id="seedA_hash">Bet created at block:</p>
 		<div id="seedA_hashBlock"></div>
-		<p class="green" id="betBlock">SeedB (your number) created at block:</p>
+		<p class="green" id="betBlock">SeedB created at block:</p>
 		<div id="betBlockID"></div>
 	</div>
 </div>
 <div class="jumbotron-container">
 	<div class="full">
 		<h2><a class="green" name="the_game">!!!WARNING!!!</a></h2>
-		<p>This is only an alpha release of my Dapp and it will only run if you are running your own testnet node of the Ethereum blockchain. <span class="red">THERE IS NO REAL ETHER INVOLVED. DO NOT SEND LIVENET ETHER YOU WILL NOT WIN. ONLY TESTNET ETHER.</span>  </p>
+		<p>This is only an alpha release of my Dapp and it will only run if you are running your own testnet node of the Ethereum blockchain.</p>
+		<p><span class="red">THERE IS NO REAL ETHER INVOLVED. DO NOT SEND LIVENET ETHER YOU WILL NOT WIN. ONLY TESTNET ETHER.</span>  </p>
 		<p>Whilst you will not win or lose real Ether using Etheroll you may win or lose some fake Ether.</p>
 		<h2><a class="green" name="the_game">How to play</a></h2>
 		<p>You are betting on the result of a 100 sided die roll. The result of the die roll is either a low roll range (1-49) or a high roll range (50-100).</p>
 		<p>If the number you submit is within the result range; low range numbers are (1-49), high range numbers are (50-100) you are paid 1.9 to 1 instantly.</p>
-		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete.</p>
+		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete. This is for security and to allow people to make late bets, so please, be patient.</p>
 
 		<h2><a class="green" name="the_result">How is the result decided?</a></h2>
 		<p>((SeedA + SeedB + SeedC) / (2 ^ 256 / 100) ) +1 = result</p>
@@ -195,6 +200,15 @@
 		<p>Any detection of potential misuse of the game will result in your address being banned from playing. You have been warned.</p>
 
 		<p>Feel free to browse/steal the source code which I will eventually release.</p>
+
+		<h2 class="green">Investors</h2>
+		<p>We have received a lot of interest regarding our recent investment opportunities and offerings at etheroll.com.</p>
+
+		<p>Whilst we have not ironed out all those details completely, we would like to <a href="https://www.reddit.com/r/ethtrader/comments/45slbh/etherollcom_public_announcement_regarding/">announce</a> that as of now, an anonymous investor has just purchased a 12.5% stake in the Dapp etheroll.com for 500 ETH + 100 ETH to bankroll the Dapp for go live.</p>
+
+		<p>The payout address for 12.5% of any profit etheroll.com pulls in will go directly (and in perpetuity) to the following address: 0x7d4fe1fe322a332397a2e813e002779675f5e212</p>
+
+		<p>If you are interested in investing in etheroll.com please <a href="mailto:jambtt2@gmail.com">email</a> me at to this post and we will provide you with information over the next week.</p>
 	</div>
 </div>
 </body>
