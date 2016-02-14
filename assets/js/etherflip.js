@@ -8,7 +8,7 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 $(document).ready(function() {
 
-  var _contractAddress = '0x909ccdd2e17c36481e582d4db68609d8430bffec';
+  var _contractAddress = '0x2bad9bbbd5255f97e55c9f66a8ab29957936e5da';
   //contract abi
   var abi = [{"constant":false,"inputs":[],"name":"getSeedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[],"name":"rand","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"newEntrant","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"getNumberAtPosition","type":"uint256"}],"name":"getEntrants","outputs":[{"name":"entrantInfo","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"luckyNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam2","type":"uint256"}],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"},{"name":"rewardValue","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"Stage0BetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"readyForNewPlayers","type":"event"}];
 
@@ -40,6 +40,8 @@ $(document).ready(function() {
   var _Stage1BetsDecided = etherflip.Stage1BetsDecided();
   var _readyForNewPlayers =  etherflip.readyForNewPlayers();
 
+
+
   //change bets UI
   var myInput = $('#the-bet');
   myInput.keyup(function() {
@@ -70,7 +72,19 @@ $(document).ready(function() {
     $("#bet-number").val(_seedB);
   });
 
-  hideLoading();
+
+  //check if game already in action - freeze UI
+ // console.log(etherflip.stage());
+  if(etherflip.stage() !=  0 ) {
+    $('.generating-normal').hide();
+    $('.generating-wait').show();
+    disableRoll();
+    showLoading();
+  }
+  else{
+    hideLoading();
+  }
+
   loadData();
 
   //place bet
@@ -114,7 +128,7 @@ $(document).ready(function() {
       showLoading();
       disableRoll();
 
-      setTimeout(rand, 30000);
+      setTimeout(rand, 10000);
 
 
 
