@@ -71,7 +71,7 @@ a{
 .header-balance .inner{
 	float:right;
 	text-align: right;
-	padding-top:24px;
+	padding-top:15px;
 }
 
 h5{
@@ -254,7 +254,7 @@ button:hover{
 
 	.header-logo h1 {
 		float: none;
-		line-height: 50px;
+		line-height: 40px;
 		margin: 0 20px;
 	}
 
@@ -263,6 +263,11 @@ button:hover{
 		width: 100%;
 		font-size: 12px;
 		text-align: center!important;
+	}
+	
+	.etheroll-balance{
+		display: none;
+		visibility: hidden;
 	}
 
 	.header-balance .inner{
