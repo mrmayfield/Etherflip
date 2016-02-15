@@ -8,7 +8,7 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 $(document).ready(function() {
 
-  var _contractAddress = '0xbd6c556053edfa9010f2a89bc3ee1fc2a1f8dc68';
+  var _contractAddress = '0x53a25341c2da3119ff5f99f36dcdd265060f7c43';
   //contract abi
   var abi = [{"constant":false,"inputs":[],"name":"getSeedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[],"name":"rand","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"newEntrant","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"getNumberAtPosition","type":"uint256"}],"name":"getEntrants","outputs":[{"name":"entrantInfo","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"luckyNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam2","type":"uint256"}],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"},{"name":"rewardValue","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"Stage0BetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"Stage1BetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"readyForNewPlayers","type":"event"}];
 
@@ -92,30 +92,25 @@ $(document).ready(function() {
     //if bet number and bet value is within range
     if(($('#the-bet').val() != '') && ($('#seedB').val() != '') && ($('#the-bet').val() < 101) && ($('#seedB').val() < 101)  && ($('#the-bet').val() > 0) && ($('#seedB').val() > 0)) {
 
-        //send bet
+      //send bet
 
       etherflip.newEntrant.sendTransaction(_seedB, {from: web3.eth.accounts[0],value: web3.toWei(_betValue, 'ether'), to: _contractAddress, gas: 500000, data: web3.fromAscii('Etheroll.com bet created at block ' + web3.eth.blockNumber)});
 
-        //etherflip.rand.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000, data: web3.fromAscii('Etheroll.com bet created at block ' + web3.eth.blockNumber)});
-        //etherflip.reveal.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000, data: web3.fromAscii('Etheroll.com bet created at block ' + web3.eth.blockNumber)});
+      //get latest block number
+      _betBlockNumberDisplay = web3.eth.blockNumber;
+      $( '#betBlockID' ).text(_betBlockNumberDisplay);
 
+      //set result UI empty
+      $("#result").val("");
 
-
-        //get latest block number
-        _betBlockNumberDisplay = web3.eth.blockNumber;
-        $( '#betBlockID' ).text(_betBlockNumberDisplay);
-
-        //set result UI empty
-        $("#result").val("");
-
-        _blockNumberOriginal = web3.eth.blockNumber;
+      _blockNumberOriginal = web3.eth.blockNumber;
 
       $("#win").hide();
       $("#lose").hide();
 
-      _blockNumber = web3.eth.blockNumber;
-      _blocksToGo = _blockNumber - _blockNumberOriginal;
-      _blocksToGoDisplay = 2 - (_blockNumber - _blockNumberOriginal);
+      //_blockNumber = web3.eth.blockNumber;
+      //_blocksToGo = _blockNumber - _blockNumberOriginal;
+      //_blocksToGoDisplay = 2 - (_blockNumber - _blockNumberOriginal);
 
       $('.bet-payout').removeClass('red');
       $('.bet-payout').removeClass('green');
@@ -125,7 +120,10 @@ $(document).ready(function() {
       showLoading();
       disableRoll();
 
-      setTimeout(rand, 20000);
+      //setTimeout(rand, 20000);
+      _blockNumberOriginal = web3.eth.blockNumber;
+      //rand();
+      _blockCheck = setInterval(function () {rand()}, 1000);
 
 
 
@@ -133,61 +131,91 @@ $(document).ready(function() {
 
   });
 
-function rand(){
-  etherflip.rand.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
-}
+  function rand(){
+    _blockNumber = web3.eth.blockNumber;
+    _blocksToGo = _blockNumber - _blockNumberOriginal;
+    _blocksToGoDisplay = 3 - (_blockNumber - _blockNumberOriginal);
+    $('#blocks-to-go').val(_blocksToGoDisplay + ' blocks to go...');
+
+    if(_blocksToGo >= 3) {
+      etherflip.rand.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
+      //_blockCheck2 = setInterval(function () {goNext()}, 1000);
+      _blockNumberOriginal;
+      _blockNumberOriginal = web3.eth.blockNumber;
+      _blockNumber;
+      _blocksToGo;
+      _blocksToGoDisplay;
+      $('#blocks-to-go').val(' Accepting last bets...');
+      clearInterval(_blockCheck);
+
+    }
+  }
 
   // watch for changes
   _Stage0BetsOpen.watch(function(error, result){
     if (!error)
       disableRoll();
-      showLoading();
-      //optimise / strengthen this!!
-      getSeedAHash();
-      setTimeout(etherflip.reveal.sendTransaction(1,{from: web3.eth.accounts[0],to: _contractAddress,gas: 500000}), 20000);
+    showLoading();
+    getSeedAHash();
+    _blockNumberOriginal1 = web3.eth.blockNumber;
+    _blockCheck2 = setInterval(function () {goNext()}, 1000);
+    function goNext() {
 
-      $('#blocks-to-go').val('Rolling up...');
+      _blockNumber1 = web3.eth.blockNumber;
+      _blocksToGo1 = _blockNumber1 - _blockNumberOriginal1;
+      _blocksToGoDisplay1 = 2 - (_blockNumber1 - _blockNumberOriginal1);
+      //$('#blocks-to-go').val(_blocksToGoDisplay + ' blocks to go...');
+      $('#blocks-to-go').val('Rolling up in ' + _blocksToGoDisplay1 + ' blocks... ');
+
+      if (_blocksToGo >= 2) {
+        etherflip.reveal.sendTransaction(1, {from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
+        clearInterval(_blockCheck2);
+
+      }
+    }
   });
 
   // watch for changes
   _Stage1BetsClosed.watch(function(error, result){
     if (!error)
       $('#blocks-to-go').val('No more bets please...');
-      disableRoll();
-      showLoading();
-      etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
+    disableRoll();
+    showLoading();
+    etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
 
-      //update GUI
-      getSeedA();
-      getSeedAHash();
-      updateBalance();
-      loadData();
+    //update GUI
+    getSeedA();
+    getSeedAHash();
+    updateBalance();
+    loadData();
 
-      //WINNERS
-      if ((_result > 49 && _seedB > 49) || (_result < 50 && _seedB < 50)) {
-        $("#win").show();
-        $("#lose").hide();
-        $('.bet-payout').removeClass('red');
-        $('.bet-payout').addClass('green');
-        $('#result').addClass('highlight');
-      }
+    //WINNERS
+    if ((_result > 49 && _seedB > 49) || (_result < 50 && _seedB < 50)) {
+      $("#win").show();
+      $("#lose").hide();
+      $('.bet-payout').removeClass('red');
+      $('.bet-payout').addClass('green');
+      $('#result').addClass('highlight');
+    }
 
-      if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)){
-        $("#win").hide();
-        $("#lose").show();
-        $('.bet-payout').removeClass('green');
-        $('.bet-payout').addClass('red');
-        $('#result').addClass('highlight-red');
-      }
+    if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)){
+      $("#win").hide();
+      $("#lose").show();
+      $('.bet-payout').removeClass('green');
+      $('.bet-payout').addClass('red');
+      $('#result').addClass('highlight-red');
+    }
 
   });
 
   _Stage1BetsDecided.watch(function(error, result){
     if (!error)
       disableRoll();
-      showLoading();
-      etherflip.reveal.sendTransaction(10, {from: web3.eth.accounts[0],to: _contractAddress,gas: 500000,data: web3.fromAscii('LateBets')});
-      $('#blocks-to-go').val('Paying winners...');
+    showLoading();
+
+
+    etherflip.reveal.sendTransaction(10, {from: web3.eth.accounts[0],to: _contractAddress,gas: 500000,data: web3.fromAscii('LateBets')});
+    $('#blocks-to-go').val('Paying winners...');
 
   });
 
@@ -195,8 +223,8 @@ function rand(){
   _readyForNewPlayers.watch(function(error, result){
     if (!error)
       enableRoll();
-      hideLoading();
-      loadData();
+    hideLoading();
+    loadData();
     $('#blocks-to-go').val('Accepting final bets...');
     $('#result').removeClass('highlight');
     $('#result').removeClass('highlight-red');
