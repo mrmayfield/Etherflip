@@ -165,7 +165,7 @@ $(document).ready(function() {
       _blocksToGo1 = _blockNumber1 - _blockNumberOriginal1;
       _blocksToGoDisplay1 = 2 - (_blockNumber1 - _blockNumberOriginal1);
       //$('#blocks-to-go').val(_blocksToGoDisplay + ' blocks to go...');
-      $('#blocks-to-go').val('Rolling up in ' + _blocksToGoDisplay1 + ' blocks... ');
+      $('#blocks-to-go').val('Rolling in ' + _blocksToGoDisplay1 + ' blocks... ');
 
       if (_blocksToGo >= 2) {
         etherflip.reveal.sendTransaction(1, {from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});

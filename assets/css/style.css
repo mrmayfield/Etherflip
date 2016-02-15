@@ -1,35 +1,5 @@
 * { Box-sizing: Border-box }
 
-@-webkit-keyframes green-fade {
-	0% {background: #DCFF9B;}
-	100% {background: none;}
-}
-
-@keyframes green-fade {
-	0% {background: #DCFF9B;}
-	100% {background: none;}
-}
-
-@-webkit-keyframes red-fade {
-	0% {background: #c20000;}
-	100% {background: none;}
-}
-
-@keyframes red-fade {
-	0% {background: #c20000;}
-	100% {background: none;}
-}
-
-.highlight {
-	-webkit-animation: green-fade 2s ease-in 1;
-	animation: green-fade 2s ease-in 1;
-}
-
-.highlight-red {
-	-webkit-animation: red-fade 2s ease-in 1;
-	animation: red-fade 2s ease-in 1;
-}
-
 html,body{
 	background-color:#111;
 	width:100%;
@@ -241,6 +211,42 @@ button:hover{
 
 .not-allowed{
 	cursor: not-allowed;
+}
+
+
+.no-node{
+	display: none;
+}
+
+
+@-webkit-keyframes green-fade {
+	0% {background: #DCFF9B;}
+	100% {background: none;}
+}
+
+@keyframes green-fade {
+	0% {background: #DCFF9B;}
+	100% {background: none;}
+}
+
+@-webkit-keyframes red-fade {
+	0% {background: #c20000;}
+	100% {background: none;}
+}
+
+@keyframes red-fade {
+	0% {background: #c20000;}
+	100% {background: none;}
+}
+
+.highlight {
+	-webkit-animation: green-fade 2s ease-in 1;
+	animation: green-fade 2s ease-in 1;
+}
+
+.highlight-red {
+	-webkit-animation: red-fade 2s ease-in 1;
+	animation: red-fade 2s ease-in 1;
 }
 
 
