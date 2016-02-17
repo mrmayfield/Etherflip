@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html class="body">
 <head>
-	<title> :: Etheroll :: </title>
-	<description></description>
+	<title> :: Etheroll :: Ether gambling games</title>
 	<meta name="description" content="Provably fair, de-centralized Ether gambling running on the Ethereum network. Pays 1.9 to 1.." />
-	<meta name="keywords" content="ethereum, ether, gambling, ethereum gambling, de-centralized, de-centralised, gamble, Dapp, Ðapp, provably fair, crypto, crypto-currency, cryptocurrency, bitcoin" />
+	<meta name="keywords" content="Ether, gambling, games, Ethereum, wei, finney, ether, ethereum gambling, de-centralized, de-centralised, gamble, Dapp, Ðapp, provably, fair, provably fair, crypto-currency, cryptocurrency, crypto, crypto-currency, cryptocurrency, bitcoin" />
 	<meta name="robots" content="index,follow" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,6 +13,7 @@
 	<script src="assets/js/jquery-1.12.0.min.js"></script>
 	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="assets/js/etherflip.js"></script>
+	<script src="https://raw.githubusercontent.com/HubSpot/odometer/master/themes/odometer-theme-digital.css"></script>
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -29,13 +29,14 @@
 
 <body class="body">
 <div class="header clearfix">
-	<div class="header-logo"><h1>Et<span class="green">hero</span>ll</h1></div>
+	<div class="header-logo"><h1>Et<span class=" green">hero</span>ll</h1><img class="logo-die" src="assets/images/die.png"></div>
 	<div class="header-balance">
 		<div class="inner">
 			<nav>
-				<div class="balance-wrap">
+				
+	  <div class="balance-wrap">
 						<span class="balance-container">
-							<span class="green">Wallet</span> <strong class="account"></strong>
+							<a href="https://etheroll.wordpress.com/" title="Blog">Blog</a> | <a href="investors.html" title="Investors">Investors</a> | <span class="green">Wallet</span> <strong class="account"></strong>
 						</span>
 				</div>
 				<div class="balance-wrap">
@@ -126,6 +127,7 @@
 			<div class="generating-normal"><img src="assets/images/ajax-loader1.gif"/> </div>
 			<div class="generating-wait"><img src="assets/images/ajax-loader-wait1.gif"/> </div>
 			<input type="text" id="result" disabled></input>
+
 			<p class="" id=''>Latest result</p>
 			<h2 class="green" id="win">WINNER!</h2>
 			<h2 class="red" id="lose">NO WIN</h2>
@@ -165,36 +167,37 @@
 </div>
 <div class="jumbotron-container">
 	<div class="full">
-		<h2><a class="green" name="the_game">!!!WARNING!!!</a></h2>
-		<p>This is only an alpha release of my Ðapp and it will only run if you are running your own testnet node of the Ethereum blockchain.</p>
+		<h2 class="alert"><a class="" name="the_game">WARNING</a></h2>
+		<p>This is the pre-alpha release of the Etheroll Ðapp and it will only run if you are running your own local testnet node of the Ethereum blockchain.</p>
 		<p><span class="red">THERE IS NO REAL ETHER INVOLVED. DO NOT SEND LIVENET ETHER YOU WILL NOT WIN. ONLY TESTNET ETHER.</span>  </p>
-		<p>Whilst you will not win or lose real Ether using Etheroll you may win or lose some fake Ether.</p>
+		<p>You may win or lose some Ether playing Etheroll. The chances of winning or losing on each round of die roll is 50/50.</p>
 		<h2><a class="green" name="the_game">How to play</a></h2>
 		<p>You are betting on the result of a 100 sided die roll. The result of the die roll is either a low roll range (1-49) or a high roll range (50-100).</p>
 		<p>If the number you submit is within the result range; low range numbers are (1-49), high range numbers are (50-100) you are paid 1.9 to 1 instantly.</p>
 		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete. This is for security and to allow people to make late bets, so please, be patient.</p>
+		<h2><a class="green" name="the_terms">Instructions</a></h2>
+		<h3 class="red alert">ONLY RUN ETHEROLL ON THE TESTNET</h3>
+		<p>Each round takes up to 1 minute, so be patient.</p>
+		<p>This Ðapp will only work if you are connected to the testnet. Run Etheroll from the testnet ONLY. You will not be able to connect to it otherwise and I will not be responsible for any lost funds as a consequence of using the livenet. The testnet is unable to communicate with the livenet, so if you are connected to a livenet node, send real Ether to the testnet using Etheroll, you will instantly lose your Ether. Etheroll is ONLY running this Ðapp on the test net version of the network. </p>
+		<p class="alert">TESTNET ONLY</p>
+		<p>Because Ethereum is still being heavily developed and we do not have the Mist browser, if you want to play Etheroll, for the moment you will need to run your own node (testnet) and connect to Etheroll by instantiating your node with the following:</p>
+		<p>geth --testnet --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p>
+		<p>This will start your node with cross-domain access to etheroll.com and 'unlock' your account so you can submit and receive funds to and from Etheroll.</p>
+		<p>If you land at the site and it says "Bet in progress" wait until a new round starts before submitting any bets.</p>
 
 		<h2><a class="green" name="the_result">How is the result decided?</a></h2>
 		<p>((SeedA + SeedB + SeedC) / (2 ^ 256 / 100) ) +1 = result</p>
-		<p>SeedA = Is set before you place your bet, and we cannot change it. Basically; when you make a bet the contract will retrieve and store the blockhash of the <em>parent block</em> relative to the block you made your bet on. The contract then uses that as our SeedA number. See <a href="#provably_fair">'provably fair'</a> below for more details. 1st dice rolled. </p>
-		<p>SeedB = Your number choice 1-100 when you are the first better for that round. If a game is already in progress, and you are submitting late bets to the round, SeedB is generated by the first player to submit a bet in that round. 2nd dice rolled.</p>
+		<p>SeedA = Is set before you place your bet, and we cannot change it. Basically; when the first bet of the round is placed, the contract will retrieve and store the blockhash of the <em>parent block</em> relative to the block the first bet for the round was made on. The contract uses that as its SeedA number. See <a href="#provably_fair">'provably fair'</a> below for more details. 1st dice rolled. </p>
+		<p>SeedB = Your number choice between 1-100, when you are the first better for that round. If a game is already in progress, and you are submitting late bets to the round, SeedB is generated by the first player to submit a bet in that round. 2nd dice rolled.</p>
 		<p>SeedC = Hash of block in a future time. 3rd dice rolled.</p>
 		<p>Before any bets are placed, we have already generated a number from a previous block hash. This is SeedA.</p>
-		<p>Once you submit your bet (SeedB), the Etheroll contract waits for a mumber of new Ethereum blocks to be mined and we use a future block hash from which SeedC generated, therefore SeedC is impossible for us or you to know prior to the submission of the bet as the block did not yet exist.</p>
+		<p>Once a player submits a bet along with a number (SeedB) for a particular round, the Etheroll contract waits for a set number of new Ethereum blocks to be mined, so that we can the use a future block hash from which SeedC generated.</p>
+		<p>Therefore SeedC is impossible for us, or you to know, prior to the submission of the bet as the block did not exist on the Blockchain at the time of your bet.</p>
 		<p>Etheroll pays 1.9 to 1 if the number you submitted is within the resulting range, either 'high' or 'low'.</p>
 		<p>The chance of the dice roll being either high or low is 50/50.</p>
 		<h2><a class="green" name="provably_fair">Provably Fair (work in progress)</a></h2>
 		<p>SeedA is generated by a block hash previous to your bet. By the time you make your bet, SeedA was already generated by the Ethereum Blockchain, we pull the block hash information from that block to use as SeedA.</p>
 		<p>You can check the block number and compare its block hash to sha3 using any good block explorer. This will confirm that we did indeed use the number we said we did (a number that already existed before you made your bet). We provide the sha3 encrypted version of SeedA ('SHA3 of SeedA'). This is to prove that we do not (and could not - mathematical impossibility) change SeedA after you submit your bet. This means Etheroll will always have picked a number before you pick yours.</p>
-		<h2><a class="green" name="the_terms">Technical</a></h2>
-		<h3 class="red">!!!!ONLY RUN ETHEROLL ON THE TESTNET!!!!!</h3>
-		<p>This Ðapp will only work if you are connected to the testnet. Run Etheroll from the testnet ONLY. You will not be able to connect to it otherwise and I will not be responsible for any lost funds as a consequence of using the livenet. The testnet is not dealing with real Ether. I am ONLY running this Ðapp on the test net version of the network. </p>
-		<p>Errors may occur if other users try to play whilst a game is already in progress. Be aware. You may lose fake Ether. You may win fake Ether. You have been warned. Good luck.</p>
-		<p>Because Ethereum is still being heavily developed and we do not have the Mist browser, if you want to play Etheroll, for the moment you will need to run your own node (testnet) and connect to Etheroll by instantiating your node with the following:</p>
-		<p>geth --testnet --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p>
-		<p>This will start your node with cross-domain access to etheroll.com and 'unlock' your account so Etheroll (you still need to provide Geth with your password upon entering this command) can view your testnet balance and so you can place bets - real bets - fake money.</p>
-		<p>If you land at the site and it says "Bet in progress" wait until a new result shows and then refresh the page to make your bet.</p>
-		<p>There are bugs. This is only for fun at the moment. I hope to have it bug free and optimised eventually in a good enough state to be able to run on the livenet with real Ether.</p>
 		<h2><a class="green" name="roll_in_progress">Die roll is in progress</a></h2>
 		<p>If you see this upon entering Etheroll it means somebody is already in the middle of a die roll. There is a limited time where you can add to the bet, but after you will not be able to place any bets until the die roll in progress is complete. Each roll takes ~6-8 blocks. The duration of each roll is dependant upon the speed of the network in general. REMEMBER: THIS ONLY RUNS ON THE TESTNET. NO REAL ETHER IS INVOLVED.</p>
 		<h2><a class="green" name="the_terms">Terms</a></h2>
@@ -206,14 +209,6 @@
 
 		<p>Feel free to browse/steal the source code which I will eventually release.</p>
 
-		<h2 class="green">Investors</h2>
-		<p>We have received a lot of interest regarding our recent investment opportunities and offerings at etheroll.com.</p>
-
-		<p>Whilst we have not ironed out all those details completely, we would like to <a href="https://www.reddit.com/r/ethtrader/comments/45slbh/etherollcom_public_announcement_regarding/">announce</a> that as of now, an anonymous investor has just purchased a 12.5% stake in the Ðapp etheroll.com for 500 ETH + 100 ETH to bankroll the Ðapp for go live.</p>
-
-		<p>The payout address for 12.5% of any profit etheroll.com pulls in will go directly (and in perpetuity) to the following address: 0x7d4fe1fe322a332397a2e813e002779675f5e212</p>
-
-		<p>If you are interested in investing in etheroll.com please <a href="mailto:jambtt2@gmail.com">email</a> me at to this post and we will provide you with information over the next week.</p>
 	</div>
 </div>
 </body>

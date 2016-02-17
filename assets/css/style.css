@@ -23,9 +23,13 @@ a{
 }
 
 .header h1{
-	margin:0 20px;
+	margin:0 10px 0 20px;
 	line-height: 100px;
 	float:left;
+}
+
+.logo-die{
+	margin-top: 37px;
 }
 
 .header-logo{
@@ -250,6 +254,11 @@ button:hover{
 	animation: red-fade 2s ease-in 1;
 }
 
+.alert{
+border: 1px solid red;
+border-radius: 10px;
+padding: 20px;
+}
 
 
 @media only screen and (max-width : 1000px) {
@@ -263,6 +272,11 @@ button:hover{
 		float: none;
 		line-height: 40px;
 		margin: 0 20px;
+	}
+
+	.logo-die{
+		display: none;
+		visibility: hidden;
 	}
 
 	.header-balance {
