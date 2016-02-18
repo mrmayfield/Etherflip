@@ -97,12 +97,27 @@ em{
 #result{
 }
 
+.odometer{
+	border-left: 1px solid #1c1d1f;
+	border-right: 1px solid #1c1d1f;
+}
+
 .green{
 	color:#DCFF9B;
 }
 
 .red{
 	color:#c20000;
+}
+
+.green-border{
+	border-right:1px solid #DCFF9B;
+	border-left: 1px solid #DCFF9B;
+}
+
+.red-border{
+	border-right:1px solid #c20000;
+	border-left: 1px solid #c20000;
 }
 
 .red-bkgd{

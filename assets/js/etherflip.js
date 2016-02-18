@@ -100,7 +100,7 @@ $(document).ready(function() {
       //$( '#betBlockID' ).text(_betBlockNumberDisplay);
 
       //set result UI empty
-      $("#result").val("");
+      //$("#result").val("");
 
       _blockNumberOriginal = web3.eth.blockNumber;
 
@@ -194,7 +194,9 @@ $(document).ready(function() {
       $("#lose").hide();
       $('.bet-payout').removeClass('red');
       $('.bet-payout').addClass('green');
-      $('#result').addClass('highlight');
+      $('.odometer').addClass('highlight');
+      $('.odometer').addClass('green');
+      $('.odometer').addClass('green-border');
     }
 
     if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)){
@@ -202,7 +204,9 @@ $(document).ready(function() {
       $("#lose").show();
       $('.bet-payout').removeClass('green');
       $('.bet-payout').addClass('red');
-      $('#result').addClass('highlight-red');
+      $('.odometer').addClass('highlight-red');
+      $('.odometer').addClass('red');
+      $('.odometer').addClass('red-border');
     }
 
   });
@@ -225,8 +229,12 @@ $(document).ready(function() {
     hideLoading();
     loadData();
     $('#blocks-to-go').val('Accepting final bets...');
-    $('#result').removeClass('highlight');
-    $('#result').removeClass('highlight-red');
+    $('.odometer').removeClass('highlight');
+    $('.odometer').removeClass('highlight-red');
+    $('.odometer').removeClass('green');
+    $('.odometer').removeClass('red');
+    $('.odometer').removeClass('green-border');
+    $('.odometer').removeClass('red-border');
   });
 
 
@@ -300,7 +308,8 @@ $(document).ready(function() {
     //get latest result
     _result = etherflip.dieResult.call();
     //display result
-    $("#result").val(_result);
+    //$("#result").val(_result);
+    $('.odometer').html(_result);
   }
 
   //get latest getSeedAHash

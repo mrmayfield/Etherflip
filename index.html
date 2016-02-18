@@ -14,6 +14,9 @@
 	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="assets/js/etherflip.js"></script>
 
+	<link rel="stylesheet" href="/assets/css/odometer-theme-digital.css" />
+	<script src="assets/js/odometer.min.js"></script>
+
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -56,12 +59,6 @@
 	</div>
 </div>
 </div>
-<!--<div class="jumbotron-container no-node">
-	<div class="full no-node">
-<p class="no-node">You are seeing this message because you are not connected to an Ethereum node and therefore you are unable to use Etheroll as intended. At the moment Etheroll is in pre-alpha release and in order to use it you should be running a full local testnet Ethereum node.</p>
-<p class="no-node">We are eagerly awaiting the arrival of the official Mist browser which will remove the current barriers to entry.</p>
-	</div>
-</div>-->
 <div class="jumbotron-container">
 
 	<div class="jumbotron">
@@ -126,8 +123,8 @@
 			<div class="orange generating-wait" ><input type="text" id='blocks-to-go' disabled value="Waiting for blocks..."></input></div>
 			<div class="generating-normal"><img src="assets/images/ajax-loader1.gif"/> </div>
 			<div class="generating-wait"><img src="assets/images/ajax-loader-wait1.gif"/> </div>
-			<input type="text" id="result" disabled></input>
-
+			<!--<input type="text" id="result" class="odometer" disabled></input>-->
+			<div class="odometer" style="width: 70%;font-size: 40px;height: 55px;border-radius: 10px;">0</div>
 			<p class="" id=''>Latest result</p>
 			<h2 class="green" id="win">WINNER!</h2>
 			<h2 class="red" id="lose">NO WIN</h2>
