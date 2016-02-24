@@ -43,7 +43,7 @@ contract Random{
     uint public amount;
 
     //seedA
-    uint256 internal seedA;
+    uint256 public seedA;
 
     //seedAHash
     bytes32 public seedAHash;
@@ -105,17 +105,21 @@ contract Random{
         //generate random number
     function newEntrant( uint seedBUserParam ) atStage(Stages.betsOpen){
 
-            luckyNumber = seedBUserParam;
-            seedB = seedBUserParam;
+            if(msg.value == 1 ether ){
+                luckyNumber = seedBUserParam;
+                seedB = seedBUserParam;
 
-            //user address
-            uint betValue = msg.value;
+                //user address
+                uint betValue = msg.value;
 
-            rewardValue = (betValue)+(betValue*90/100);
+                rewardValue = (betValue)+(betValue*98/100);
 
-            funders.push( Funder({addr:  msg.sender, amount: betValue, Number: luckyNumber, rewardValue: rewardValue}));
+                funders.push( Funder({addr:  msg.sender, amount: betValue, Number: luckyNumber, rewardValue: rewardValue}));
 
-            blockNumberAtInit = block.number;
+                blockNumberAtInit = block.number;
+            }
+
+
 
     }
 
@@ -235,7 +239,7 @@ contract Random{
     }
 
     //todo remove - important
-    function getSeedA() atStage(Stages.reveal) returns (uint256)
+    function getSeedA() returns (uint256)
     {
         return seedA;
     }

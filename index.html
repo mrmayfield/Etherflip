@@ -9,6 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+	<script src='assets/js/bignumber.js'></script>
 	<script src="assets/js/web3.min.js"></script>
 	<script src="assets/js/jquery-1.12.0.min.js"></script>
 	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
@@ -66,7 +67,7 @@
 		<h3 class="orange  generating-wait">Ðie roll is in progress <a href="#roll_in_progress">(?)</a></h3>
 		<p class="mobile-only">You are seeing this message likely because you are viewing Etheroll on a mobile device. This Ðapp requires you to be running a local testnet version of Ethereum Blockchain for it to work. Please try on a desktop environment running a local testnet node.</p>
 		<div class="bet-container">
-			<h5>WAGER - PAYS 1.9 TO 1</h5>
+			<h5>MAX WAGER IS 1 - PAYS 1.98 TO 1</h5>
 			<!--<div class="pre-paid-container">
 				<button id="1" class="choose pre-paid" value="1">
 					<strong>1</strong>
@@ -87,7 +88,7 @@
 					<strong>50</strong>
 				</button>
 			</div>-->
-			<input id="the-bet" type="number" pattern="[0-100]" min="1" max="100" class="bet-amount green"  placeholder="Enter wager"></input>
+			<input id="the-bet" type="number" pattern="[0-100]" min="1" max="1" class="bet-amount green"  placeholder="Enter wager (max 1)"></input>
 			<h5>Lucky number</h5>
 			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" ></input>
 				<!--<button id="Low" class="choose bet-choice">
@@ -151,7 +152,7 @@
 </div>
 <div class="jumbotron-container">
 	<div class="full">
-		<p class="green"><strong>Provably fair - work in progress... (<a href="#provably_fair">?</a>)</strong></p>
+		<p class="green"><strong>Provably fair (<a href="#provably_fair">?</a>)</strong></p>
 		<p class="green" id="seedA_hash">SHA3 of SeedA:</p>
 		<div id="seedA_hashSHA3"></div>
 		<p class="green">SeedA:</p>
@@ -164,22 +165,26 @@
 </div>
 <div class="jumbotron-container">
 	<div class="full">
-		<h2 class="alert"><a class="" name="the_game">WARNING</a></h2>
-		<p>This is the pre-alpha release of the Etheroll Ðapp that provides a provably-fair Ethereum gambling and casino experience online. Currently, Etheroll will only run if you are running your own local testnet node of the Ethereum blockchain.</p>
-		<p><span class="red">THERE IS NO REAL ETHER INVOLVED. DO NOT SEND LIVENET ETHER YOU WILL NOT WIN. ONLY TESTNET ETHER.</span>  </p>
-		<p>You may win or lose some Ether playing Etheroll. The chances of winning or losing on each round of die roll is 50/50.</p>
+		<h2><a class="" name="the_game">WARNING</a></h2>
+		<p>TESTNET RELEASE ONLY. DO NOT SEND REAL ETHER.</p>
+		<p>This is the pre-alpha release of Etheroll, a Ðapp that provides a provably-fair Ethereum gambling and casino experience online. Currently, Etheroll will only run if you are running your own local testnet Ethereum blockchain.</p>
+		<p>The current maximum bet during our pre-alpha release phase is 1 Ether. If you submit more than 1 Ether the smart-contract will not be invoked. Do not send more than 1 Ether.</p>
+		<p>The initial bankroll for the pre-alpha release was 25 Ether.</p>
+		<p>You may win or lose some Ether playing Etheroll. The chances of winning or losing on each round of die roll is 50/50 and the house edge is 2%. Winners are paid 1.98 to 1.</p>
+		<h2><a class="green" name="the_game">Disclaimer</a></h2>
+		<p>You must be 18 years or older to play Etheroll. By playing Etheroll you agree that you are over 18 years of age and that you are also playing Etheroll within a jurisdiction that does not consider interacting with and/or placing bets and/or profiting and/or losing from an Ethereum online casino to be illegal in any way shape or form.</p>
+		<p>No refunds. No acceptances.</p>
 		<h2><a class="green" name="the_game">How to play</a></h2>
-		<p>You are betting on the result of a 100 sided die roll. The result of the die roll is either a low roll range (1-49) or a high roll range (50-100).</p>
-		<p>If the number you submit is within the result range; low range numbers are (1-49), high range numbers are (50-100) you are paid 1.9 to 1 instantly.</p>
+		<p>Etheroll is an Ethereum casino, you are gambling Ether on the result of a 100 sided die roll. The result of the die roll is either a low roll range (1-49) or a high roll range (50-100).</p>
+		<p>If the number you submit is within the result range; low range numbers are (1-49), high range numbers are (50-100) you are paid 1.98 to 1 instantly.</p>
 		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete. This is for security and to allow people to make late bets, so please, be patient.</p>
 		<h2><a class="green" name="the_terms">Instructions</a></h2>
-		<h3 class="red alert">ONLY RUN ETHEROLL ON THE TESTNET</h3>
-		<p>Each round takes up to 1 minute, so be patient.</p>
-		<p>This Ðapp will only work if you are connected to the testnet. Run Etheroll from the testnet ONLY. You will not be able to connect to it otherwise and I will not be responsible for any lost funds as a consequence of using the livenet. The testnet is unable to communicate with the livenet, so if you are connected to a livenet node, send real Ether to the testnet using Etheroll, you will instantly lose your Ether. Etheroll is ONLY running this Ðapp on the test net version of the network. </p>
-		<p class="alert">TESTNET ONLY</p>
-		<p>Because Ethereum is still being heavily developed and we do not have the Mist browser, if you want to play Etheroll, for the moment you will need to run your own node (testnet) and connect to Etheroll by instantiating your node with the following:</p>
-		<p>geth --testnet --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p>
-		<p>This will start your node with cross-domain access to etheroll.com and 'unlock' your account so you can submit and receive funds to and from Etheroll.</p>
+		<p>Each round takes up to 1 or 2 minutes, so be patient as your dice roll is in progress.</p>
+		<p>Because Ethereum is still being heavily developed and the official Mist browser has not yet been publicly released, to play Etheroll currently you will need to run your own Ethereum blockchain and connect to Etheroll with the following command:</p>
+		<p>geth --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p>
+		<p>You will be prompted to enter your password to unlock your account which will enable you to place bets and receive winnings from Etheroll. We never receive your password at anytime during your interaction with Etheroll.</p>
+		<p>Once you have done this you can reload our website and you should see your wallet balance in the top right hand corner.</p>
+		<p>During our pre-alpha release phase the maximum bet is 1 Ether. Do not send more than 1 Ether. No refunds.</p>
 		<p>If you land at the site and it says "Bet in progress" wait until a new round starts before submitting any bets.</p>
 
 		<h2><a class="green" name="the_result">How is the result decided?</a></h2>
@@ -190,14 +195,16 @@
 		<p>Before any bets are placed, we have already generated a number from a previous block hash. This is SeedA.</p>
 		<p>Once a player submits a bet along with a number (SeedB) for a particular round, the Etheroll contract waits for a set number of new Ethereum blocks to be mined, so that we can the use a future block hash from which SeedC generated.</p>
 		<p>Therefore SeedC is impossible for us, or you to know, prior to the submission of the bet as the block did not exist on the Blockchain at the time of your bet.</p>
-		<p>Etheroll pays 1.9 to 1 if the number you submitted is within the resulting range, either 'high' or 'low'.</p>
+		<p>Etheroll pays 1.98 to 1 if the number you submitted is within the resulting range, either 'high' or 'low'.</p>
 		<p>The chance of the dice roll being either high or low is 50/50.</p>
-		<h2><a class="green" name="provably_fair">Provably Fair (work in progress)</a></h2>
+		<h2><a class="green" name="provably_fair">Provably Fair</a></h2>
 		<p>SeedA is generated by a block hash previous to your bet. By the time you make your bet, SeedA was already generated by the Ethereum Blockchain, we pull the block hash information from that block to use as SeedA.</p>
 		<p>You can check the block number and compare its block hash to sha3 using any good block explorer. This will confirm that we did indeed use the number we said we did (a number that already existed before you made your bet). We provide the sha3 encrypted version of SeedA ('SHA3 of SeedA'). This is to prove that we do not (and could not - mathematical impossibility) change SeedA after you submit your bet. This means Etheroll will always have picked a number before you pick yours.</p>
 		<h2><a class="green" name="roll_in_progress">Die roll is in progress</a></h2>
 		<p>If you see this upon entering Etheroll it means somebody is already in the middle of a die roll. There is a limited time where you can add to the bet, but after you will not be able to place any bets until the die roll in progress is complete. Each roll takes ~6-8 blocks. The duration of each roll is dependant upon the speed of the network in general. REMEMBER: THIS ONLY RUNS ON THE TESTNET. NO REAL ETHER IS INVOLVED.</p>
 		<h2><a class="green" name="the_terms">Terms</a></h2>
+		<p>By interacting with Etheroll.com you agree that you are 18 years of age or above.</p>
+		<p>By interacting with Etheroll.com you agree that you are in a jurisdiction that does not consider Ethereum casinos, Ethereum gambling, Ether casinos or Ether gambling to be illegal.</p>
 		<p>Etheroll is an Ethereum casino and Ether gambling experience that is only for entertainment purposes. Please be aware Etheroll is in alpha mode and as such you should take care when handling your bets, any loss due to malfunction of the game, codebase, networks or likewise will not result in a refund and Etheroll is not repsonsible or liable for anything that occurs as a result, directly or in-directly from interacting with the contract.</p>
 		<p>Etheroll is not liable for any loss of funds you or any entity incurs as a result of using this service.</p>
 		<p>Refunds are not possible and will not be considered under any circumstances what-so-ever, so only risk what you can afford.</p>
