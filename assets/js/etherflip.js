@@ -32,6 +32,8 @@ $(document).ready(function() {
   var _betBlockNumberDisplay;
   var _seedB;
   var _seedBInput;
+  var _animResult;
+  var _resultAnimTemp;
 
 
   var _Stage0BetsOpen = etherflip.Stage0BetsOpen();
@@ -40,6 +42,7 @@ $(document).ready(function() {
   var _readyForNewPlayers =  etherflip.readyForNewPlayers();
 
 
+  _animResult  = setInterval(function () {_animResults()}, 3000);
 
   //change bets UI
   var myInput = $('#the-bet');
@@ -124,11 +127,20 @@ $(document).ready(function() {
       //rand();
       _blockCheck = setInterval(function () {rand()}, 1000);
 
+      //clear init anim
+      clearInterval(_animResult);
+      //play again
+      _animResult  = setInterval(function () {_animResults()}, 3000);
 
 
     }
 
   });
+
+  function _animResults(){
+    _resultAnimTemp = Math.floor((Math.random() * 100) + 1);
+    $('.odometer').html(_resultAnimTemp);
+  }
 
   function rand(){
     _blockNumber = web3.eth.blockNumber;
@@ -190,6 +202,7 @@ $(document).ready(function() {
 
     //WINNERS
     if ((_result > 49 && _seedB > 49) || (_result < 50 && _seedB < 50)) {
+      clearInterval(_animResult);
       $("#win").show();
       $("#lose").hide();
       $('.bet-payout').removeClass('red');
@@ -200,6 +213,7 @@ $(document).ready(function() {
     }
 
     if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)){
+      clearInterval(_animResult);
       $("#win").hide();
       $("#lose").show();
       $('.bet-payout').removeClass('green');
@@ -235,6 +249,7 @@ $(document).ready(function() {
     $('.odometer').removeClass('red');
     $('.odometer').removeClass('green-border');
     $('.odometer').removeClass('red-border');
+    _animResult  = setInterval(function () {_animResults()}, 3000);
   });
 
 
@@ -249,8 +264,6 @@ $(document).ready(function() {
     $('.generating-normal').hide();
     $('.place-bet').addClass('red');
     $('.place-bet').removeClass('green');
-
-
   }
 
   function hideLoading(){
