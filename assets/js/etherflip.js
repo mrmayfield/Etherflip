@@ -130,7 +130,7 @@ $(document).ready(function() {
       //clear init anim
       clearInterval(_animResult);
       //play again
-      _animResult  = setInterval(function () {_animResults()}, 3000);
+      //_animResult  = setInterval(function () {_animResults()}, 3000);
 
 
     }
@@ -181,7 +181,7 @@ $(document).ready(function() {
       if (_blocksToGo >= 2) {
         etherflip.reveal.sendTransaction(1, {from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
         clearInterval(_blockCheck2);
-
+        _animResult  = setInterval(function () {_animResults()}, 3000);
       }
     }
   });
@@ -202,7 +202,6 @@ $(document).ready(function() {
 
     //WINNERS
     if ((_result > 49 && _seedB > 49) || (_result < 50 && _seedB < 50)) {
-      clearInterval(_animResult);
       $("#win").show();
       $("#lose").hide();
       $('.bet-payout').removeClass('red');
@@ -213,7 +212,6 @@ $(document).ready(function() {
     }
 
     if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50)){
-      clearInterval(_animResult);
       $("#win").hide();
       $("#lose").show();
       $('.bet-payout').removeClass('green');
@@ -222,6 +220,9 @@ $(document).ready(function() {
       $('.odometer').addClass('red');
       $('.odometer').addClass('red-border');
     }
+
+    clearInterval(_animResult);
+
 
   });
 
@@ -233,7 +234,7 @@ $(document).ready(function() {
 
     etherflip.reveal.sendTransaction(10, {from: web3.eth.accounts[0],to: _contractAddress,gas: 500000,data: web3.fromAscii('LateBets')});
     $('#blocks-to-go').val('Paying winners...');
-
+    clearInterval(_animResult);
   });
 
 
@@ -249,7 +250,7 @@ $(document).ready(function() {
     $('.odometer').removeClass('red');
     $('.odometer').removeClass('green-border');
     $('.odometer').removeClass('red-border');
-    _animResult  = setInterval(function () {_animResults()}, 3000);
+    //_animResult  = setInterval(function () {_animResults()}, 3000);
   });
 
 
