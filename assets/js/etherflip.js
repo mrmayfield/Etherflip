@@ -181,7 +181,7 @@ $(document).ready(function() {
   _eventBetsOpen1.watch(function(error, result){
     if (!error)
       etherflip.betsOpen1.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-      $('#blocks-to-go').val('Waiting for 3 blocks...');
+      $('#blocks-to-go').val('Generating 3 blocks...');
       $('.stageOutput').html('_eventBetsOpen1');
       getSeedAHash();
   });
@@ -189,7 +189,7 @@ $(document).ready(function() {
   _eventBetsOpen2.watch(function(error, result){
     if (!error)
       etherflip.betsOpen2.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-      $('#blocks-to-go').val('Waiting for 2 blocks...');
+      $('#blocks-to-go').val('Generating 2 blocks...');
       $('.stageOutput').html('_eventBetsOpen2');
       getSeedAHash();
       showLoading();
@@ -249,14 +249,14 @@ $(document).ready(function() {
     }
     etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0],to: _contractAddress,gas: _stateChangeGas});
     $('#blocks-to-go').val('Paying winners...');
-    $('.stageOutput').html('_eventBetsDecided  - should be updating results and paying');
+    $('.stageOutput').html('_eventBetsDecided  - update result and pay winners');
 
   });
 
   _eventResetting.watch(function(error, result){
     if (!error)
       getSeedAHash();
-      $('#blocks-to-go').val('Setting up new game...');
+      $('#blocks-to-go').val('Preparing new game...');
       $('.stageOutput').html('_eventReadyForNewPlayers');
       //$('#blocks-to-go').val('Accepting final bets...');
       $('.odometer').removeClass('highlight');
@@ -375,20 +375,20 @@ $(document).ready(function() {
     _balanceDisplay = _balance*.000000000000000001;
 
     var str = _balanceDisplay.toString(10);
-    var _balanceDisplayDecimalSplit = str.split(".");
-    var _balanceDisplayDecimal = _balanceDisplayDecimalSplit[0];
+    //var _balanceDisplayDecimalSplit = str.split(".");
+    //var _balanceDisplayDecimal = _balanceDisplayDecimalSplit[0];
 
-    $('.balance').text(_balanceDisplayDecimal);
+    $('.balance').text(_balanceDisplay);
 
     var _accountEtheroll = web3.eth.getBalance(_contractAddress);
 
     _accountEtherollDisplay = _accountEtheroll*.000000000000000001;
 
     var str = _accountEtherollDisplay.toString(10);
-    var _accountEtherollDisplayDecimalSplit = str.split(".");
-    var _accountEtherollDisplayDecimal = _accountEtherollDisplayDecimalSplit[0];
+    //var _accountEtherollDisplayDecimalSplit = str.split(".");
+    //var _accountEtherollDisplayDecimal = _accountEtherollDisplayDecimalSplit[0];
 
-    $('.balance-etheroll').text(_accountEtherollDisplayDecimal);
+    $('.balance-etheroll').text(str);
 
     //get latest block number
     _blockNumberDisplay = web3.eth.blockNumber;
@@ -409,10 +409,10 @@ $(document).ready(function() {
     _balanceDisplay = _balance*.000000000000000001;
 
     var str = _balanceDisplay.toString(10);
-    var _balanceDisplayDecimalSplit = str.split(".");
-    var _balanceDisplayDecimal = _balanceDisplayDecimalSplit[0];
+    //var _balanceDisplayDecimalSplit = str.split(".");
+    //var _balanceDisplayDecimal = _balanceDisplayDecimalSplit[0];
 
-    $('.balance').text(_balanceDisplayDecimal);
+    $('.balance').text(str);
   }
 
 
