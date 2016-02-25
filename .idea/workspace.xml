@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3d1394-dc53-477f-aff0-77c93e99a17d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/etherflip.js" afterPath="$PROJECT_DIR$/assets/js/etherflip.js" />
     </list>
     <ignored path="etherflip.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +46,8 @@
       <file leaf-file-name="etherflip.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8" vertical-offset="663" max-vertical-offset="6460">
-              <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.5220729" vertical-offset="3553" max-vertical-offset="6443">
+              <caret line="277" column="47" selection-start-line="277" selection-start-column="47" selection-end-line="277" selection-end-column="47" />
               <folding>
                 <element signature="e#178#632#0" expanded="false" />
                 <element signature="e#6678#6828#0" expanded="false" />
@@ -55,6 +55,8 @@
                 <element signature="e#7017#7128#0" expanded="false" />
                 <element signature="e#7163#7276#0" expanded="false" />
                 <element signature="e#7283#7307#0" expanded="false" />
+                <element signature="e#12036#12063#0" expanded="false" />
+                <element signature="e#12271#12386#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -249,11 +251,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="676" extended-state="6" />
-    <editor active="false" />
+    <frame x="-4" y="-4" width="1288" height="676" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3232143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3232143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -265,13 +267,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -330,6 +332,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -380,6 +384,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -430,6 +436,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -480,6 +488,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -530,6 +540,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,6 +592,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -630,6 +644,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,6 +685,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -708,6 +726,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -747,6 +767,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -811,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8" vertical-offset="663" max-vertical-offset="6460">
-          <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.5220729" vertical-offset="3553" max-vertical-offset="6443">
+          <caret line="277" column="47" selection-start-line="277" selection-start-column="47" selection-end-line="277" selection-end-column="47" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
             <element signature="e#6678#6828#0" expanded="false" />
@@ -820,6 +842,8 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
+            <element signature="e#12036#12063#0" expanded="false" />
+            <element signature="e#12271#12386#0" expanded="false" />
           </folding>
         </state>
       </provider>

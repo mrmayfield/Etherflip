@@ -276,7 +276,6 @@ $(document).ready(function() {
       $('.odometer').removeClass('red');
       $('.odometer').removeClass('green-border');
       $('.odometer').removeClass('red-border');
-      _isPlayer = false;
     if(_isPlayer == true) {
       etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas});
     }
