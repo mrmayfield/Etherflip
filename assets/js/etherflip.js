@@ -89,7 +89,7 @@ $(document).ready(function() {
   //place bet
   $("#place-bet").click(function() {
 
-    console.log( "stage= " + etherflip.stage())
+    //console.log( "stage= " + etherflip.stage())
 
     //if bet number and bet value is within range
     if(($('#the-bet').val() != '') && ($('#seedB').val() != '') && ($('#the-bet').val() == 1) && ($('#seedB').val() < 101)  && ($('#the-bet').val() > 0) && ($('#seedB').val() > 0)) {
