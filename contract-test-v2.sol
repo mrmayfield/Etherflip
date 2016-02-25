@@ -3,10 +3,10 @@ contract Random{
     event eventBetsOpen();
 
     event eventBetsOpen1();
-
-    event eventBetsOpen2();
-
-    event eventBetsOpen3();
+    
+    event eventBetsOpen2();    
+    
+    event eventBetsOpen3();        
 
     event eventBetsClosed();
 
@@ -18,9 +18,9 @@ contract Random{
 
     enum Stages {
         betsOpen,
-        betsOpen1,
-        betsOpen2,
-        betsOpen3,
+        betsOpen1,        
+        betsOpen2,         
+        betsOpen3,         
         betsClosed,
         betsDecided,
         resetting
@@ -113,10 +113,10 @@ contract Random{
 
     //accept new entrant
     function newEntrant( uint seedBUserParam ){
-
-
+        
+        
             arrayLength = funders.length;
-
+        
             //is this the fist player?
             if(stage == Stages(uint(0))){
                 seedB = seedBUserParam;
@@ -127,7 +127,7 @@ contract Random{
 
                 //only submit if entrants array not full
                 if(arrayLength < 3){
-
+                    
                     //is bet within limit?
                     if(msg.value < 3 ether ){
                         luckyNumber = seedBUserParam;
@@ -138,18 +138,18 @@ contract Random{
                 }
 
             }
-
+            
             //quietly refund bet if stage 4
             if(stage == Stages(uint(4))){
                 msg.sender.send(msg.value);
             }
-
+            
             //quietly refund bet if entrant array full - keeping gas cost down for reveal fun
             if(arrayLength > 2){
                 msg.sender.send(msg.value);
-            }
-
-
+            }            
+            
+            
     }
 
     //generate random number
@@ -168,33 +168,33 @@ contract Random{
             seedBStage1Hash = sha3(seedB);
 
         nextStage();
-
+        
         //what does client do at this event?
         eventBetsOpen1();
     }
-
+    
     //waiting
     function betsOpen1() atStage(Stages.betsOpen1){
         nextStage();
-
+        
         //what does client do at this event?
         eventBetsOpen2();
-    }
-
+    }  
+    
     //waiting still
     function betsOpen2() atStage(Stages.betsOpen2){
         nextStage();
-
+        
         //what does client do at this event?
         eventBetsOpen3();
-    }
-
+    }  
+    
     function betsOpen3() atStage(Stages.betsOpen3){
         nextStage();
-
+        
         //what does client do at this event?
         eventBetsClosed();
-    }
+    }       
 
     //generate random number
     function reveal() atStage(Stages.betsClosed) returns (uint256){
@@ -256,13 +256,13 @@ contract Random{
             }
         //}
     }
-
+    
     function betsDecided() atStage(Stages.betsDecided){
         nextStage();
-
+        
         //what does client do at this event?
         eventResetting();
-    }
+    }     
 
 
     function resetStage() atStage(Stages.resetting) {
@@ -274,7 +274,7 @@ contract Random{
 
         //}
     }
-
+    
 
 
     //getters
