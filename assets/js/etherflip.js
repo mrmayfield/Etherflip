@@ -162,7 +162,7 @@ $(document).ready(function() {
       etherflip.rand.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: 500000});
       //_blockCheck2 = setInterval(function () {goNext()}, 1000);
       _blockNumberOriginal;
-      _blockNumberOriginal = web3.eth.blockNumber;
+      //_blockNumberOriginal = web3.eth.blockNumber;
       _blockNumber;
       _blocksToGo;
       _blocksToGoDisplay;
