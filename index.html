@@ -73,7 +73,7 @@
 		<h3 class="orange  generating-wait">Ðie roll is in progress <a href="#roll_in_progress">(?)</a></h3>
 		<p class="mobile-only">You are seeing this message likely because you are viewing Etheroll on a mobile device. This Ðapp requires you to be running a local testnet version of Ethereum Blockchain for it to work. Please try on a desktop environment running a local testnet node.</p>
 		<div class="bet-container">
-			<h5>MAX WAGER IS 1 - PAYS 1.98 TO 1</h5>
+			<h5>MAX WAGER IS 2 - PAYS 1.98 TO 1</h5>
 			<!--<div class="pre-paid-container">
 				<button id="1" class="choose pre-paid" value="1">
 					<strong>1</strong>
@@ -94,7 +94,7 @@
 					<strong>50</strong>
 				</button>
 			</div>-->
-			<input id="the-bet" type="number" pattern="[0-100]" min="1" max="1" class="bet-amount green"  placeholder="Enter wager (max 1)"></input>
+			<input id="the-bet" type="number" pattern="[0-100]" min="1" max="2" class="bet-amount green"  placeholder="Enter wager (max 1)"></input>
 			<h5>Lucky number</h5>
 			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" ></input>
 				<!--<button id="Low" class="choose bet-choice">
@@ -181,16 +181,24 @@
 		<p>You must be 18 years or older to play Etheroll. By playing Etheroll you agree that you are over 18 years of age and that you are also playing Etheroll within a jurisdiction that does not consider interacting with and/or placing bets and/or profiting and/or losing from an Ethereum online casino to be illegal in any way shape or form.</p>
 		<p>No refunds. No acceptances.</p>
 		<h2><a class="green" name="the_game">How to play</a></h2>
-		<p>Etheroll is an Ethereum casino, you are gambling Ether on the result of a 100 sided die roll. The result of the die roll is either a low roll range (1-49) or a high roll range (50-100).</p>
-		<p>If the number you submit is within the result range; low range numbers are (1-49), high range numbers are (50-100) you are paid 1.98 to 1 instantly.</p>
+		<p>Etheroll is the world's first Ethereum casino that allows you to gamble entirely within the Ethereum blockchain.</p>
+		<p>To almost double your Ether (we pay 1.98 to 1), just guess correctly on the result of a 100 sided dice roll. The result of the dice roll is either a low roll range (1-49) or a high roll range (50-100).</p>
+		<p>If the number you submit is within the result range (high or low); low range numbers are (1-49), high range numbers are (50-100) you are paid 1.98 to 1 instantly.</p>
 		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete. This is for security and to allow people to make late bets, so please, be patient.</p>
 		<h2><a class="green" name="the_terms">Instructions</a></h2>
-		<p>Each round takes up to 1 or 2 minutes, so be patient as your dice roll is in progress.</p>
-		<p>Because Ethereum is still being heavily developed and the official Mist browser has not yet been publicly released, to play Etheroll currently you will need to run your own Ethereum blockchain and connect to Etheroll with the following command:</p>
+		<p><strong>IMPORTANT PLEASE READ BEFORE PLAYING:</strong></p>
+		<p>During our pre-alpha release phase, each betting round will only accept a maximum of 4 players per round. This is only a temporary measure, to primarily keep gas costs down for our users as we continue to optimize Etheroll.</p>
+		<p>If you are the 5th better of the round (submitting a late bet), for the moment you will be quietly refunded. We are working to make this current restriction a better experience by providing a 'current round full' notification. </p>
+		<p>Each round takes up to 1 or 2 minutes, so be patient as each dice roll is in progress, do not close your browser window, you may lose your funds with no chance for recovery. You have been warned.</p>
+		<p>Because Ethereum is still being heavily developed and the official Mist browser has not yet been publicly released, to play Etheroll currently you will need to:</p>
+		<p class="green"><strong>Step 1:</strong></p>
+		<p>Run your own Ethereum blockchain and connect to Etheroll with the following command:</p>
 		<p>geth --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p>
+		<p class="green"><strong>Step 2:</strong></p>
 		<p>You will be prompted to enter your password to unlock your account which will enable you to place bets and receive winnings from Etheroll. We never receive your password at anytime during your interaction with Etheroll.</p>
+		<p class="green"><strong>Step 3</strong>:</p>
 		<p>Once you have done this you can reload our website and you should see your wallet balance in the top right hand corner.</p>
-		<p>During our pre-alpha release phase the maximum bet is 1 Ether. Do not send more than 1 Ether. No refunds.</p>
+		<p>During our pre-alpha release phase the maximum bet is 2 Ether. Do not send more than 2 Ether. No refunds.</p>
 		<p>If you land at the site and it says "Bet in progress" wait until a new round starts before submitting any bets.</p>
 
 		<h2><a class="green" name="the_result">How is the result decided?</a></h2>

@@ -96,7 +96,6 @@ contract Random{
         address addr;
         uint amount;
         uint Number;
-        uint rewardValue;
     }
 
     uint arrayLength;
@@ -112,30 +111,49 @@ contract Random{
 
     bool acceptNoMoreBets;
 
-        //generate random number
-    function newEntrant( uint seedBUserParam ) atStage(Stages.betsOpen){
+    //accept new entrant
+    function newEntrant( uint seedBUserParam ){
 
-            if(msg.value == 1 ether ){
-                luckyNumber = seedBUserParam;
+
+            arrayLength = funders.length;
+
+            //is this the fist player?
+            if(stage == Stages(uint(0))){
                 seedB = seedBUserParam;
-
-                //user address
-                uint betValue = msg.value;
-
-                rewardValue = (betValue)+(betValue*98/100);
-
-                funders.push( Funder({addr:  msg.sender, amount: betValue, Number: luckyNumber, rewardValue: rewardValue}));
-
-                blockNumberAtInit = block.number;
             }
 
+            //only submit if we are not in stage betsClosed
+            if(stage != Stages(uint(4))){
+
+                //only submit if entrants array not full
+                if(arrayLength < 3){
+
+                    //is bet within limit?
+                    if(msg.value < 3 ether ){
+                        luckyNumber = seedBUserParam;
+                        uint betValue = msg.value;
+                        //rewardValue = (betValue)+(betValue*98/100);
+                        funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
+                    }
+                }
+
+            }
+
+            //quietly refund bet if stage 4
+            if(stage == Stages(uint(4))){
+                msg.sender.send(msg.value);
+            }
+
+            //quietly refund bet if entrant array full - keeping gas cost down for reveal fun
+            if(arrayLength > 2){
+                msg.sender.send(msg.value);
+            }
 
 
     }
 
     //generate random number
     function rand() atStage(Stages.betsOpen){
-
 
             //get hash of parent block for seedA
             uint256 lastBlockNumberA = block.number - 1;
@@ -148,8 +166,6 @@ contract Random{
 
             //ensure stage 2 seedB equals stage 1 seedB
             seedBStage1Hash = sha3(seedB);
-
-
 
         nextStage();
 
@@ -204,7 +220,7 @@ contract Random{
 
                 for (i = 0; i < arrayLength; i++) {
                     playerNumber = funders[i].Number;
-                    theReward =  funders[i].rewardValue;
+                    theReward =  funders[i].amount + (funders[i].amount*98/100);
                     theAddress = funders[i].addr;
                     if(playerNumber > 49){
                         theAddress.send(theReward);
@@ -225,7 +241,7 @@ contract Random{
 
                 for (i = 0; i < arrayLength; i++) {
                     playerNumber = funders[i].Number;
-                    theReward =  funders[i].rewardValue;
+                    theReward =  funders[i].amount + (funders[i].amount*98/100);
                     theAddress = funders[i].addr;
                     if(playerNumber < 50){
                         theAddress.send(theReward);
