@@ -246,7 +246,7 @@ $(document).ready(function() {
       $('.odometer').addClass('green-border');
     }
 
-    if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50) && (_isPlayer == true)){
+    if ((_result < 50 && _seedB > 49) || (_result > 49 && _seedB < 50) && (_isPlayer == true)){
       $("#win").hide();
       $("#lose").show();
       $('.bet-payout').removeClass('green');
