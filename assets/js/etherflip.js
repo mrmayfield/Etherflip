@@ -92,27 +92,30 @@ $(document).ready(function() {
     //console.log( "stage= " + etherflip.stage())
 
     //if bet number and bet value is within range
-    if(($('#the-bet').val() != '') && ($('#seedB').val() != '') && ($('#the-bet').val() == 1) && ($('#seedB').val() < 101)  && ($('#the-bet').val() > 0) && ($('#seedB').val() > 0)) {
+    if(
+        ($('#the-bet').val() != '') &&
+        ($('#seedB').val() != '') &&
+        ($('#the-bet').val() == 1) &&
+        ($('#seedB').val() < 101)  &&
+        ($('#the-bet').val() > 0) &&
+        ($('#seedB').val() > 0)
+    ){
 
       //send bet
-
-      etherflip.newEntrant.sendTransaction(_seedB, {from: web3.eth.accounts[0],value: web3.toWei(_betValue, 'ether'), to: _contractAddress, gas: 500000, data: web3.fromAscii('Etheroll.com bet created at block ' + web3.eth.blockNumber)});
-
-      //get latest block number
-      //_betBlockNumberDisplay = web3.eth.blockNumber;
-      //$( '#betBlockID' ).text(_betBlockNumberDisplay);
-
-      //set result UI empty
-      //$("#result").val("");
+      etherflip.newEntrant.sendTransaction(
+          _seedB, {
+            from: web3.eth.accounts[0],
+            value: web3.toWei(_betValue, 'ether'),
+            to: _contractAddress,
+            gas: 500000
+          }
+      );
 
       _blockNumberOriginal = web3.eth.blockNumber;
 
       $("#win").hide();
       $("#lose").hide();
 
-      //_blockNumber = web3.eth.blockNumber;
-      //_blocksToGo = _blockNumber - _blockNumberOriginal;
-      //_blocksToGoDisplay = 2 - (_blockNumber - _blockNumberOriginal);
 
       $('.bet-payout').removeClass('red');
       $('.bet-payout').removeClass('green');
@@ -129,18 +132,9 @@ $(document).ready(function() {
 
       //clear init anim
       clearInterval(_animResult);
-      //play again
-      //_animResult  = setInterval(function () {_animResults()}, 3000);
-
-
     }
 
   });
-
-  function _animResults(){
-    _resultAnimTemp = Math.floor((Math.random() * 100) + 1);
-    $('.odometer').html(_resultAnimTemp);
-  }
 
   function rand(){
     _blockNumber = web3.eth.blockNumber;
@@ -258,6 +252,11 @@ $(document).ready(function() {
     displayResult();
 
   });
+
+  function _animResults(){
+    _resultAnimTemp = Math.floor((Math.random() * 100) + 1);
+    $('.odometer').html(_resultAnimTemp);
+  }
 
   function showLoading(){
     $('.generating-wait').show();
