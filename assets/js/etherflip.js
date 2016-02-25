@@ -88,7 +88,7 @@ $(document).ready(function() {
   var _stateChangeGas = 50000;
   var _randStageGas = 100000;
   var _revealStageGas = 500000;
-  var _resetStageGas = 100000;
+  var _resetStageGas = 60000;
 
 
   //_animResult  = setInterval(function () {_animResults()}, 3000);
