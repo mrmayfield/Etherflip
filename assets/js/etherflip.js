@@ -276,13 +276,6 @@ $(document).ready(function() {
       enableRoll();
   });
 
-
-  //to do remove   - devonly
-  $("#reset").click(function() {
-    displayResult();
-
-  });
-
   function showLoading(){
     $('.generating-wait').show();
     $('.generating-normal').hide();
