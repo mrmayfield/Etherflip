@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3d1394-dc53-477f-aff0-77c93e99a17d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/etherflip.js" afterPath="$PROJECT_DIR$/assets/js/etherflip.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="etherflip.iws" />
@@ -37,7 +36,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7142856" vertical-offset="5914" max-vertical-offset="6239">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6018" max-vertical-offset="6239">
               <caret line="354" column="9" selection-start-line="354" selection-start-column="9" selection-end-line="354" selection-end-column="9" />
               <folding />
             </state>
@@ -47,8 +46,8 @@
       <file leaf-file-name="etherflip.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5547025" vertical-offset="663" max-vertical-offset="6460">
-              <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.8" vertical-offset="663" max-vertical-offset="6460">
+              <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
               <folding>
                 <element signature="e#178#632#0" expanded="false" />
                 <element signature="e#6678#6828#0" expanded="false" />
@@ -56,8 +55,6 @@
                 <element signature="e#7017#7128#0" expanded="false" />
                 <element signature="e#7163#7276#0" expanded="false" />
                 <element signature="e#7283#7307#0" expanded="false" />
-                <element signature="e#12061#12088#0" expanded="false" />
-                <element signature="e#12296#12411#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -225,15 +222,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="4b994d6c-bcb0-4691-8499-53db7eee2ad5" server_name="localhost">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="4b994d6c-bcb0-4691-8499-53db7eee2ad5" server_name="localhost">
       <method />
     </configuration>
     <list size="0" />
@@ -253,10 +250,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1288" height="676" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3232143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3232143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -294,9 +291,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2609047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -333,8 +330,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -385,8 +380,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -437,8 +430,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -489,8 +480,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,8 +530,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -593,8 +580,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,8 +630,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -686,8 +669,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -727,8 +708,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -768,8 +747,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -826,7 +803,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7142856" vertical-offset="5914" max-vertical-offset="6239">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6018" max-vertical-offset="6239">
           <caret line="354" column="9" selection-start-line="354" selection-start-column="9" selection-end-line="354" selection-end-column="9" />
           <folding />
         </state>
@@ -834,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5547025" vertical-offset="663" max-vertical-offset="6460">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.8" vertical-offset="663" max-vertical-offset="6460">
+          <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
             <element signature="e#6678#6828#0" expanded="false" />
@@ -843,8 +820,6 @@
             <element signature="e#7017#7128#0" expanded="false" />
             <element signature="e#7163#7276#0" expanded="false" />
             <element signature="e#7283#7307#0" expanded="false" />
-            <element signature="e#12061#12088#0" expanded="false" />
-            <element signature="e#12296#12411#0" expanded="false" />
           </folding>
         </state>
       </provider>
