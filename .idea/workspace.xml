@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/assets/js/etherflip.js" line="103" />
+    <bookmark url="file://$PROJECT_DIR$/assets/js/etherflip.js" line="100" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3d1394-dc53-477f-aff0-77c93e99a17d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contract-test-v3.sol" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/etherflip.js" afterPath="$PROJECT_DIR$/assets/js/etherflip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investor-details.html" afterPath="$PROJECT_DIR$/investor-details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investors-register.html" afterPath="$PROJECT_DIR$/investors-register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investors.html" afterPath="$PROJECT_DIR$/investors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="etherflip.iws" />
@@ -33,31 +39,42 @@
     <leaf>
       <file leaf-file-name="contract-test-v2.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.428571" vertical-offset="5759" max-vertical-offset="6239">
+              <caret line="351" column="27" selection-start-line="351" selection-start-column="27" selection-end-line="351" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contract-test-v3.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contract-test-v3.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.714286" vertical-offset="5665" max-vertical-offset="6239">
-              <caret line="341" column="0" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.285714" vertical-offset="5776" max-vertical-offset="6256">
+              <caret line="360" column="5" selection-start-line="360" selection-start-column="5" selection-end-line="360" selection-end-column="5" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="etherflip.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65259117" vertical-offset="2992" max-vertical-offset="6443">
-              <caret line="248" column="79" selection-start-line="248" selection-start-column="79" selection-end-line="248" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.37777779" vertical-offset="0" max-vertical-offset="6545">
+              <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
               <folding>
                 <element signature="e#178#632#0" expanded="false" />
-                <element signature="e#6677#6827#0" expanded="false" />
-                <element signature="e#6910#6960#0" expanded="false" />
-                <element signature="e#7016#7127#0" expanded="false" />
-                <element signature="e#7162#7275#0" expanded="false" />
-                <element signature="e#7282#7306#0" expanded="false" />
-                <element signature="e#12035#12062#0" expanded="false" />
-                <element signature="e#12270#12385#0" expanded="false" />
+                <element signature="e#6779#6829#0" expanded="false" />
+                <element signature="e#7031#7144#0" expanded="false" />
+                <element signature="e#7151#7175#0" expanded="false" />
+                <element signature="e#11952#11979#0" expanded="false" />
+                <element signature="e#12187#12302#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -66,8 +83,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="6341">
-              <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="6409">
+              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -76,8 +93,38 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2856" max-vertical-offset="4080">
-              <caret line="178" column="75" selection-start-line="178" selection-start-column="75" selection-end-line="178" selection-end-column="75" />
+            <state vertical-scroll-proportion="-5.3396225" vertical-offset="3015" max-vertical-offset="4318">
+              <caret line="194" column="42" selection-start-line="194" selection-start-column="42" selection-end-line="194" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="investors.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/investors.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1037">
+              <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="investors-register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/investors-register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="578">
+              <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="investor-details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/investor-details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="935">
+              <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -99,9 +146,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/contract-test-v2.sol" />
+        <option value="$PROJECT_DIR$/investors.html" />
+        <option value="$PROJECT_DIR$/investors-register.html" />
+        <option value="$PROJECT_DIR$/investor-details.html" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/contract-test-v3.sol" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/js/etherflip.js" />
       </list>
     </option>
@@ -119,7 +170,7 @@
     <option name="x" value="-4" />
     <option name="y" value="-4" />
     <option name="width" value="1288" />
-    <option name="height" value="676" />
+    <option name="height" value="652" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -144,6 +195,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,7 +248,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,20 +303,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="676" extended-state="0" />
+    <frame x="-4" y="-4" width="1288" height="652" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3232143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32397005" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2609047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26009694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -278,25 +329,25 @@
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3232143" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32397005" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2609047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26009694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -322,50 +373,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6460">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6137" max-vertical-offset="6239">
-          <caret line="361" column="1" selection-start-line="361" selection-start-column="1" selection-end-line="361" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="6341">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="4080">
-          <caret line="108" column="37" selection-start-line="108" selection-start-column="37" selection-end-line="108" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/web3.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="268141">
@@ -379,26 +386,24 @@
           <caret line="384" column="67" selection-start-line="384" selection-start-column="67" selection-end-line="384" selection-end-column="67" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
@@ -430,26 +435,24 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6137" max-vertical-offset="6239">
           <caret line="361" column="1" selection-start-line="361" selection-start-column="1" selection-end-line="361" selection-end-column="1" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
@@ -481,26 +484,24 @@
           <caret line="54" column="50" selection-start-line="47" selection-start-column="1" selection-end-line="54" selection-end-column="50" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6137" max-vertical-offset="6239">
           <caret line="361" column="1" selection-start-line="361" selection-start-column="1" selection-end-line="361" selection-end-column="1" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
@@ -532,26 +533,24 @@
           <caret line="54" column="50" selection-start-line="47" selection-start-column="1" selection-end-line="54" selection-end-column="50" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
@@ -583,26 +582,24 @@
           <caret line="253" column="50" selection-start-line="253" selection-start-column="50" selection-end-line="253" selection-end-column="50" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
@@ -634,13 +631,11 @@
           <caret line="291" column="3" selection-start-line="291" selection-start-column="3" selection-end-line="291" selection-end-column="3" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,13 +669,11 @@
           <caret line="266" column="3" selection-start-line="266" selection-start-column="3" selection-end-line="266" selection-end-column="3" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,13 +707,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -754,13 +745,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -788,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="6341">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/web3.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="268141">
@@ -803,38 +784,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2856" max-vertical-offset="4080">
-          <caret line="178" column="75" selection-start-line="178" selection-start-column="75" selection-end-line="178" selection-end-column="75" />
+        <state vertical-scroll-proportion="-7.428571" vertical-offset="5759" max-vertical-offset="6239">
+          <caret line="351" column="27" selection-start-line="351" selection-start-column="27" selection-end-line="351" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1037">
+          <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contract-test-v2.sol">
+    <entry file="file://$PROJECT_DIR$/investors-register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="578">
+          <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investor-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="935">
+          <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="6409">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contract-test-v3.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.285714" vertical-offset="5776" max-vertical-offset="6256">
+          <caret line="360" column="5" selection-start-line="360" selection-start-column="5" selection-end-line="360" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.714286" vertical-offset="5665" max-vertical-offset="6239">
-          <caret line="341" column="0" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.3396225" vertical-offset="3015" max-vertical-offset="4318">
+          <caret line="194" column="42" selection-start-line="194" selection-start-column="42" selection-end-line="194" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65259117" vertical-offset="2992" max-vertical-offset="6443">
-          <caret line="248" column="79" selection-start-line="248" selection-start-column="79" selection-end-line="248" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.37777779" vertical-offset="0" max-vertical-offset="6545">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#6677#6827#0" expanded="false" />
-            <element signature="e#6910#6960#0" expanded="false" />
-            <element signature="e#7016#7127#0" expanded="false" />
-            <element signature="e#7162#7275#0" expanded="false" />
-            <element signature="e#7282#7306#0" expanded="false" />
-            <element signature="e#12035#12062#0" expanded="false" />
-            <element signature="e#12270#12385#0" expanded="false" />
+            <element signature="e#6779#6829#0" expanded="false" />
+            <element signature="e#7031#7144#0" expanded="false" />
+            <element signature="e#7151#7175#0" expanded="false" />
+            <element signature="e#11952#11979#0" expanded="false" />
+            <element signature="e#12187#12302#0" expanded="false" />
           </folding>
         </state>
       </provider>

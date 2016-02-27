@@ -70,6 +70,10 @@ input{
 	width: 70%;
 }
 
+.warning-max-bet{
+	display: none;
+}
+
 .jumbotron-container{
 	margin:20px 0;
 	min-height: 10px;

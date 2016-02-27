@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="body">
 <head>
-	<title> :: Etheroll :: Ethereum casino - Ether gambling</title>
+	<title> :: Etheroll :: Ethereum casino :: Ether gambling</title>
 	<meta name="description" content="Provably fair, de-centralized Ethereum casino - gamble online using Ether on the Ethereum network - smart-contract gambling. Pays 1.98 to 1." />
 	<meta name="keywords" content="Ether, gambling, games, Ethereum, wei, finney, ether, ethereum gambling, de-centralized, de-centralised, gamble, Dapp, Ðapp, provably, fair, provably fair, crypto-currency, cryptocurrency, crypto, crypto-currency, cryptocurrency, bitcoin" />
 	<meta name="robots" content="index,follow" />
@@ -52,6 +52,11 @@
 							<span>Etheroll bankroll</span> <strong class="balance-etheroll"></strong> Ether
 						</span>
 				</div>
+				<div class="balance-wrap etheroll-balance">
+						<span class="balance-container">
+							<span>Bet maximum</span> <strong class="max-bet"></strong> Ether
+						</span>
+				</div>
 
 			</nav>
 
@@ -73,7 +78,7 @@
 		<h3 class="orange  generating-wait">Ðie roll is in progress <a href="#roll_in_progress">(?)</a></h3>
 		<p class="mobile-only">You are seeing this message likely because you are viewing Etheroll on a mobile device. This Ðapp requires you to be running a local testnet version of Ethereum Blockchain for it to work. Please try on a desktop environment running a local testnet node.</p>
 		<div class="bet-container">
-			<h5>MAX WAGER = 2. PAYS 1.98 TO 1</h5>
+			<h5>MAX WAGER: <span class="max-bet"></span></h5>
 			<!--<div class="pre-paid-container">
 				<button id="1" class="choose pre-paid" value="1">
 					<strong>1</strong>
@@ -94,9 +99,10 @@
 					<strong>50</strong>
 				</button>
 			</div>-->
-			<input id="the-bet" type="number" pattern="[0-100]" min="1" max="2" class="bet-amount green"  placeholder="Enter wager (max 1)"></input>
-			<h5>YOUR LUCKY NUMBER 1-100</h5>
-			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" ></input>
+			<input id="the-bet" type="number" pattern="[0-100]" min="1" class="bet-amount green"  placeholder="Enter wager">
+			<div class="warning-max-bet red">Maximum wager is <span class="max-bet"></span></div>
+			<h5>YOUR LUCKY NUMBER: 1-100</h5>
+			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" >
 				<!--<button id="Low" class="choose bet-choice">
 					<strong>Low</strong>
 					<p><span class="prediction">49</span> and lower</p>
@@ -115,11 +121,11 @@
 		<h3 id="title-bet-slip">Bet slip</h3>
 		<div class="your-bet-container">
 			<h5>Your number</h5>
-			<input type="text" id="bet-number" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set"></input>
+			<input type="text" id="bet-number" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set">
 			<h5>Bet Cost</h5>
-			<input type="text" class="bet-amount" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set"> </input>
+			<input type="text" class="bet-amount" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set">
 			<h5>Potential payout</h5>
-			<input type="text" class="bet-payout" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set"></input>
+			<input type="text" class="bet-payout" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set">
 		</div>
 	</div>
 	<div  class="jumbotron">
@@ -128,7 +134,7 @@
 			<h3 class="green generating-normal">Place your bet...</h3>
 			<h3 class="orange generating-wait">Rolling die...</h3>
 			<h3 class="green generating-confirm">Minting...</h3>
-			<div class="orange generating-wait" ><input type="text" id='blocks-to-go' disabled value="Accepting last bets..."></input></div>
+			<div class="orange generating-wait" ><input type="text" id='blocks-to-go' disabled value="Accepting last bets..."></div>
 			<div class="generating-normal"><img src="assets/images/ajax-loader1.gif"/> </div>
 			<div class="generating-wait"><img src="assets/images/ajax-loader-wait1.gif"/> </div>
 			<!--<input type="text" id="result" class="odometer" disabled></input>-->
@@ -160,6 +166,8 @@
 <div class="jumbotron-container">
 	<div class="full">
 		<p class="green"><strong>Provably fair (<a href="#provably_fair">?</a>)</strong></p>
+		<p class="green" id="betBlock">SeedA created at block:</p>
+		<div id="betBlockID"></div>
 		<p class="green" id="seedA_hash">SHA3 of SeedA:</p>
 		<div id="seedA_hashSHA3"></div>
 		<p class="green">SeedA:</p>
@@ -172,26 +180,29 @@
 </div>
 <div class="jumbotron-container">
 	<div class="full">
-		<h2><a class="" name="the_game">WARNING</a></h2>
+		<h2><a class="">WARNING</a></h2>
 		<p>TESTNET RELEASE ONLY. DO NOT SEND REAL ETHER.</p>
-		<p>This is the pre-alpha release of Etheroll, a Ðapp that provides a provably-fair Ethereum gambling and casino experience online. Currently, Etheroll will only run if you are running your own local testnet Ethereum blockchain.</p>
-		<p>The current maximum bet during our pre-alpha release phase is 2 Ether. If you submit more than 2 Ether the smart-contract will not be invoked. Do not send more than 2 Ether.</p>
-		<p>The initial bankroll for the pre-alpha release was 25 Ether.</p>
-		<p>You may win or lose some Ether playing Etheroll. The chances of winning or losing on each round of die roll is 50/50 and the house edge is 2%. Winners are paid 1.98 to 1.</p>
-		<h2><a class="green" name="the_game">Disclaimer</a></h2>
-		<p>You must be 18 years or older to play Etheroll. By playing Etheroll you agree that you are over 18 years of age and that you are also playing Etheroll within a jurisdiction that does not consider interacting with and/or placing bets and/or profiting and/or losing from an Ethereum online casino to be illegal in any way shape or form.</p>
-		<p>No refunds. No acceptances.</p>
+		<p>Try your luck and gamble in a provably-fair environment thanks to the power of the Ethereum blockchain. Our random number is generated entirely on the blockchain meaning it is impossible for us to affect the outcome of the dice roll.</p>
+		<p>This is the pre-alpha release and currently Etheroll will only run if you are running your own local <strong>testnet Ethereum blockchain</strong>.</p>
 		<h2><a class="green" name="the_game">How to play</a></h2>
-		<p>Etheroll is the world's first Ethereum casino that allows you to gamble entirely within the Ethereum blockchain.</p>
-		<p>To almost double your Ether (we pay 1.98 to 1), just guess correctly on the result of a 100 sided dice roll. The result of the dice roll is either a low roll range (1-49) or a high roll range (50-100).</p>
+		<p>Take a chance! You are betting on the result of a 100 sided dice roll. The result of the dice roll is either a low roll range (1-49) or a high roll range (50-100).</p>
 		<p>If the number you submit is within the result range (high or low); low range numbers are (1-49), high range numbers are (50-100) you are paid 1.98 to 1 instantly.</p>
 		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete. This is for security and to allow people to make late bets, so please, be patient.</p>
-		<h2><a class="green" name="the_terms">Instructions</a></h2>
+		<h2><a class="green">Instructions</a></h2>
 		<p><strong>IMPORTANT PLEASE READ BEFORE PLAYING:</strong></p>
-		<p>During our pre-alpha release phase, each betting round will only accept a maximum of 4 players per round. This is only a temporary measure, to primarily keep gas costs down for our users as we continue to optimize Etheroll.</p>
-		<p>If you are the 5th better of the round (submitting a late bet), for the moment you will be quietly refunded. We are working to make this current restriction a better experience by providing a 'current round full' notification. </p>
-		<p>Each round takes up to 1 or 2 minutes, so be patient as each dice roll is in progress, do not close your browser window, you may lose your funds with no chance for recovery. You have been warned.</p>
+		<ol>
+			<li>To enter, set your wager between 1 ether and <span class="max-bet"></span>  ether.</li>
+			<li>Any wager that does not fall within this range will result in your wager being <strong>quietly refunded</strong>, <strong>voiding the play</strong> and excluding you from that betting round.</li>
+			<li>Any wager that will result in >5% of the pool at risk, will result in that bet being <strong>voided</strong> and <strong>quietly refunded</strong>.</li>
+			<li>A win will return your original amount plus profit, minus commission applied.</li>
+			<li>Etheroll operates on a 2% commission, this is subtracted from the amount returned to the player in the case of a win.</li>
+		</ol>
+		<h3>Note:</h3>
+		<p><strong>During our pre-alpha release phase, each betting round will only accept a maximum of 4 players per round. This is only a temporary measure, to primarily keep gas costs down for our users as we continue to optimize Etheroll.</strong></p>
+		<p>If you are the 5th better of the round (submitting a late bet), you will be quietly refunded and your play will be voided.</p>
+		<p>Each round takes up to 1 or 2 minutes, so be patient as each dice roll is in progress. Do not close your browser window if you are in the middle of a wagered dice roll. You may lose your funds with no chance for recovery. You have been warned.</p>
 		<p>Be aware that when you are in a betting round, you will incur gas charges to participate whether you win or lose. Etheroll does not receive the gas you spend. Gas is used to maintain the Ethereum blockchain.</p>
+		<h2><a class="green">Setup</a></h2>
 		<p>Because Ethereum is still being heavily developed and the official Mist browser has not yet been publicly released, to play Etheroll currently you will need to:</p>
 		<p class="green"><strong>Step 1:</strong></p>
 		<p>Run your own Ethereum blockchain and connect to Etheroll with the following command:</p>
@@ -228,6 +239,9 @@
 		<p>Any detection of potential misuse of the game will result in your address being banned from playing. You have been warned.</p>
 
 		<p>Feel free to browse/steal the source code which I will eventually release.</p>
+		<h2><a class="green">Disclaimer</a></h2>
+		<p>You must be 18 years or older to play Etheroll. By playing Etheroll you agree that you are over 18 years of age and that you are also playing Etheroll within a jurisdiction that does not consider interacting with and/or placing bets and/or profiting and/or losing from an Ethereum online casino to be illegal in any way shape or form.</p>
+		<p>No refunds. No acceptances.</p>
 
 	</div>
 </div>
