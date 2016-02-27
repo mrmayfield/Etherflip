@@ -161,7 +161,7 @@ contract Random{
     function rand() atStage(Stages.betsOpen){
 
             //get hash of parent block for seedA
-            uint256 lastBlockNumberA = block.number - 1;
+            uint lastBlockNumberA = block.number - 1;
             uint256 lastBlockHashValA = uint256(block.blockhash(lastBlockNumberA));
 
             seedA = lastBlockHashValA;
@@ -169,36 +169,24 @@ contract Random{
             //provably fair - as can be checked after result
             seedAHash = sha3(seedA);
 
-            //ensure stage 2 seedB equals stage 1 seedB
-            seedBStage1Hash = sha3(seedB);
-
         nextStage();
-
-        //what does client do at this event?
         eventBetsOpen1();
     }
 
     //waiting
     function betsOpen1() atStage(Stages.betsOpen1){
         nextStage();
-
-        //what does client do at this event?
         eventBetsOpen2();
     }
 
     //waiting still
     function betsOpen2() atStage(Stages.betsOpen2){
         nextStage();
-
-        //what does client do at this event?
         eventBetsClosed();
     }
 
     //generate random number
     function reveal() atStage(Stages.betsClosed) returns (uint256){
-
-
-        //if (block.number >= blockNumberAtInit+2){
 
             //get hash of parent block for seedC
             uint256 lastBlockNumberC = block.number - 1;
@@ -249,39 +237,20 @@ contract Random{
                 delete funders;
                 eventBetsDecided();
                 nextStage();
-
-
             }
-        //}
     }
 
     function betsDecided() atStage(Stages.betsDecided){
         nextStage();
-
-        //what does client do at this event?
         eventResetting();
     }
 
 
     function resetStage() atStage(Stages.resetting) {
         blockNumberAtInit;
-        //if ( block.number > blockNumberAtDecide + 2){
         initialSeedSet = false;
         eventReady();
         stage = Stages(uint(0));
-
-        //}
-    }
-
-
-
-    //getters
-    //to do - remove dangerous ones
-
-    function getEntrants(uint getNumberAtPosition) constant returns (uint entrantInfo){
-
-        return funders[getNumberAtPosition].Number;
-
     }
 
 
@@ -290,7 +259,6 @@ contract Random{
         return stage;
     }
 
-    //todo remove - important
     function getSeedA() returns (uint256)
     {
         return seedA;
@@ -299,26 +267,6 @@ contract Random{
     function getSeedAHash() returns (bytes32)
     {
         return seedAHash;
-    }
-
-    function getSeedB() returns (uint256)
-    {
-        return seedB;
-    }
-
-    function getSeedBStage1Hash() returns (bytes32)
-    {
-        return seedBStage1Hash;
-    }
-
-    function getSeedBStage2Hash() returns (bytes32)
-    {
-        return seedBStage2Hash;
-    }
-
-    function getSeedC() returns (uint256)
-    {
-        if (msg.sender == owner) return seedC;
     }
 
     function getDieResult() returns (uint256)
@@ -334,7 +282,6 @@ contract Random{
             stage = Stages(uint(0));
 
             //refundBets
-
             arrayLength = funders.length;
             uint i;
 
@@ -354,10 +301,5 @@ contract Random{
     //recover total contract balance to owner of contract (creator)
     function kill() { if (msg.sender == owner) suicide(owner); }
 
-    //recover funds dont kill contract
-    function ownerSend(address toAddress, uint256 toAmount) {
-        if (msg.sender == owner)
-            toAddress.send(toAmount);
-    }
 
 }
