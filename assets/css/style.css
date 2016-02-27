@@ -75,6 +75,15 @@ input{
 	display: none;
 }
 
+.alert{
+	border:1px solid #DCFF9B;
+	padding:20px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.alert p{margin:0;}
+
 .jumbotron-container{
 	margin:20px 0;
 	min-height: 10px;
@@ -280,11 +289,6 @@ button:hover{
 	animation: red-fade 2s ease-in 1;
 }
 
-.alert{
-border: 1px solid red;
-border-radius: 10px;
-padding: 20px;
-}
 
 
 
