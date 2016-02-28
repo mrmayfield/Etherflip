@@ -198,7 +198,7 @@ contract Random{
             dieResult = (uint256(seedA + seedB + seedC) / FACTOR) +1;
 
             //high result boolean
-            if(dieResult > 50){
+            if(dieResult >= 51){
 
                 //payWinners
                 arrayLength = funders.length;
@@ -208,7 +208,7 @@ contract Random{
                     playerNumber = funders[i].Number;
                     theReward =  funders[i].amount + (funders[i].amount*98/100);
                     theAddress = funders[i].addr;
-                    if(playerNumber > 50){
+                    if(playerNumber >= 51){
                         theAddress.send(theReward);
                     }
                 }
@@ -219,7 +219,7 @@ contract Random{
             }
 
             //low result boolean
-            if(dieResult < 50){
+            if(dieResult <= 50){
 
                 //payWinners
                 arrayLength = funders.length;
@@ -229,7 +229,7 @@ contract Random{
                     playerNumber = funders[i].Number;
                     theReward =  funders[i].amount + (funders[i].amount*98/100);
                     theAddress = funders[i].addr;
-                    if(playerNumber < 50){
+                    if(playerNumber <= 50){
                         theAddress.send(theReward);
                     }
                 }
@@ -240,23 +240,6 @@ contract Random{
             }
 
 
-            //50
-            if(dieResult == 50){
-
-                //payWinners
-                arrayLength = funders.length;
-                i;
-
-                for (i = 0; i < arrayLength; i++) {
-                    theReward =  funders[i].amount;
-                    theAddress = funders[i].addr;
-                    theAddress.send(theReward);
-                }
-
-                delete funders;
-                eventBetsDecided();
-                nextStage();
-            }
     }
 
     function betsDecided() atStage(Stages.betsDecided){

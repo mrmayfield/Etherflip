@@ -45,7 +45,7 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 $(document).ready(function() {
 
-  var _contractAddress = '0x575120b52b7d8b369bafb58f0d5a76c22a5559f5';
+  var _contractAddress = '0x400a13360fba517421d1b7c469c7526e2af1a4a6';
   //contract abi
   var abi = [{"constant":false,"inputs":[],"name":"getSeedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[],"name":"betsOpen1","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"betsOpen2","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[],"name":"rand","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"newEntrant","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"luckyNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[],"name":"betsDecided","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"eventBetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsOpen1","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsOpen2","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"eventResetting","type":"event"},{"anonymous":false,"inputs":[],"name":"eventReady","type":"event"}];
 
@@ -142,8 +142,7 @@ $(document).ready(function() {
         ($('#seedB').val() < 101)  &&
         ($('#the-bet').val() > 0) &&
         ($('#seedB').val() > 0) &&
-        ($('#seedB').val() < 101) &&
-        ($('#seedB').val() != 50)
+        ($('#seedB').val() < 101)
     ){
 
       //send bet
@@ -182,10 +181,6 @@ $(document).ready(function() {
 
     if($('#the-bet').val() > _maxBet ){
       $(".warning-max-bet").show();
-    }
-
-    if($('#seedB').val() == 50 ){
-      $(".warning-no-fifty").show();
     }
 
 
@@ -246,7 +241,7 @@ $(document).ready(function() {
     loadData();
 
     //WINNERS
-    if ((_result > 50 && _seedB > 50) || (_result < 50 && _seedB < 50) && (_isPlayer == true)) {
+    if ((_result >= 51 && _seedB >= 51) || (_result <= 50 && _seedB <= 50) && (_isPlayer == true)) {
       $("#win").show();
       $("#lose").hide();
       $('.bet-payout').removeClass('red');
@@ -256,7 +251,7 @@ $(document).ready(function() {
       $('.odometer').addClass('green-border');
     }
 
-    if ((_result < 50 && _seedB > 50) || (_result > 50 && _seedB < 50) && (_isPlayer == true)){
+    if ((_result <= 50 && _seedB >= 51) || (_result >= 51 && _seedB <= 50) && (_isPlayer == true)){
       $("#win").hide();
       $("#lose").show();
       $('.bet-payout').removeClass('green');
