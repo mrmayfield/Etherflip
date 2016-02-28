@@ -100,8 +100,10 @@
 			</div>-->
 			<input id="the-bet" type="number" pattern="[0-100]" min="1" class="bet-amount green"  placeholder="Enter wager">
 			<div class="warning-max-bet red">Maximum wager is <span class="max-bet"></span></div>
-			<h5>YOUR LUCKY NUMBER: 1-100</h5>
-			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" >
+
+			<h5>YOUR LUCKY NUMBER: 1-49 or 51-100</h5>
+			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-49 or 51-100" >
+			<div class="warning-no-fifty red">You cannot choose 50. Number must be high or low.</div>
 				<!--<button id="Low" class="choose bet-choice">
 					<strong>Low</strong>
 					<p><span class="prediction">49</span> and lower</p>
@@ -183,8 +185,9 @@
 		<p>Try your luck and gamble on an Ethereum dice roll in a provably-fair environment thanks to the power of the Ethereum blockchain. Our random number is generated entirely on the blockchain meaning it is impossible for us to affect the outcome of the dice roll.</p>
 
 		<h2><a class="green" name="the_game">How to play</a></h2>
-		<p>Take a chance! You are betting on the result of a 100 sided dice roll. The result of the dice roll is either a low roll range (1-49) or a high roll range (50-100).</p>
-		<p>If the number you submit is within the result range (high or low); low range numbers are (1-49), high range numbers are (50-100) you are paid 1.98 to 1 instantly.</p>
+		<p>Take a chance! You are betting on the result of a 100 sided dice roll. The result of the dice roll is either a low roll range (1-49) or a high roll range (51-100).</p>
+		<p>If the number you submit is within the result range (high or low); low range numbers are (1-49), high range numbers are (51-100) you are paid 1.98 to 1 instantly.</p>
+		<p>A dice roll result of 50 voids and nullifies that betting round and all bets are quietly refunded. Players are unable to submit 50 as a lucky number.</p>
 		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete. This is for security and to allow people to make late bets, so please, be patient.</p>
 		<h2><a class="green">Instructions</a></h2>
 		<p><strong>IMPORTANT PLEASE READ BEFORE PLAYING:</strong></p>

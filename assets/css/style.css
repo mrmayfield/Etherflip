@@ -71,7 +71,8 @@ input{
 	width: 70%;
 }
 
-.warning-max-bet{
+.warning-max-bet,
+.warning-no-fifty{
 	display: none;
 }
 
@@ -294,6 +295,11 @@ button:hover{
 
 
 @media only screen and (max-width : 1000px) {
+
+	.alert{
+		display: none;
+		visibility: hidden;
+	}
 
 	.header-logo {
 		width:100%;
