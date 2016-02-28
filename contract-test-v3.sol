@@ -216,7 +216,7 @@ contract Random{
     function reveal() atStage(Stages.betsClosed) returns (uint256){
 
             //get hash of parent block for seedC
-            uint256 lastBlockNumberC = block.number;
+            uint256 lastBlockNumberC = block.number-1;
 
             uint256 lastBlockHashValC = uint256(block.blockhash(lastBlockNumberC));
             seedC = lastBlockHashValC;
