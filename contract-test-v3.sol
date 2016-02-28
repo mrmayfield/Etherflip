@@ -122,32 +122,49 @@ contract Random{
                 seedB = seedBUserParam;
             }
 
-            //continue if we are not in stage betsClosed
-            if(stage != Stages(uint(4))){
-
-                //only submit if entrants array not full
-                if(arrayLength < 3){
-
-                    //max bet is 5% of house bank
-                    if(msg.value <= (this.balance*5)/100){
-                        luckyNumber = seedBUserParam;
-                        uint betValue = msg.value;
-                        //rewardValue = (betValue)+(betValue*98/100);
-                        funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
+            //continue if we are not in stages 3,4,5
+            if(stage != Stages(uint(3))){
+                
+                if(stage != Stages(uint(4))){                    
+                    
+                    if(stage != Stages(uint(5))){                    
+    
+                        //only submit if entrants array not full
+                        if(arrayLength < 3){
+        
+                            //max bet is 5% of house bank
+                            if(msg.value <= (this.balance*5)/100){
+                                luckyNumber = seedBUserParam;
+                                uint betValue = msg.value;
+                                //rewardValue = (betValue)+(betValue*98/100);
+                                funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
+                            }
+        
+                            //quietly refund bet if is >5% of house bank
+                            if(msg.value > (this.balance*5)/100){
+                                msg.sender.send(msg.value);
+                            }
+                        }
+                        
                     }
-
-                    //quietly refund bet if is >5% of house bank
-                    if(msg.value > (this.balance*5)/100){
-                        msg.sender.send(msg.value);
-                    }
+            
                 }
-
             }
 
-            //quietly refund bet if stage 4
-            if(stage == Stages(uint(4))){
+            //quietly refund bet if stage 3 - precautionary
+            if(stage == Stages(uint(3))){
                 msg.sender.send(msg.value);
             }
+            
+            //quietly refund bet if stage 5 - precautionary
+            if(stage == Stages(uint(4))){
+                msg.sender.send(msg.value);
+            }   
+            
+            //quietly refund bet if stage 5 - precautionary
+            if(stage == Stages(uint(4))){
+                msg.sender.send(msg.value);
+            }              
 
             //quietly refund bet if entrant array full - keeping gas cost down for reveal fun
             if(arrayLength > 2){
@@ -238,8 +255,8 @@ contract Random{
                 eventBetsDecided();
                 nextStage();
             }
-
-
+            
+            
     }
 
     function betsDecided() atStage(Stages.betsDecided){
