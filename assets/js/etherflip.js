@@ -399,7 +399,7 @@ $(document).ready(function() {
     //var _accountEtherollDisplayDecimalSplit = str.split(".");
     //var _accountEtherollDisplayDecimal = _accountEtherollDisplayDecimalSplit[0];
 
-    $('.balance-etheroll').text(str);
+    //$('.balance-etheroll').text(str);
 
     _maxBet = Math.floor(_accountEtherollDisplay*5/100);
 
