@@ -98,7 +98,7 @@
 					<strong>50</strong>
 				</button>
 			</div>-->
-			<input id="the-bet" type="number" pattern="[0-100]" min="1" class="bet-amount green"  placeholder="Enter wager">
+			<input id="the-bet" type="number" pattern="[0-100]" min="0" step="any" class="bet-amount green"  placeholder="Enter wager">
 			<div class="warning-max-bet red">Maximum wager is <span class="max-bet"></span></div>
 
 			<h5>YOUR LUCKY NUMBER:</h5>
@@ -191,7 +191,7 @@
 		<h2><a class="green">Instructions</a></h2>
 		<p><strong>IMPORTANT PLEASE READ BEFORE PLAYING:</strong></p>
 		<ol>
-			<li><strong>Do not play unless you are currently synchronized to the latest block on the Ethereum blockchain, doing so otherwise could result in a loss of your original bet.</strong></li>
+			<li><strong>To play you must first make sure you are currently synchronized to the latest block on the Ethereum blockchain, doing so otherwise could result in a loss of your original bet.</strong></li>
 			<li>To enter, set your wager between 1 ether and <span class="max-bet"></span>  ether.</li>
 			<li>Any wager that does not fall within this range will result in your wager being <strong>quietly refunded</strong>, <strong>voiding the play</strong> and excluding you from that betting round.</li>
 			<li>Any wager that will result in >5% of the pool at risk, will result in that bet being <strong>voided</strong> and <strong>quietly refunded</strong>.</li>
