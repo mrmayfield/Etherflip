@@ -91,12 +91,12 @@ $(document).ready(function() {
   //_animResult  = setInterval(function () {_animResults()}, 3000);
 
   //change bets UI
-  var myInput = $('#the-bet');
+/*  var myInput = $('#the-bet');
   myInput.keyup(function() {
     _betValue = $(this).val();
     $(".bet-amount").val(myInput.val());
     $(".bet-payout").val((myInput.val()*198)/100);
-  });
+  });*/
 
   //change bets UI
   $("#the-bet").change(function() {
