@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3d1394-dc53-477f-aff0-77c93e99a17d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_notes/dwsync.xml" afterPath="$PROJECT_DIR$/_notes/dwsync.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/_notes/dwsync.xml" afterPath="$PROJECT_DIR$/assets/js/_notes/dwsync.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/etherflip.js" afterPath="$PROJECT_DIR$/assets/js/etherflip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="etherflip.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,13 +110,13 @@
       <file leaf-file-name="etherflip.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4913295" vertical-offset="0" max-vertical-offset="6613">
+            <state vertical-scroll-proportion="0.7" vertical-offset="17" max-vertical-offset="6613">
               <caret line="49" column="2" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
               <folding>
                 <element signature="e#178#632#0" expanded="false" />
-                <element signature="e#19791#19841#0" expanded="false" />
-                <element signature="e#20043#20156#0" expanded="false" />
-                <element signature="e#20163#20187#0" expanded="false" />
+                <element signature="e#6086#6136#0" expanded="false" />
+                <element signature="e#6338#6451#0" expanded="false" />
+                <element signature="e#6458#6482#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -301,7 +300,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32078853" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32078853" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -380,9 +379,9 @@
           <caret line="384" column="67" selection-start-line="384" selection-start-column="67" selection-end-line="384" selection-end-column="67" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -427,9 +426,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -474,9 +473,9 @@
           <caret line="54" column="50" selection-start-line="47" selection-start-column="1" selection-end-line="54" selection-end-column="50" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -521,9 +520,9 @@
           <caret line="54" column="50" selection-start-line="47" selection-start-column="1" selection-end-line="54" selection-end-column="50" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -568,9 +567,9 @@
           <caret line="253" column="50" selection-start-line="253" selection-start-column="50" selection-end-line="253" selection-end-column="50" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -615,9 +614,9 @@
           <caret line="291" column="3" selection-start-line="291" selection-start-column="3" selection-end-line="291" selection-end-column="3" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,9 +650,9 @@
           <caret line="266" column="3" selection-start-line="266" selection-start-column="3" selection-end-line="266" selection-end-column="3" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -687,9 +686,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -723,9 +722,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -824,13 +823,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4913295" vertical-offset="0" max-vertical-offset="6613">
+        <state vertical-scroll-proportion="0.7" vertical-offset="17" max-vertical-offset="6613">
           <caret line="49" column="2" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
           <folding>
             <element signature="e#178#632#0" expanded="false" />
-            <element signature="e#19791#19841#0" expanded="false" />
-            <element signature="e#20043#20156#0" expanded="false" />
-            <element signature="e#20163#20187#0" expanded="false" />
+            <element signature="e#6086#6136#0" expanded="false" />
+            <element signature="e#6338#6451#0" expanded="false" />
+            <element signature="e#6458#6482#0" expanded="false" />
           </folding>
         </state>
       </provider>
