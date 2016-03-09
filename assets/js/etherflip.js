@@ -88,7 +88,20 @@ $(document).ready(function() {
   var _maxBet;
 
 
-  //_animResult  = setInterval(function () {_animResults()}, 3000);
+  //pre-selected bet values
+  $(".pre-paid").click(function() {
+    _betValue = $(this).val();
+    $(".bet-amount").val(_betValue);
+    $(".bet-payout").val((_betValue*198)/100);
+  });
+
+
+  //pre-selected roll values
+  $(".bet-choice").click(function() {
+    _seedB = $(this).val();
+    $("#bet-number").val(_seedB);
+    $("#seedB").val(_seedB);
+  });
 
   //change bets UI
 /*  var myInput = $('#the-bet');

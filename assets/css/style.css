@@ -204,6 +204,7 @@ button{
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
 	border-radius: 10px!important;
+	width:15%;
 }
 
 button:hover{
@@ -211,7 +212,8 @@ button:hover{
 }
 
 .pre-paid-container{
-	margin:10px 0;
+	margin: 0 auto;
+	width:70%;
 }
 
 .full{
