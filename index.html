@@ -98,9 +98,10 @@
 					<strong>50</strong>
 				</button>
 			</div>
-			<h5>MAX WAGER: <span class="max-bet"></span></h5>
-			<input id="the-bet" type="number" pattern="[0-100]" min="0" step="any" class="bet-amount green"  placeholder="Enter wager">
+			<h5>MAX WAGER: <span class="max-bet">2</span></h5>
+			<input id="the-bet" type="number" pattern="[0-100]" min="0.000000000000000001" step="any" class="bet-amount green"  placeholder="0.00005000">
 			<div class="warning-max-bet red">Maximum wager is <span class="max-bet"></span></div>
+			<div class="warning-min-bet red">Minimum wager is 0.000000000000000001 ETH</div>
 
 			<h5>YOUR LUCKY NUMBER:</h5>
 			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" >
@@ -196,7 +197,7 @@
 		<p><strong>IMPORTANT PLEASE READ BEFORE PLAYING:</strong></p>
 		<ol>
 			<li><strong>To play you must first make sure you are currently synchronized to the latest block on the Ethereum blockchain, doing so otherwise could result in a loss of your original bet.</strong></li>
-			<li>To enter, set your wager to be above 0, there is no minimum bet. The current maximum wager is <span class="max-bet"></span>  ether.</li>
+			<li>To place a bet, etner your bet size. The current maximum wager is <span class="max-bet">2</span>  Ether. All units are in Ether.</li>
 			<li>Any wager that does not fall within this range will result in your wager being <strong>quietly refunded</strong>, <strong>voiding the play</strong> and excluding you from that betting round.</li>
 			<li>Any wager that will result in >5% of the pool at risk, will result in that bet being <strong>voided</strong> and <strong>quietly refunded</strong>.</li>
 			<li>Enter a lucky number between 1-50 (low) or 51-100 (high).</li>
@@ -222,7 +223,7 @@
 		<p>You will be prompted to enter your password to unlock your account which will enable you to place bets and receive winnings from Etheroll. We never receive your password at anytime during your interaction with Etheroll.</p>
 		<p class="green"><strong>Step 3</strong>:</p>
 		<p>Once you have done this you can reload our website and you should see your wallet balance in the top right hand corner.</p>
-		<p>During our pre-alpha release phase the maximum bet is <span class="max-bet"></span> Ether. Do not send more than <span class="max-bet"></span> Ether. No refunds.</p>
+		<p>During our pre-alpha release phase the maximum bet is <span class="max-bet"></span> Ether. Do not send more than <span class="max-bet">2</span> Ether. No refunds.</p>
 		<p>If you land at the site and it says "Bet in progress" wait until a new round starts before submitting any bets.</p>
 
 		<h2><a class="green" name="the_result">How is the result decided?</a></h2>
