@@ -77,8 +77,8 @@
 		<h3 class="orange  generating-wait">Ðie roll is in progress <a href="#roll_in_progress">(?)</a></h3>
 		<p class="mobile-only">You are seeing this message likely because you are viewing Etheroll on a mobile device. This Ðapp requires you to be running a local testnet version of Ethereum Blockchain for it to work. Please try on a desktop environment running a local testnet node.</p>
 		<div class="bet-container">
-			<h5>MAX WAGER: <span class="max-bet"></span></h5>
-			<!--<div class="pre-paid-container">
+			<h5>QUICK BET SIZE:</h5>
+			<div class="pre-paid-container">
 				<button id="1" class="choose pre-paid" value="1">
 					<strong>1</strong>
 				</button>
@@ -97,20 +97,24 @@
 				<button id="50" class="choose pre-paid" value="50">
 					<strong>50</strong>
 				</button>
-			</div>-->
+			</div>
+			<h5>MAX WAGER: <span class="max-bet"></span></h5>
 			<input id="the-bet" type="number" pattern="[0-100]" min="0" step="any" class="bet-amount green"  placeholder="Enter wager">
 			<div class="warning-max-bet red">Maximum wager is <span class="max-bet"></span></div>
 
 			<h5>YOUR LUCKY NUMBER:</h5>
 			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" >
-				<!--<button id="Low" class="choose bet-choice">
-					<strong>Low</strong>
-					<p><span class="prediction">49</span> and lower</p>
+			<div>
+				<h5>OR:</h5>
+				<button id="Low" class="choose bet-choice" value="1">
+					<strong>Roll low</strong>
+					<p><span class="prediction">50</span> and lower</p>
 				</button>
-				<button id="High" class="choose bet-choice">
-					<strong>High</strong>
-					<p><span class="prediction">50</span> and higher</p>
-				</button>-->
+				<button id="High" class="choose bet-choice" value="100">
+					<strong>Roll high</strong>
+					<p><span class="prediction">51</span> and higher</p>
+				</button>
+			</div>
 			<button id="place-bet" class="choose place-bet" >
 				<strong>ROLL</strong>
 			</button>
