@@ -179,7 +179,7 @@ em{
  }
 
 .bet-choice {
-	width: 110px;
+	width: 34%;
 
 }
 
@@ -214,6 +214,10 @@ button:hover{
 .pre-paid-container{
 	margin: 0 auto;
 	width:70%;
+}
+
+.pre-roll-container{
+	width:100%;
 }
 
 .full{
