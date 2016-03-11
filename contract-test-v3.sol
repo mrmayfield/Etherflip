@@ -100,6 +100,7 @@ contract Random{
     uint theAmount;
     uint theReward;
     address theAddress;
+    uint betValue;
 
 
     //initialSeed
@@ -122,14 +123,8 @@ contract Random{
                 seedB = seedBUserParam;
             }
 
-            //continue if we are not in stages 2,3,4,5 - solidity ignores || statements
-            if(stage != Stages(uint(2))){
-
-                if(stage != Stages(uint(3))){
-
-                    if(stage != Stages(uint(4))){
-
-                        if(stage != Stages(uint(5))){
+            //continue if we are in stage 0
+            if(stage == Stages(uint(0))){
 
                             //only submit if entrants array not full
                             if(arrayLength < 3){
@@ -137,7 +132,7 @@ contract Random{
                                 //max bet is 5% of house bank
                                 if(msg.value <= (this.balance*5)/100){
                                     luckyNumber = seedBUserParam;
-                                    uint betValue = msg.value;
+                                    betValue = msg.value;
                                     //rewardValue = (betValue)+(betValue*98/100);
                                     funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
                                 }
@@ -148,10 +143,27 @@ contract Random{
                                 }
                             }
 
-                        }
+            }
 
-                    }
-                }
+            //continue if we are in stage 1
+            if(stage == Stages(uint(1))){
+
+                            //only submit if entrants array not full
+                            if(arrayLength < 3){
+
+                                //max bet is 5% of house bank
+                                if(msg.value <= (this.balance*5)/100){
+                                    luckyNumber = seedBUserParam;
+                                    betValue = msg.value;
+                                    //rewardValue = (betValue)+(betValue*98/100);
+                                    funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
+                                }
+
+                                //quietly refund bet if is >5% of house bank
+                                if(msg.value > (this.balance*5)/100){
+                                    msg.sender.send(msg.value);
+                                }
+                            }
 
             }
 
