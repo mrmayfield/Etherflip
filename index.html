@@ -67,7 +67,7 @@
 </div>
 <div class="jumbotron-container">
 	<div class="full">
-		<div class="alert"><p>Pre-alpha release. To play, first make sure you are synchronized to the best block.</p><p>geth --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p></div>
+		<div class="alert"><p><strong>To <a href="#instructions">play</a>, first make sure you are synchronized to the best block</strong></p></div>
 	</div>
 </div>
 <div class="jumbotron-container">
@@ -77,8 +77,8 @@
 		<h3 class="orange  generating-wait">Ðie roll is in progress <a href="#roll_in_progress">(?)</a></h3>
 		<p class="mobile-only">You are seeing this message likely because you are viewing Etheroll on a mobile device. This Ðapp requires you to be running a local testnet version of Ethereum Blockchain for it to work. Please try on a desktop environment running a local testnet node.</p>
 		<div class="bet-container">
-			<h5>MAX WAGER: <span class="max-bet"></span></h5>
-			<!--<div class="pre-paid-container">
+			<h5>QUICK BET SIZE:</h5>
+			<div class="pre-paid-container">
 				<button id="1" class="choose pre-paid" value="1">
 					<strong>1</strong>
 				</button>
@@ -97,20 +97,25 @@
 				<button id="50" class="choose pre-paid" value="50">
 					<strong>50</strong>
 				</button>
-			</div>-->
-			<input id="the-bet" type="number" pattern="[0-100]" min="1" class="bet-amount green"  placeholder="Enter wager">
+			</div>
+			<h5>MAX WAGER: <span class="max-bet">2</span></h5>
+			<input id="the-bet" type="number" pattern="[0-100]" min="0.000000000000000001" step="any" class="bet-amount green"  placeholder="0.00005000">
 			<div class="warning-max-bet red">Maximum wager is <span class="max-bet"></span></div>
+			<div class="warning-min-bet red">Minimum wager is 0.000000000000000001 ETH</div>
 
 			<h5>YOUR LUCKY NUMBER:</h5>
 			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" >
-				<!--<button id="Low" class="choose bet-choice">
-					<strong>Low</strong>
-					<p><span class="prediction">49</span> and lower</p>
+			<div class="pre-roll-container">
+				<h5>OR:</h5>
+				<button id="Low" class="choose bet-choice" value="1">
+					<strong>Roll low</strong>
+					<p><span class="prediction">50</span> and lower</p>
 				</button>
-				<button id="High" class="choose bet-choice">
-					<strong>High</strong>
-					<p><span class="prediction">50</span> and higher</p>
-				</button>-->
+				<button id="High" class="choose bet-choice" value="100">
+					<strong>Roll high</strong>
+					<p><span class="prediction">51</span> and higher</p>
+				</button>
+			</div>
 			<button id="place-bet" class="choose place-bet" >
 				<strong>ROLL</strong>
 			</button>
@@ -188,11 +193,11 @@
 		<p>Take a chance! You are betting on the result of either a high or a low 100 sided dice roll. The result of the dice roll is either within a low roll range (1-50) or a high roll range (51-100).</p>
 		<p>If the number you submit is within the result range (high or low); low range numbers are (1-50), high range numbers are (51-100) you are paid 1.98 to 1 instantly.</p>
 		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete. This is for security and to allow people to make late bets, so please, be patient.</p>
-		<h2><a class="green">Instructions</a></h2>
+		<h2><a class="green" name="instructions">Instructions</a></h2>
 		<p><strong>IMPORTANT PLEASE READ BEFORE PLAYING:</strong></p>
 		<ol>
-			<li><strong>Do not play unless you are currently synchronized to the latest block on the Ethereum blockchain, doing so otherwise could result in a loss of your original bet.</strong></li>
-			<li>To enter, set your wager between 1 ether and <span class="max-bet"></span>  ether.</li>
+			<li><strong>To play you must first make sure you are currently synchronized to the latest block on the Ethereum blockchain, doing so otherwise could result in a loss of your original bet.</strong></li>
+			<li>To place a bet, enter your bet size. The current maximum wager is <span class="max-bet">2</span>  Ether. All units are in Ether.</li>
 			<li>Any wager that does not fall within this range will result in your wager being <strong>quietly refunded</strong>, <strong>voiding the play</strong> and excluding you from that betting round.</li>
 			<li>Any wager that will result in >5% of the pool at risk, will result in that bet being <strong>voided</strong> and <strong>quietly refunded</strong>.</li>
 			<li>Enter a lucky number between 1-50 (low) or 51-100 (high).</li>
@@ -218,7 +223,7 @@
 		<p>You will be prompted to enter your password to unlock your account which will enable you to place bets and receive winnings from Etheroll. We never receive your password at anytime during your interaction with Etheroll.</p>
 		<p class="green"><strong>Step 3</strong>:</p>
 		<p>Once you have done this you can reload our website and you should see your wallet balance in the top right hand corner.</p>
-		<p>During our pre-alpha release phase the maximum bet is <span class="max-bet"></span> Ether. Do not send more than <span class="max-bet"></span> Ether. No refunds.</p>
+		<p>During our pre-alpha release phase the maximum bet is <span class="max-bet"></span> Ether. Do not send more than <span class="max-bet">2</span> Ether. No refunds.</p>
 		<p>If you land at the site and it says "Bet in progress" wait until a new round starts before submitting any bets.</p>
 
 		<h2><a class="green" name="the_result">How is the result decided?</a></h2>

@@ -72,7 +72,7 @@ input{
 }
 
 .warning-max-bet,
-.warning-no-fifty{
+.warning-min-bet{
 	display: none;
 }
 
@@ -179,7 +179,7 @@ em{
  }
 
 .bet-choice {
-	width: 110px;
+	width: 34%;
 
 }
 
@@ -204,6 +204,7 @@ button{
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
 	border-radius: 10px!important;
+	width:15%;
 }
 
 button:hover{
@@ -211,7 +212,12 @@ button:hover{
 }
 
 .pre-paid-container{
-	margin:10px 0;
+	margin: 0 auto;
+	width:70%;
+}
+
+.pre-roll-container{
+	width:100%;
 }
 
 .full{
