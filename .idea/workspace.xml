@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1d3d1394-dc53-477f-aff0-77c93e99a17d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contract-test-v4.sol" afterPath="$PROJECT_DIR$/contract-test-v4.sol" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/etherflip.js" afterPath="$PROJECT_DIR$/assets/js/etherflip.js" />
     </list>
     <ignored path="etherflip.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +62,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9522727" vertical-offset="11634" max-vertical-offset="12155">
-              <caret line="709" column="1" selection-start-line="709" selection-start-column="1" selection-end-line="709" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.9195402" vertical-offset="11830" max-vertical-offset="12172">
+              <caret line="710" column="1" selection-start-line="710" selection-start-column="1" selection-end-line="710" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -349,8 +348,8 @@
     <frame x="-4" y="-4" width="1288" height="652" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.335206" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32397005" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.335206" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -868,8 +867,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9522727" vertical-offset="11634" max-vertical-offset="12155">
-          <caret line="709" column="1" selection-start-line="709" selection-start-column="1" selection-end-line="709" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.9195402" vertical-offset="11830" max-vertical-offset="12172">
+          <caret line="710" column="1" selection-start-line="710" selection-start-column="1" selection-end-line="710" selection-end-column="1" />
           <folding />
         </state>
       </provider>

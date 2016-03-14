@@ -406,7 +406,7 @@ contract Random is usingOraclize, stringUtils {
     uint256 public seedC;
 
     //result
-    uint256 public dieResult;
+    uint public dieResult;
 
     //high die result (50+)
     bool public high;
@@ -595,11 +595,12 @@ contract Random is usingOraclize, stringUtils {
 
 
     function getRequestsLeft(string json) internal returns(uint){
-        int x = indexOf(json, '"requestsLeft":');
+        int x = indexOf(json, '"data":[');
         if (x < 0) throw;
         uint ux = uint(x);
         return parseInt(subStr(json, ux+15, uint(indexOf(json, ',', ux))));
     }
+
 
 
 function __callback(bytes32 id, string result) {
