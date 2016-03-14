@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/assets/js/etherflip.js" line="85" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d3d1394-dc53-477f-aff0-77c93e99a17d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contract-test-v4.sol" afterPath="$PROJECT_DIR$/contract-test-v4.sol" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/etherflip.js" afterPath="$PROJECT_DIR$/assets/js/etherflip.js" />
-    </list>
+    <list default="true" id="1d3d1394-dc53-477f-aff0-77c93e99a17d" name="Default" comment="" />
     <ignored path="etherflip.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -63,8 +60,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9182692" vertical-offset="10141" max-vertical-offset="10625">
-              <caret line="619" column="1" selection-start-line="619" selection-start-column="1" selection-end-line="619" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.100961536" vertical-offset="9886" max-vertical-offset="10625">
+              <caret line="584" column="5" selection-start-line="584" selection-start-column="5" selection-end-line="584" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -123,8 +120,8 @@
       <file leaf-file-name="etherflip.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.296296" vertical-offset="0" max-vertical-offset="7021">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state vertical-scroll-proportion="-7.5555553" vertical-offset="1989" max-vertical-offset="7021">
+              <caret line="138" column="23" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
               <folding>
                 <element signature="e#6381#6431#0" expanded="false" />
                 <element signature="e#6633#6746#0" expanded="false" />
@@ -853,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.296296" vertical-offset="0" max-vertical-offset="7021">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state vertical-scroll-proportion="-7.5555553" vertical-offset="1989" max-vertical-offset="7021">
+          <caret line="138" column="23" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
           <folding>
             <element signature="e#6381#6431#0" expanded="false" />
             <element signature="e#6633#6746#0" expanded="false" />
@@ -868,8 +865,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9182692" vertical-offset="10141" max-vertical-offset="10625">
-          <caret line="619" column="1" selection-start-line="619" selection-start-column="1" selection-end-line="619" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.100961536" vertical-offset="9886" max-vertical-offset="10625">
+          <caret line="584" column="5" selection-start-line="584" selection-start-column="5" selection-end-line="584" selection-end-column="5" />
           <folding />
         </state>
       </provider>
