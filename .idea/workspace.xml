@@ -63,8 +63,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9495192" vertical-offset="10111" max-vertical-offset="10608">
-              <caret line="618" column="1" selection-start-line="618" selection-start-column="1" selection-end-line="618" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.9182692" vertical-offset="10141" max-vertical-offset="10625">
+              <caret line="619" column="1" selection-start-line="619" selection-start-column="1" selection-end-line="619" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -123,12 +123,12 @@
       <file leaf-file-name="etherflip.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9259257" vertical-offset="85" max-vertical-offset="7021">
-              <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+            <state vertical-scroll-proportion="-6.296296" vertical-offset="0" max-vertical-offset="7021">
+              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
               <folding>
-                <element signature="e#6382#6432#0" expanded="false" />
-                <element signature="e#6634#6747#0" expanded="false" />
-                <element signature="e#6754#6778#0" expanded="false" />
+                <element signature="e#6381#6431#0" expanded="false" />
+                <element signature="e#6633#6746#0" expanded="false" />
+                <element signature="e#6753#6777#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -455,9 +455,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6154">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -501,9 +501,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="5338">
           <caret line="54" column="50" selection-start-line="47" selection-start-column="1" selection-end-line="54" selection-end-column="50" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,9 +547,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="5338">
           <caret line="54" column="50" selection-start-line="47" selection-start-column="1" selection-end-line="54" selection-end-column="50" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -593,9 +593,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3417" max-vertical-offset="5134">
           <caret line="253" column="50" selection-start-line="253" selection-start-column="50" selection-end-line="253" selection-end-column="50" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -639,9 +639,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4947" max-vertical-offset="7361">
           <caret line="291" column="3" selection-start-line="291" selection-start-column="3" selection-end-line="291" selection-end-column="3" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,9 +674,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4522" max-vertical-offset="6936">
           <caret line="266" column="3" selection-start-line="266" selection-start-column="3" selection-end-line="266" selection-end-column="3" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,9 +709,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6936">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -744,9 +744,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2346">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -853,12 +853,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9259257" vertical-offset="85" max-vertical-offset="7021">
-          <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+        <state vertical-scroll-proportion="-6.296296" vertical-offset="0" max-vertical-offset="7021">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding>
-            <element signature="e#6382#6432#0" expanded="false" />
-            <element signature="e#6634#6747#0" expanded="false" />
-            <element signature="e#6754#6778#0" expanded="false" />
+            <element signature="e#6381#6431#0" expanded="false" />
+            <element signature="e#6633#6746#0" expanded="false" />
+            <element signature="e#6753#6777#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -868,8 +868,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9495192" vertical-offset="10111" max-vertical-offset="10608">
-          <caret line="618" column="1" selection-start-line="618" selection-start-column="1" selection-end-line="618" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.9182692" vertical-offset="10141" max-vertical-offset="10625">
+          <caret line="619" column="1" selection-start-line="619" selection-start-column="1" selection-end-line="619" selection-end-column="1" />
           <folding />
         </state>
       </provider>

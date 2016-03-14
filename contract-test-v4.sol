@@ -364,6 +364,7 @@ contract Random is usingOraclize {
 
     uint public random;
 
+
     //accept new entrant
     function newEntrant( uint seedBUserParam ){
 
@@ -514,7 +515,7 @@ contract Random is usingOraclize {
 function __callback(bytes32 id, string result) {
     if (msg.sender != oraclize_cbAddress()) throw;
 
-        uint dieResult = parseInt(result);
+        dieResult = parseInt(result);
         //dieResult = getRequestsLeft(result);
         //high result boolean
             if(dieResult >= 51){
