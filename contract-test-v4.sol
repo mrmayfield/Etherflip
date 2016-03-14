@@ -281,7 +281,11 @@ contract Random is usingOraclize {
     }
 
     //executed at init - sets the owner of the contract to creator
-    function Random() { owner = msg.sender; }
+    function Random() {
+        owner = msg.sender;
+        oraclize_setNetwork(networkID_testnet);
+
+    }
 
     //owner of the type - address
     address public owner;
@@ -525,7 +529,7 @@ function __callback(bytes32 id, string result) {
 
                 delete funders;
                 eventBetsDecided();
-                nextStage();
+                stage = Stages(uint(4));
             }
 
             //low result boolean
@@ -546,7 +550,7 @@ function __callback(bytes32 id, string result) {
 
                 delete funders;
                 eventBetsDecided();
-                nextStage();
+                stage = Stages(uint(4));
             }
 
   }
