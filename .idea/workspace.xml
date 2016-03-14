@@ -63,7 +63,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9522727" vertical-offset="10087" max-vertical-offset="10608">
+            <state vertical-scroll-proportion="0.9495192" vertical-offset="10111" max-vertical-offset="10608">
               <caret line="618" column="1" selection-start-line="618" selection-start-column="1" selection-end-line="618" selection-end-column="1" />
               <folding />
             </state>
@@ -123,8 +123,8 @@
       <file leaf-file-name="etherflip.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5185184" vertical-offset="31" max-vertical-offset="7021">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state vertical-scroll-proportion="-10.074074" vertical-offset="0" max-vertical-offset="7021">
+              <caret line="16" column="68" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="68" />
               <folding>
                 <element signature="e#6382#6432#0" expanded="false" />
                 <element signature="e#6634#6747#0" expanded="false" />
@@ -185,7 +185,7 @@
     <option name="x" value="-4" />
     <option name="y" value="-4" />
     <option name="width" value="1288" />
-    <option name="height" value="652" />
+    <option name="height" value="628" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -346,7 +346,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="652" extended-state="6" />
+    <frame x="-4" y="-4" width="1288" height="628" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32397005" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -853,8 +853,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/etherflip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5185184" vertical-offset="31" max-vertical-offset="7021">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state vertical-scroll-proportion="-10.074074" vertical-offset="0" max-vertical-offset="7021">
+          <caret line="16" column="68" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="68" />
           <folding>
             <element signature="e#6382#6432#0" expanded="false" />
             <element signature="e#6634#6747#0" expanded="false" />
@@ -868,7 +868,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9522727" vertical-offset="10087" max-vertical-offset="10608">
+        <state vertical-scroll-proportion="0.9495192" vertical-offset="10111" max-vertical-offset="10608">
           <caret line="618" column="1" selection-start-line="618" selection-start-column="1" selection-end-line="618" selection-end-column="1" />
           <folding />
         </state>
