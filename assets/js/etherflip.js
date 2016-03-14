@@ -1,46 +1,10 @@
 
 if(typeof web3 !== 'undefined')
   web3 = new Web3(web3.currentProvider);
-else
+else{
   web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
-
-
-/*
-
-
- event eventBetsOpen();
- //accept bets
- //move to next
-
- event eventBetsOpen1();
- //accept bets
- //move to next
-
- event eventBetsOpen2();
- //accept bets
- //move to next
-
- event eventBetsOpen3();
- //accept bets
- //move to next
-
- event eventBetsClosed();
- //show loading
- //disable roll
- //move to next
-
- event eventBetsDecided();
- //show loading
- //disable roll
- //display win
-
- event eventReadyForNewPlayers();
-  //hide loading
-  //enable roll
-
-
- */
+  web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+}
 
 
 $(document).ready(function() {
