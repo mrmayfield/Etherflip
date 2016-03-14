@@ -486,7 +486,7 @@ contract Random is usingOraclize {
             //seedC = lastBlockHashValC;
 
             //oraclize_query("URL", "https://api.random.org/json-rpc/1/invoke", strConcat('\n{"jsonrpc":"2.0","method":"generateIntegers","params":{"apiKey":"', "9fc456ad-57ec-46f2-858c-0949de861c1e", '","n":1,"min":1,"max":100},"id":1}'), 300000);
-            oraclize_query("URL", "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new");
+            bytes32 myid = oraclize_query("URL", "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new");
             //result
             //dieResult = (uint256(seedA + seedB + seedC) / FACTOR) +1;
 
