@@ -243,93 +243,8 @@ contract usingOraclize {
 }
 // </ORACLIZE_API>
 
-// <STRING UTILS>
-contract stringUtils {
-    /* Copyright (C) 2016 Thomas Bertani - Oraclize */
 
-    function indexOf(string _haystack, string _needle, uint offset) internal returns (int){
-        int subOffset = indexOf(subStr(_haystack, offset), _needle);
-        if (subOffset == -1) return -1;
-        else return int(offset)+subOffset;
-    }
-
-    function indexOf(string _haystack, string _needle) internal returns (int)
-    {
-    	bytes memory h = bytes(_haystack);
-    	bytes memory n = bytes(_needle);
-    	if(h.length < 1 || n.length < 1 || (n.length > h.length))
-    		return -1;
-    	else if(h.length > (2**128 -1))
-    		return -1;
-    	else
-    	{
-    		uint subindex = 0;
-    		for (uint i = 0; i < h.length; i ++)
-    		{
-    			if (h[i] == n[0])
-    			{
-    				subindex = 1;
-    				while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
-    				{
-    					subindex++;
-    				}
-    				if(subindex == n.length)
-    					return int(i);
-    			}
-    		}
-    		return -1;
-    	}
-    }
-
-    function strConcat(string _a, string _b, string _c, string _d, string _e) internal returns (string){
-        bytes memory _ba = bytes(_a);
-        bytes memory _bb = bytes(_b);
-        bytes memory _bc = bytes(_c);
-        bytes memory _bd = bytes(_d);
-        bytes memory _be = bytes(_e);
-        string memory abcde = new string(_ba.length + _bb.length + _bc.length + _bd.length + _be.length);
-        bytes memory babcde = bytes(abcde);
-        uint k = 0;
-        for (uint i = 0; i < _ba.length; i++) babcde[k++] = _ba[i];
-        for (i = 0; i < _bb.length; i++) babcde[k++] = _bb[i];
-        for (i = 0; i < _bc.length; i++) babcde[k++] = _bc[i];
-        for (i = 0; i < _bd.length; i++) babcde[k++] = _bd[i];
-        for (i = 0; i < _be.length; i++) babcde[k++] = _be[i];
-        return string(babcde);
-    }
-
-    function strConcat(string _a, string _b, string _c, string _d) internal returns (string) {
-        return strConcat(_a, _b, _c, _d, "");
-    }
-
-    function strConcat(string _a, string _b, string _c) internal returns (string) {
-        return strConcat(_a, _b, _c, "", "");
-    }
-
-    function strConcat(string _a, string _b) internal returns (string) {
-        return strConcat(_a, _b, "", "", "");
-    }
-
-    function strLen(string s) internal returns (uint){
-        return bytes(s).length;
-    }
-
-    function subStr(string s, uint start) internal returns (string){
-        return subStr(s, start, bytes(s).length);
-    }
-
-    function subStr(string s, uint start, uint end) internal returns (string){
-        bytes memory bs = bytes(s);
-        bytes memory bns = new bytes(end-start);
-        for (uint i=start; i<end; i++) bns[i-start] = bs[i];
-        return string(bns);
-    }
-
-}
-
-// </STRING UTILS>
-
-contract Random is usingOraclize, stringUtils {
+contract Random is usingOraclize {
 
     event eventBetsOpen();
 
@@ -570,8 +485,8 @@ contract Random is usingOraclize, stringUtils {
             //uint256 lastBlockHashValC = uint256(block.blockhash(lastBlockNumberC));
             //seedC = lastBlockHashValC;
 
-            oraclize_query("URL", "https://api.random.org/json-rpc/1/invoke", strConcat('\n{"jsonrpc":"2.0","method":"generateIntegers","params":{"apiKey":"', "9fc456ad-57ec-46f2-858c-0949de861c1e", '","n":1,"min":1,"max":100},"id":1}'), 300000);
-
+            //oraclize_query("URL", "https://api.random.org/json-rpc/1/invoke", strConcat('\n{"jsonrpc":"2.0","method":"generateIntegers","params":{"apiKey":"', "9fc456ad-57ec-46f2-858c-0949de861c1e", '","n":1,"min":1,"max":100},"id":1}'), 300000);
+            oraclize_query("URL", "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new");
             //result
             //dieResult = (uint256(seedA + seedB + seedC) / FACTOR) +1;
 
@@ -594,20 +509,13 @@ contract Random is usingOraclize, stringUtils {
     }
 
 
-    function getRequestsLeft(string json) internal returns(uint){
-        int x = indexOf(json, '"data":[');
-        if (x < 0) throw;
-        uint ux = uint(x);
-        return parseInt(subStr(json, ux+15, uint(indexOf(json, ',', ux))));
-    }
-
 
 
 function __callback(bytes32 id, string result) {
     if (msg.sender != oraclize_cbAddress()) throw;
 
-        //uint dieResult = parseInt(result);
-        dieResult = getRequestsLeft(result);
+        uint dieResult = parseInt(result);
+        //dieResult = getRequestsLeft(result);
         //high result boolean
             if(dieResult >= 51){
 
