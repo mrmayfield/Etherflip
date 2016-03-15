@@ -248,9 +248,9 @@ contract Random is usingOraclize {
 
     event eventBetsOpen();
 
-    event eventBetsOpen1();
+    //event eventBetsOpen1();
 
-    event eventBetsOpen2();
+    //event eventBetsOpen2();
 
     event eventBetsClosed();
 
@@ -262,8 +262,8 @@ contract Random is usingOraclize {
 
     enum Stages {
         betsOpen,
-        betsOpen1,
-        betsOpen2,
+        //betsOpen1,
+        //betsOpen2,
         betsClosed,
         betsDecided,
         resetting
@@ -400,27 +400,13 @@ contract Random is usingOraclize {
             }
 
 
-            if(stage != Stages(uint(1))){
 
-                            //only submit if entrants array not full
-                            if(arrayLength < 3){
 
-                                //max bet is 5% of house bank
-                                if(msg.value <= (this.balance*5)/100){
-                                    luckyNumber = seedBUserParam;
-                                    betValue = msg.value;
-                                    //rewardValue = (betValue)+(betValue*98/100);
-                                    funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
-                                }
 
-                                //quietly refund bet if is >5% of house bank
-                                if(msg.value > (this.balance*5)/100){
-                                    msg.sender.send(msg.value);
-                                }
-                            }
-
+            //quietly refund bet if stage 1 - precautionary
+            if(stage == Stages(uint(1))){
+                msg.sender.send(msg.value);
             }
-
 
             //quietly refund bet if stage 2 - precautionary
             if(stage == Stages(uint(2))){
@@ -432,15 +418,6 @@ contract Random is usingOraclize {
                 msg.sender.send(msg.value);
             }
 
-            //quietly refund bet if stage 4 - precautionary
-            if(stage == Stages(uint(4))){
-                msg.sender.send(msg.value);
-            }
-
-            //quietly refund bet if stage 5 - precautionary
-            if(stage == Stages(uint(5))){
-                msg.sender.send(msg.value);
-            }
 
             //quietly refund bet if entrant array full - keeping gas cost down for reveal fun
             if(arrayLength > 2){
@@ -463,20 +440,20 @@ contract Random is usingOraclize {
             seedAHash = sha3(seedA);
 
         nextStage();
-        eventBetsOpen1();
+        eventBetsClosed();
     }
 
     //waiting
-    function betsOpen1() atStage(Stages.betsOpen1){
-        nextStage();
-        eventBetsOpen2();
-    }
+    //function betsOpen1() atStage(Stages.betsOpen1){
+    //    nextStage();
+    //    eventBetsOpen2();
+    //}
 
     //waiting still
-    function betsOpen2() atStage(Stages.betsOpen2){
-        nextStage();
-        eventBetsClosed();
-    }
+    //function betsOpen2() atStage(Stages.betsOpen2){
+    //    nextStage();
+    //    eventBetsClosed();
+    //}
 
     //generate random number
     function reveal() atStage(Stages.betsClosed) returns (uint256){
@@ -536,7 +513,7 @@ function __callback(bytes32 id, string result, bytes proof) {
 
                 delete funders;
                 eventBetsDecided();
-                stage = Stages(uint(4));
+                stage = Stages(uint(2));
             }
 
             //low result boolean
@@ -557,7 +534,7 @@ function __callback(bytes32 id, string result, bytes proof) {
 
                 delete funders;
                 eventBetsDecided();
-                stage = Stages(uint(4));
+                stage = Stages(uint(2));
             }
 
   }
