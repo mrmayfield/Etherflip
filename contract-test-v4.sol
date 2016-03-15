@@ -254,7 +254,7 @@ contract Random is usingOraclize {
 
     event eventBetsClosed();
 
-    event eventBetsDecided();
+    //event eventBetsDecided();
 
     event eventResetting();
 
@@ -474,10 +474,10 @@ contract Random is usingOraclize {
 
     }
 
-    function betsDecided() atStage(Stages.betsDecided){
-        nextStage();
-        eventResetting();
-    }
+    //function betsDecided() atStage(Stages.betsDecided){
+    //   nextStage();
+    //   eventResetting();
+    //}
 
 
     function resetStage() atStage(Stages.resetting) {
@@ -512,7 +512,7 @@ function __callback(bytes32 id, string result, bytes proof) {
                 }
 
                 delete funders;
-                eventBetsDecided();
+                //eventBetsDecided();
                 stage = Stages(uint(2));
             }
 
@@ -533,7 +533,7 @@ function __callback(bytes32 id, string result, bytes proof) {
                 }
 
                 delete funders;
-                eventBetsDecided();
+                //eventBetsDecided();
                 stage = Stages(uint(2));
             }
 

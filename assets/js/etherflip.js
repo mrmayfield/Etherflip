@@ -1,8 +1,8 @@
 
 /*if(typeof web3 !== 'undefined')
-  web3 = new Web3(web3.currentProvider);
-else
-  web3 = new Web3(new web3.providers.HttpProvider("http://localhost:8545"));*/
+ web3 = new Web3(web3.currentProvider);
+ else
+ web3 = new Web3(new web3.providers.HttpProvider("http://localhost:8545"));*/
 
 
 if(typeof web3 !== 'undefined')
@@ -43,7 +43,7 @@ $(document).ready(function() {
   //var _eventBetsOpen2 = etherflip.eventBetsOpen2();
   var _eventBetsClosed = etherflip.eventBetsClosed();
   var _eventBetsDecided = etherflip.eventBetsDecided();
-  var _eventResetting =  etherflip.eventResetting();
+  //var _eventResetting =  etherflip.eventResetting();
   var _eventReady = etherflip.eventReady();
 
   var _isPlayer = false;
@@ -76,12 +76,12 @@ $(document).ready(function() {
   });
 
   //change bets UI
-/*  var myInput = $('#the-bet');
-  myInput.keyup(function() {
-    _betValue = $(this).val();
-    $(".bet-amount").val(myInput.val());
-    $(".bet-payout").val((myInput.val()*198)/100);
-  });*/
+  /*  var myInput = $('#the-bet');
+   myInput.keyup(function() {
+   _betValue = $(this).val();
+   $(".bet-amount").val(myInput.val());
+   $(".bet-payout").val((myInput.val()*198)/100);
+   });*/
 
   //change bets UI
   $("#the-bet").change(function() {
@@ -176,54 +176,54 @@ $(document).ready(function() {
 
   });
 
-/*  _eventBetsOpen1.watch(function(error, result){
-    if (!error)
-      if(_isPlayer == true) {
-        etherflip.betsOpen1.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-      }
+  /*  _eventBetsOpen1.watch(function(error, result){
+   if (!error)
+   if(_isPlayer == true) {
+   etherflip.betsOpen1.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
+   }
 
-      //get latest block timestamp
-      //_blockTimeStamp =  web3.eth.getBlock(_blockNumberDisplay [timestamp]);
+   //get latest block timestamp
+   //_blockTimeStamp =  web3.eth.getBlock(_blockNumberDisplay [timestamp]);
 
-      //get latest block number
-      _blockNumberDisplay = web3.eth.blockNumber-1;
-      $('#betBlockID').text( _blockNumberDisplay);
+   //get latest block number
+   _blockNumberDisplay = web3.eth.blockNumber-1;
+   $('#betBlockID').text( _blockNumberDisplay);
 
 
-      $('#blocks-to-go').val('Generating 3 blocks...');
-      $('.stageOutput').html('_eventBetsOpen1');
-      getSeedAHash();
-  });
+   $('#blocks-to-go').val('Generating 3 blocks...');
+   $('.stageOutput').html('_eventBetsOpen1');
+   getSeedAHash();
+   });
 
-  _eventBetsOpen2.watch(function(error, result){
-    if (!error)
-      if(_isPlayer == true) {
-        etherflip.betsOpen2.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-      }
-      $('#blocks-to-go').val('No more bets please...');
-      $('.stageOutput').html('_eventBetsOpen2');
-      getSeedAHash();
-      showLoading();
-      disableRoll();
-  });*/
+   _eventBetsOpen2.watch(function(error, result){
+   if (!error)
+   if(_isPlayer == true) {
+   etherflip.betsOpen2.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
+   }
+   $('#blocks-to-go').val('No more bets please...');
+   $('.stageOutput').html('_eventBetsOpen2');
+   getSeedAHash();
+   showLoading();
+   disableRoll();
+   });*/
 
   _eventBetsClosed.watch(function(error, result){
     if (!error)
       if(_isPlayer == true) {
         etherflip.reveal.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _revealStageGas});
       }
-      $('#blocks-to-go').val('Rolling up...');
-      $('.stageOutput').html('_eventBetsClosed  - call reveal func()');
-      //clearInterval(_animResult);
-      getSeedAHash();
-      showLoading();
-      disableRoll();
+    $('#blocks-to-go').val('Rolling up...');
+    $('.stageOutput').html('_eventBetsClosed  - call reveal func()');
+    //clearInterval(_animResult);
+    getSeedAHash();
+    showLoading();
+    disableRoll();
   });
 
   _eventBetsDecided.watch(function(error, result){
-  if (!error)
+    if (!error)
 
-    getSeedA();
+      getSeedA();
     getSeedAHash();
     //update GUI
 
@@ -252,36 +252,44 @@ $(document).ready(function() {
     }
 
     if(_isPlayer == true) {
-      etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-    }
-    $('#blocks-to-go').val('Paying winners...');
-    $('.stageOutput').html('_eventBetsDecided  - update result and pay winners');
-
-  });
-
-  _eventResetting.watch(function(error, result){
-    if (!error)
-      getSeedAHash();
-      $('#blocks-to-go').val('Preparing new game...');
-      $('.stageOutput').html('_eventReadyForNewPlayers');
-      //$('#blocks-to-go').val('Accepting final bets...');
-      $('.odometer').removeClass('highlight');
-      $('.odometer').removeClass('highlight-red');
-      $('.odometer').removeClass('green');
-      $('.odometer').removeClass('red');
-      $('.odometer').removeClass('green-border');
-      $('.odometer').removeClass('red-border');
-    if(_isPlayer == true) {
       etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas});
     }
-    _isPlayer = false;
+    $('#blocks-to-go').val('Paying winners...');
+    //$('.stageOutput').html('_eventBetsDecided  - update result and pay winners');
+    getSeedAHash();
+
   });
+
+  /*  _eventResetting.watch(function(error, result){
+   if (!error)
+   getSeedAHash();
+   $('#blocks-to-go').val('Preparing new game...');
+   $('.stageOutput').html('_eventReadyForNewPlayers');
+   //$('#blocks-to-go').val('Accepting final bets...');
+   $('.odometer').removeClass('highlight');
+   $('.odometer').removeClass('highlight-red');
+   $('.odometer').removeClass('green');
+   $('.odometer').removeClass('red');
+   $('.odometer').removeClass('green-border');
+   $('.odometer').removeClass('red-border');
+   if(_isPlayer == true) {
+   etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas});
+   }
+   _isPlayer = false;
+   });*/
 
   _eventReady.watch(function(error, result){
     if (!error)
-      $('.stageOutput').html('ready for new bets - stage 0');
-      hideLoading();
-      enableRoll();
+      _isPlayer = false;
+    $('.odometer').removeClass('highlight');
+    $('.odometer').removeClass('highlight-red');
+    $('.odometer').removeClass('green');
+    $('.odometer').removeClass('red');
+    $('.odometer').removeClass('green-border');
+    $('.odometer').removeClass('red-border');
+    hideLoading();
+    enableRoll();
+
   });
 
   function showLoading(){
