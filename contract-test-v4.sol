@@ -285,6 +285,7 @@ contract Random is usingOraclize {
     function Random() {
         owner = msg.sender;
         oraclize_setNetwork(networkID_testnet);
+        oraclize_setProof(proofType_TLSNotary | proofStorage_IPFS);
 
     }
 
@@ -512,7 +513,7 @@ contract Random is usingOraclize {
 
 
 
-function __callback(bytes32 id, string result) {
+function __callback(bytes32 id, string result, bytes proof) {
     if (msg.sender != oraclize_cbAddress()) throw;
 
         dieResult = parseInt(result);
