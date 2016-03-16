@@ -301,22 +301,22 @@ contract Random is usingOraclize {
     uint public amount;
 
     //seedA
-    uint256 public seedA;
+    //uint256 public seedA;
 
     //seedAHash
-    bytes32 public seedAHash;
+    //bytes32 public seedAHash;
 
     //seedB
-    uint public seedB;
+    //uint public seedB;
 
     //luckyNumber
     uint public luckyNumber;
 
     //seedBHash
-    bytes32 public seedBStage1Hash;
+    //bytes32 public seedBStage1Hash;
 
     //seedBStage2Hash
-    bytes32 public seedBStage2Hash;
+    //bytes32 public seedBStage2Hash;
 
     //seedC
     uint256 public seedC;
@@ -367,59 +367,33 @@ contract Random is usingOraclize {
 
 
     //accept new entrant
-    function newEntrant( uint seedBUserParam ){
+    function newEntrant( uint seedBUserParam ) atStage(Stages.betsOpen){
 
 
             arrayLength = funders.length;
 
-            //is this the first player in the betting round?
-            if(stage == Stages(uint(0))){
-                seedB = seedBUserParam;
+
+            //only submit if entrants array not full
+            if(arrayLength < 3){
+
+                //max bet is 5% of house bank
+                if(msg.value <= (this.balance*5)/100){
+                    luckyNumber = seedBUserParam;
+                    betValue = msg.value;
+                    //rewardValue = (betValue)+(betValue*98/100);
+                    funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
+                    nextStage();
+                    eventBetsClosed();
+
+                }
+
+                //quietly refund bet if is >5% of house bank
+                if(msg.value > (this.balance*5)/100){
+                    msg.sender.send(msg.value);
+                }
             }
 
-            //continue if we are stage 0
-            if(stage != Stages(uint(0))){
-
-                            //only submit if entrants array not full
-                            if(arrayLength < 3){
-
-                                //max bet is 5% of house bank
-                                if(msg.value <= (this.balance*5)/100){
-                                    luckyNumber = seedBUserParam;
-                                    betValue = msg.value;
-                                    //rewardValue = (betValue)+(betValue*98/100);
-                                    funders.push( Funder({addr: msg.sender, amount: betValue, Number: luckyNumber}));
-                                }
-
-                                //quietly refund bet if is >5% of house bank
-                                if(msg.value > (this.balance*5)/100){
-                                    msg.sender.send(msg.value);
-                                }
-                            }
-
-            }
-
-
-
-
-
-            //quietly refund bet if stage 1 - precautionary
-            if(stage == Stages(uint(1))){
-                msg.sender.send(msg.value);
-            }
-
-            //quietly refund bet if stage 2 - precautionary
-            if(stage == Stages(uint(2))){
-                msg.sender.send(msg.value);
-            }
-
-            //quietly refund bet if stage 3 - precautionary
-            if(stage == Stages(uint(3))){
-                msg.sender.send(msg.value);
-            }
-
-
-            //quietly refund bet if entrant array full - keeping gas cost down for reveal fun
+            //quietly refund bet if entrant array full - keeping gas cost down
             if(arrayLength > 2){
                 msg.sender.send(msg.value);
             }
@@ -427,50 +401,10 @@ contract Random is usingOraclize {
 
     }
 
-    //generate random number
-    function rand() atStage(Stages.betsOpen){
-
-            //get hash of parent block for seedA
-            uint lastBlockNumberA = block.number - 1;
-            uint256 lastBlockHashValA = uint256(block.blockhash(lastBlockNumberA));
-
-            seedA = lastBlockHashValA;
-
-            //provably fair - as can be checked after result
-            seedAHash = sha3(seedA);
-
-        nextStage();
-        eventBetsClosed();
-    }
-
-    //waiting
-    //function betsOpen1() atStage(Stages.betsOpen1){
-    //    nextStage();
-    //    eventBetsOpen2();
-    //}
-
-    //waiting still
-    //function betsOpen2() atStage(Stages.betsOpen2){
-    //    nextStage();
-    //    eventBetsClosed();
-    //}
 
     //generate random number
     function reveal() atStage(Stages.betsClosed) returns (uint256){
-
-            //get hash of parent block for seedC
-            //uint256 lastBlockNumberC = block.number-1;
-
-            //uint256 lastBlockHashValC = uint256(block.blockhash(lastBlockNumberC));
-            //seedC = lastBlockHashValC;
-
-            //oraclize_query("URL", "https://api.random.org/json-rpc/1/invoke", strConcat('\n{"jsonrpc":"2.0","method":"generateIntegers","params":{"apiKey":"', "9fc456ad-57ec-46f2-858c-0949de861c1e", '","n":1,"min":1,"max":100},"id":1}'), 300000);
             oraclize_query("URL", "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new", 500000);
-            //result
-            //dieResult = (uint256(seedA + seedB + seedC) / FACTOR) +1;
-
-
-
 
     }
 
@@ -485,6 +419,8 @@ contract Random is usingOraclize {
         initialSeedSet = false;
         eventReady();
         stage = Stages(uint(0));
+        //seedA = dieResult;
+        //seedAHash = sha3(seedA);
     }
 
 
@@ -545,22 +481,22 @@ function __callback(bytes32 id, string result, bytes proof) {
         return stage;
     }
 
-    function getSeedA() returns (uint256)
-    {
-        return seedA;
-    }
+    //function getSeedA() returns (uint256)
+    //{
+    //    return seedA;
+    //}
 
-    function getSeedC() returns (uint256)
-    {
-         if (msg.sender == owner){
-             return seedC;
-         }
-    }
+    //function getSeedC() returns (uint256)
+    //{
+    //     if (msg.sender == owner){
+    //         return seedC;
+    //     }
+    //}
 
-    function getSeedAHash() returns (bytes32)
-    {
-        return seedAHash;
-    }
+    //function getSeedAHash() returns (bytes32)
+    //{
+    //    return seedAHash;
+    //}
 
     function getDieResult() returns (uint256)
     {
