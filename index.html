@@ -37,25 +37,28 @@
 	<div class="header-balance">
 		<div class="inner">
 			<nav>
-				
-	  <div class="balance-wrap">
+
+				<div class="balance-wrap">
 						<span class="balance-container">
-							<a href="http://chinese.etheroll.com">中文版</a> | <a href="https://etheroll.wordpress.com/" title="Blog">Blog</a> | <a href="investors.html" title="Investors">Investors</a> | <span class="green">Wallet</span> <strong class="account"></strong>
+							<a href="https://etheroll.wordpress.com/" title="Blog">
+								博客</a> | <a href="investors.html" title="Investors">
+							投资者</a> | <span class="green">钱包</span> <strong class="account"></strong>
 						</span>
 				</div>
 				<div class="balance-wrap">
 						<span class="balance-container">
-							<span class="green">Balance</span> <strong class="balance"></strong> Ether
+							<span class="green">平衡</span> <strong class="balance"></strong> Ether
 						</span>
 				</div>
-<!--				<div class="balance-wrap etheroll-balance">
-						<span class="balance-container">
-							<span>Etheroll balance</span> <strong class="balance-etheroll"></strong> Ether
-						</span>
-				</div>-->
+				<!--				<div class="balance-wrap etheroll-balance">
+                                        <span class="balance-container">
+                                            <span>Etheroll balance</span> <strong class="balance-etheroll"></strong> Ether
+                                        </span>
+                                </div>-->
 				<div class="balance-wrap etheroll-balance">
 						<span class="balance-container">
-							<span>Bet maximum</span> <strong class="max-bet"></strong> Ether
+							<span>
+最大赌注</span> <strong class="max-bet"></strong> Ether
 						</span>
 				</div>
 
@@ -63,22 +66,24 @@
 
 		</div>
 		<div>
+		</div>
 	</div>
-</div>
 </div>
 <div class="jumbotron-container">
 	<div class="full">
-		<div class="alert"><p><strong>To <a href="#instructions">play</a>, first make sure you are synchronized to the best block</strong></p></div>
+		<div class="alert"><p>中国版本是处于测试阶段。为我们提高翻译，请耐心等待。</p><p>中国版即将推出<strong>要<a href="#instructions">玩</a>时，首先要确保你同步到最佳拦网</strong></p></div>
 	</div>
 </div>
 <div class="jumbotron-container">
 
 	<div class="jumbotron">
-		<h3 class="green generating-normal">Accepting bets (<a href="#the_game">?</a>)</h3>
-		<h3 class="orange  generating-wait">Ðie roll is in progress <a href="#roll_in_progress">(?)</a></h3>
-		<p class="mobile-only">You are seeing this message likely because you are viewing Etheroll on a mobile device. This Ðapp requires you to be running a local testnet version of Ethereum Blockchain for it to work. Please try on a desktop environment running a local testnet node.</p>
+		<h3 class="green generating-normal">接受投注(<a href="#the_game">?</a>)</h3>
+		<h3 class="orange  generating-wait">
+			掷骰正在进行中<a href="#roll_in_progress">(?)</a></h3>
+		<p class="mobile-only">您看到此消息，很可能是因为您在移动设备上观看Etheroll 。这DAPP需要你运行复仇Blockchain的本地testnet版本为它工作。请尝试上运行的本地testnet节点的桌面环境。</p>
 		<div class="bet-container">
-			<h5>QUICK BET SIZE:</h5>
+			<h5>
+				快速的赌注大小：</h5>
 			<div class="pre-paid-container">
 				<button id="1" class="choose pre-paid" value="1">
 					<strong>1</strong>
@@ -99,55 +104,71 @@
 					<strong>50</strong>
 				</button>
 			</div>
-			<h5>MAX WAGER: <span class="max-bet">2</span></h5>
+			<h5>
+				最大的赌注：<span class="max-bet">2</span></h5>
 			<input id="the-bet" type="number" pattern="[0-100]" min="0.5" step="any" class="bet-amount green"  placeholder="0.5">
-			<div class="warning-max-bet red">Maximum wager is <span class="max-bet"></span></div>
-			<div class="warning-min-bet red">Minimum wager is 0.5 ETH</div>
+			<div class="warning-max-bet red">
+				最大的赌注是<span class="max-bet"></span></div>
+			<div class="warning-min-bet red">
+				最低投注0.5 ETH</div>
 
-			<h5>YOUR LUCKY NUMBER:</h5>
-			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="Enter 1-100" >
+			<h5>
+				你的幸运数字：</h5>
+			<input id="seedB" type="number" pattern="[0-100]" min="1" max="100" placeholder="输入1-100" >
 			<div class="pre-roll-container">
-				<h5>OR:</h5>
+				<h5>
+					要么：</h5>
 				<button id="Low" class="choose bet-choice" value="1">
-					<strong>Roll low</strong>
-					<p><span class="prediction">50</span> and lower</p>
+					<strong>
+						低滚</strong>
+					<p><span class="prediction">50</span> 和较低</p>
 				</button>
 				<button id="High" class="choose bet-choice" value="100">
-					<strong>Roll high</strong>
-					<p><span class="prediction">51</span> and higher</p>
+					<strong>推出高</strong>
+					<p><span class="prediction">51</span> 和更高</p>
 				</button>
 			</div>
 			<button id="place-bet" class="choose place-bet" >
-				<strong>ROLL</strong>
+				<strong>
+					滚</strong>
 			</button>
-			<div><small>Gas estimate: 0.01509255</small></div>
-			</div>
+			<div><small>
+				天然气估计: 0.01509255</small></div>
 		</div>
+	</div>
 	<div class="jumbotron bet-slip">
-		<h3 id="title-bet-slip">Bet slip</h3>
+		<h3 id="title-bet-slip">投注单</h3>
 		<div class="your-bet-container">
-			<h5>Your number</h5>
+			<h5>
+				你的号码</h5>
 			<input type="text" id="bet-number" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set">
-			<h5>Bet Cost</h5>
+			<h5>投注成本</h5>
 			<input type="text" class="bet-amount" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set">
-			<h5>Potential payout</h5>
+			<h5>
+				潜在派息</h5>
 			<input type="text" class="bet-payout" disabled type="number" pattern="[0-100]" min="1" max="100" placeholder="Not set">
 		</div>
 	</div>
 	<div  class="jumbotron">
 		<div class="result-container">
 
-			<h3 class="green generating-normal">Place your bet...</h3>
-			<h3 class="orange generating-wait">Rolling die...</h3>
-			<h3 class="green generating-confirm">Minting...</h3>
-			<div class="orange generating-wait" ><input type="text" id='blocks-to-go' disabled value="Accepting last bets..."></div>
+			<h3 class="green generating-normal">请将您的赌注...</h3>
+			<h3 class="orange generating-wait">
+				轧制模...</h3>
+			<h3 class="green generating-confirm">
+				铸造...</h3>
+			<div class="orange generating-wait" ><input type="text" id='blocks-to-go' disabled value="
+接受最后的赌注..."></div>
 			<div class="generating-normal"><img src="assets/images/ajax-loader1.gif"/> </div>
 			<div class="generating-wait"><img src="assets/images/ajax-loader-wait1.gif"/> </div>
 			<!--<input type="text" id="result" class="odometer" disabled></input>-->
 			<div class="odometer" style="width: 70%;font-size: 40px;height: 55px;border-radius: 10px;">0</div>
-			<p class="" id=''>Latest result</p>
-			<h2 class="green" id="win">WINNER!</h2>
-			<h2 class="red" id="lose">NO WIN</h2>
+			<p class="" id=''>
+				最新结果</p>
+			<h2 class="green" id="win">
+				优胜者!</h2>
+			<h2 class="red" id="lose">
+				没有胜利</h2>
 		</div>
 	</div>
 	<!--<div class="jumbotron">
@@ -186,67 +207,93 @@
 </div>-->
 <div class="jumbotron-container">
 	<div class="full">
-		<h2><a class="green">About</a></h2>
-		<p>Try your luck and gamble on an Ethereum dice roll in a <strong>provably-fair</strong> environment thanks to the power of the Ethereum blockchain.</p>
-		<p>No sign-up, no user accounts, no deposits. Just dice.</p>
+		<h2><a class="green">关于</a></h2>
+		<p>尝试在< STRONG>可证公平</ STRONG>环境感谢复仇blockchain的力量的复仇骰子掷出你的运气和赌博。</p>
 
-		<h2><a class="green" name="the_game">How to play</a></h2>
-		<p>Take a chance! You are betting on the result of either a high or a low 100 sided dice roll. The result of the dice roll is either within a low roll range (1-50) or a high roll range (51-100).</p>
-		<p>If the number you submit is within the result range (high or low); low range numbers are (1-50), high range numbers are (51-100) you are paid 1.98 to 1 instantly.</p>
-		<p>If the number you submit is outside the result range you are not paid. Each roll takes at <em>least</em> 1 minute to complete.</p>
-		<h2><a class="green" name="instructions">Instructions</a></h2>
-		<p><strong>IMPORTANT PLEASE READ BEFORE PLAYING:</strong></p>
+
+		<h2><a class="green" name="the_game">
+			怎么玩</a></h2>
+		<p>
+			冒一次险！您正押注于高或低100面骰子掷出的结果。掷骰子的结果要么是一个低滚范围（ 1-50）或高辊范围（ 51-100）之内。</p>
+		<p>如果您提交的数字是结果的范围（高或低）之内;低量程数字（1-50 ），高数值范围为（ 51-100）你支付1.98到1瞬间。</p>
+		<p>如果您提交的数字是结果范围之外时，你不支付。每个轧辊至少需要1分钟完成。</p>
+		<h2><a class="green" name="instructions">
+			说明</a></h2>
+		<p><strong>
+			重要请仔细阅读播放前：</strong></p>
 		<ol>
-			<li><strong>To play you must first make sure you are currently synchronized to the latest block on the Ethereum blockchain, doing so otherwise could result in a loss of your original bet.</strong></li>
-			<li>To place a bet, enter your bet size. The current minimum wager is 0.5 Ether. The current maximum wager is <span class="max-bet">2</span>  Ether. All units are in Ether.</li>
-			<li>Any wager that exceeds the maximum bet will result in your wager being <strong>quietly refunded</strong>, <strong>voiding the play</strong> and excluding you from that betting round.</li>
-			<li>Any wager that will result in >5% of the pool at risk, will result in that bet being <strong>voided</strong> and <strong>quietly refunded</strong>.</li>
-			<li>Enter a lucky number between 1-50 (low) or 51-100 (high).</li>
-			<li>A win will return your original amount plus profit, minus commission applied.</li>
-			<li>Etheroll operates on a 2% commission, this is subtracted from the amount returned to the player in the case of a win.</li>
+			<li><strong>要发挥你必须首先确保您当前正在同步的复仇blockchain最新的块，这样做，否则可能会导致您的原始赌注的损失。</strong></li>
+			<li>
+				若要下注，请输入您的赌注大小。目前的最低投注0.5醚。目前最大的赌注是<span class="max-bet">2</span>
+				醚。所有单位均为醚。</li>
+			<li>
+				超过最大赌注打赌任何会导致你的赌注是<strong>悄悄退还</strong>, <strong>排尿戏</strong> 并从该轮下注不包括你。</li>
+			<li>
+				任何赌注，这将导致在该风险池的> 5 ％ ，将导致作为赌注<strong>
+				作废</strong>
+				和 <strong>悄悄退还</strong>.</li>
+			<li>1-50 （低）或51-100 （高）之间输入一个幸运数字。</li>
+			<li>一场胜利将返回原来的金额加上利润，减去佣金应用。</li>
+			<li>Etheroll运行在2％的佣金，这是从在一个双赢的情况下返回到播放器中的量中减去。</li>
 		</ol>
-		<h3>Note:</h3>
-		<p><strong>During our pre-alpha release phase, each betting round will only accept a maximum of 3 players per round. This is only a temporary measure, to primarily keep gas costs down for our users as we continue to optimize Etheroll.</strong></p>
-		<p>If you are the 4th better of the round (submitting a late bet), you will be quietly refunded and your play will be voided.</p>
-		<p>Each round takes up to 1 or 2 minutes, so be patient as each dice roll is in progress. Do not close your browser window if you are in the middle of a wagered dice roll. You may lose your funds with no chance for recovery. You have been warned.</p>
-		<p>Be aware that when you are in a betting round, you will incur gas charges to participate whether you win or lose. Etheroll does not receive the gas you spend. Gas is used to maintain the Ethereum blockchain.</p>
-		<h2><a class="green">Connect and play</a></h2>
-		<p>Because Ethereum is still being heavily developed and the official Mist browser has not yet been publicly released, to play Etheroll currently you will need to:</p>
-		<p class="green"><strong>Step 1:</strong></p>
-		<p>If you would like to place bets, run your own Ethereum blockchain and connect to Etheroll with the following command:</p>
+		<h3>
+			注意：</h3>
+		<p><strong>
+			在我们的阿尔法预发布阶段，一轮下注将只接受最多不超过3轮的球员。这只是一个临时措施，主要是保持气成本下降为我们的用户，我们将继续优化Etheroll 。</strong></p>
+		<p>
+			如果你是圆（提交晚BET）的第4好，你会悄悄地退还你的比赛将作废。</p>
+		<p>每一轮最多需要1〜2分钟，使每个骰子过程中要有耐心。如果你是在一个下注掷骰子中间不要关闭浏览器窗口。你可能没有机会恢复失去您的资金。你被警告了。</p>
+		<p>要知道，当你在一个下注轮，你会招致气费参加你是否赢或输。 Etheroll没有收到你花了气。气体被用于维持复仇blockchain 。</p>
+		<h2><a class="green">连接和播放</a></h2>
+		<p>因为复仇军仍在被大量开发并正式薄雾浏览器还没有公开发布，发挥Etheroll目前你将需要：</p>
+		<p class="green"><strong>步骤1：</strong></p>
+		<p>如果您想下注，运行自己的复仇blockchain并连接使用下面的命令来Etheroll ：</p>
 		<p>geth --rpc --rpccorsdomain="http://etheroll.com" --unlock="your_wallet_address"</p>
-		<p><strong>Note:</strong></p>
-		<p>If you would prefer just to watch some games without unlocking your account, to do so use:</p>
+		<p><strong>
+			注意：</strong></p>
+		<p>如果您希望只为了看一些比赛未解锁您的帐户，这样做的使用方法：</p>
 		<p>geth --rpc --rpccorsdomain="http://etheroll.com"</p>
-		<p>However you will not be able to participate in the game until you unlock your account.</p>
-		<p>If you have security concerns over unlocking your account, it might also be best to unlock an account with minimal funds.</p>
-		<p class="green"><strong>Step 2:</strong></p>
-		<p>You will be prompted to enter your password to unlock your account which will enable you to place bets and receive winnings from Etheroll. We never receive your password at anytime during your interaction with Etheroll.</p>
-		<p class="green"><strong>Step 3</strong>:</p>
-		<p>Once you have done this you can reload our website and you should see your wallet balance in the top right hand corner.</p>
-		<p>During our pre-alpha release phase the maximum bet is <span class="max-bet"></span> Ether. Do not send more than <span class="max-bet">2</span> Ether. No refunds.</p>
-		<p>If you land at the site and it says "Bet in progress" wait until a new round starts before submitting any bets.</p>
+		<p>但是，直到您打开您的帐户，您将无法参加比赛。</p>
+		<p>
+			如果你有超过解锁自己的帐户安全问题，这也可能是最好的解锁用最少的资金帐户。</p>
+		<p class="green"><strong>第2步：</strong></p>
+		<p>你会被提示输入您的密码来解锁您的帐户，这将使你要投注，并从接受Etheroll奖金。我们从来没有与Etheroll的互动过程中随时接受您的密码。</p>
+		<p class="green"><strong>
+			第3步</strong>:</p>
+		<p>一旦你做到了这一点，你可以重新载入我们的网站，你应该看到在右上角你的钱包的平衡。</p>
+		<p>
+			在我们的阿尔法预发布阶段，最大的赌注是<span class="max-bet"></span>
+			醚。不要发送超过<span class="max-bet">2</span>
+			醚。不退款。</p>
+		<p>如果你降落在该网站和它说：“赌注进行中”等到提交任何投注前，新一轮的开始。</p>
 
-		<h2><a class="green" name="provably_fair">Provably Fair</a></h2>
-		<p>Randomness is sourced from <a href="https://www.random.org/">Random.org</a> — which provides true randomness from atmospheric noise — via <a href="http://www.oraclize.it/">Oraclize.it</a></p>
-		<p>Oraclize provides players with <a href="https://docs.oraclize.it/#tlsnotary-proof">TLSNotary proof</a> that the data Random.org returns to Etheroll has not been manipulated or changed in anyway since Etheroll initially requested the random number for the dice roll.</p>
-		<p>The randomness Etheroll requests is an integer between 1-100 that is served to Etheroll by Random.org. The data it generates is a <a href="https://www.random.org/randomness/">random number</a> from <a href="https://en.wikipedia.org/wiki/Atmospheric_noise">atmospheric noise</a> between 1-100 (<a href="https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new">try it for yourself</a>).</p>
-		<p>The call to Random.org to produce the random number is made only after all bets have been submitted, therefore the dice result is impossible for us, or you to know, prior to the submission of the bet.</p>
-		<h2><a class="green" name="roll_in_progress">Die roll is in progress</a></h2>
-		<p>If you see this upon entering Etheroll it means somebody is already in the middle of a die roll. There is a limited time where you can add to the bet, but after you will not be able to place any bets until the die roll in progress is complete. Each roll takes ~6-8 blocks. The duration of each roll is dependant upon the speed of the network in general.</p>
-		<h2><a class="green" name="the_terms">Terms</a></h2>
-		<p>By interacting with Etheroll.com you agree that you are 18 years of age or above.</p>
-		<p>By interacting with Etheroll.com you agree that you are in a jurisdiction that does not consider Ethereum casinos, Ethereum gambling, Ether casinos or Ether gambling to be illegal.</p>
-		<p>Etheroll is an Ethereum casino and Ether gambling experience that is only for entertainment purposes. Please be aware Etheroll is in alpha mode and as such you should take care when handling your bets, any loss due to malfunction of the game, codebase, networks or likewise will not result in a refund and Etheroll is not repsonsible or liable for anything that occurs as a result, directly or in-directly from interacting with the contract.</p>
-		<p>Etheroll is not liable for any loss of funds you or any entity incurs as a result of using this service.</p>
-		<p>Refunds are not possible and will not be considered under any circumstances what-so-ever, so only risk what you can afford.</p>
-		<p>By using this website you agree to these terms if you have read them or not.</p>
-		<p>Any detection of potential misuse of the game will result in your address being banned from playing. You have been warned.</p>
+		<h2><a class="green" name="provably_fair">可证博览会</a></h2>
+		<p>
+			随机性是从源 <a href="https://www.random.org/">Random.org</a>
+			- 它提供了从大气噪声真正的随机性 - 通过<a href="http://www.oraclize.it/">Oraclize.it</a></p>
+		<p>Oraclize为玩家提供<a href="https://docs.oraclize.it/#tlsnotary-proof">TLSNotary证明</a> 该数据Random.org返回Etheroll没有被操纵或自Etheroll最初要求的随机数骰子掷出无论如何改变。</p>
+		<p>
+			随机性Etheroll请求是受Random.org送达Etheroll 1-100之间的整数。它所产生的数据是一个<a href="https://www.random.org/randomness/">随机数</a>
+			从 <a href="https://en.wikipedia.org/wiki/Atmospheric_noise">大气噪声</a>
+			1-100之间 (<a href="https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new">
+			亲身体验</a>).</p>
+		<p>到Random.org调用产生的随机数是由所有的赌注已经提交后才，因此骰子结果是不可能的我们，还是你知道，在提交的赌注之前。</p>
+		<h2><a class="green" name="roll_in_progress">掷骰正在进行中</a></h2>
+		<p>如果你看到这个在进入Etheroll就意味着有人已经在一个掷骰的中间。有一个有限的时间，你可以添加到赌，但你不能把任何赌注，直到正在进行的掷骰完成后。每卷大约需要6-8块。各辊的持续时间取决于在一般的网络的速度。</p>
+		<h2><a class="green" name="the_terms">条款</a></h2>
+		<p>通过与Etheroll.com交互，你同意你是年满18岁或以上。</p>
+		<p>通过与Etheroll.com交互您同意在不考虑复仇赌场，赌博复仇，乙醚赌场或赌博醚是非法的司法管辖区。</p>
+		<p>Etheroll是一个复仇的赌场和赌博醚的经验，仅仅是出于娱乐的目的。请注意Etheroll处于字符模式，因此处理您的赌注，当你要小心，任何损失，由于本场比赛，代码库，网络故障或也不会导致退款和Etheroll不负责或承担任何发生，结果，直接或在直接从与合同相互作用。</p>
+		<p>Etheroll不是资金的任何损失承担责任，你或任何实体即被作为使用本服务的结果。</p>
+		<p>退款是不可能的，任何情况下什么那么以往任何时候都不会被考虑的，所以唯一的风险，你能负担得起。</p>
+		<p>通过使用这个网站，你同意这些条款，如果您已经阅读它们。</p>
+		<p>任何检测游戏会导致您的地址可能会被滥用，从打被禁止。你被警告了。</p>
 
-		<p>Feel free to browse/steal the source code which I will eventually release.</p>
-		<h2><a class="green">Disclaimer</a></h2>
-		<p>You must be 18 years or older to play Etheroll. By playing Etheroll you agree that you are over 18 years of age and that you are also playing Etheroll within a jurisdiction that does not consider interacting with and/or placing bets and/or profiting and/or losing from an Ethereum online casino to be illegal in any way shape or form.</p>
-		<p>No refunds. No acceptances.</p>
+		<p>随意浏览/窃取源代码，我将最终发布。</p>
+		<h2><a class="green">放弃</a></h2>
+		<p>
+			您必须年满18周岁玩Etheroll 。通过播放Etheroll您同意您已年满18周岁，并且您还管辖范围内打Etheroll不考虑与交互和/或下注和/或收益和/或失去从复仇网上赌场是非法的以任何方式或形式。</p>
+		<p>不退款。没有承兑汇票。</p>
 
 	</div>
 </div>
