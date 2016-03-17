@@ -179,6 +179,9 @@ $(document).ready(function() {
 
   _eventBetsDecided.watch(function(error, result){
     if (!error)
+      if(_isPlayer == true) {
+        etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _betsDecidedGas});
+      }
     //update GUI
     updateBalance();
     loadData();
@@ -211,9 +214,7 @@ $(document).ready(function() {
     $('.stageOutput').html('_eventBetsDecided  - update result and pay winners');
     /*$('body').addClass('green-bkgd');*/
 
-    if(_isPlayer == true) {
-      etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _betsDecidedGas});
-    }
+
   });
 
   _eventResetting.watch(function(error, result){
