@@ -125,7 +125,8 @@ $(document).ready(function() {
             from: web3.eth.accounts[0],
             value: web3.toWei(_betValue, 'ether'),
             to: _contractAddress,
-            gas: 500000
+            gas: 500000,
+            data: web3.fromAscii('N: ' +  _seedB)
           }
       );
 
@@ -234,7 +235,7 @@ $(document).ready(function() {
     }
 
     if(_isPlayer == true) {
-      etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
+      etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas, data: web3.fromAscii('N: ' +  _seedB + 'R: ' + _result)});
     }
     $('#blocks-to-go').val('Paying winners...');
     $('.stageOutput').html('_eventBetsDecided  - update result and pay winners');
@@ -254,7 +255,7 @@ $(document).ready(function() {
     $('.odometer').removeClass('green-border');
     $('.odometer').removeClass('red-border');
     if(_isPlayer == true) {
-      etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas});
+      etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas, data: web3.fromAscii('N: ' +  _seedB + 'R: ' + _result)});
     }
     _isPlayer = false;
   });
