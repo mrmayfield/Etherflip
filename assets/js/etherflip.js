@@ -42,7 +42,7 @@ $(document).ready(function() {
 
   //gas to use
   var _stateChangeGas = 50000;
-  var _getNumberStageGas = 50000;
+  var _getNumberStageGas = 300000;
   var _betsDecidedGas = 300000;
   var _resetStageGas = 90000;
 
