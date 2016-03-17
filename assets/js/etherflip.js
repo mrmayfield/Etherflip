@@ -14,9 +14,9 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 $(document).ready(function() {
 
-  var _contractAddress = '0x5a7301b5d7010dd6b6e2d015f20fd7751d978489';
+  var _contractAddress = '0x2d87735f9253e347f534608ed0077c03bdc6ecd9';
   //contract abi
-  var abi = [{"constant":false,"inputs":[],"name":"getSeedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage1Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":false,"inputs":[{"name":"id","type":"bytes32"},{"name":"result","type":"string"},{"name":"proof","type":"bytes"}],"name":"__callback","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"rand","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"newEntrant","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedAHash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"random","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"getSeedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedBStage2Hash","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedB","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"luckyNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[],"name":"betsDecided","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedA","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"eventBetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"eventResetting","type":"event"},{"anonymous":false,"inputs":[],"name":"eventReady","type":"event"}];
+  var abi = [{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"id","type":"bytes32"},{"name":"result","type":"string"},{"name":"proof","type":"bytes"}],"name":"__callback","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"newEntrant","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"random","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"luckyNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[],"name":"betsDecided","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"eventBetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"eventResetting","type":"event"},{"anonymous":false,"inputs":[],"name":"eventReady","type":"event"}];
 
   //creation of contract object
   var _etherFlip = web3.eth.contract(abi);
@@ -24,23 +24,15 @@ $(document).ready(function() {
   var etherflip = _etherFlip.at(_contractAddress);
 
   var _betValue;
-  var _betChoice;
   var _result;
-  var _blockNumber;
-  var _blockNumberDisplay;
-  var _blockTimeStamp;
   var _account;
   var _balance;
   var _balanceDisplay;
-  var _seedAHash;
-  var _seedA;
   var _seedB;
   var _seedBInput;
 
   //event listeners for contract broadcast events
   var _eventBetsOpen = etherflip.eventBetsOpen();
-  //var _eventBetsOpen1 = etherflip.eventBetsOpen1();
-  //var _eventBetsOpen2 = etherflip.eventBetsOpen2();
   var _eventBetsClosed = etherflip.eventBetsClosed();
   var _eventBetsDecided = etherflip.eventBetsDecided();
   var _eventResetting =  etherflip.eventResetting();
@@ -50,14 +42,11 @@ $(document).ready(function() {
 
   //gas to use
   var _stateChangeGas = 50000;
-  var _randStageGas = 100000;
   var _revealStageGas = 500000;
-  var _resetStageGas = 60000;
+  var _resetStageGas = 90000;
 
   var _maxBet;
-  var _minBet = 0.000000000000000001;
-
-  var _bestBlock;
+  var _minBet = 0.5;
 
 
   //pre-selected bet values
@@ -148,21 +137,16 @@ $(document).ready(function() {
       $('.bet-payout').removeClass('red');
       $('.bet-payout').removeClass('green');
 
-      $("#seedA_hashSHA3").text('');
-
       showLoading();
       disableRoll();
 
-      etherflip.rand.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _randStageGas});
+      //etherflip.rand.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _randStageGas});
 
       _isPlayer = true;
 
       $(".warning-max-bet").hide();
       $(".warning-min-bet").hide();
 
-      $('#betBlockID').text("");
-      $('#seedAHash').text("" );
-      $('#seedAHash').text("");
     }
 
     if($('#the-bet').val() > _maxBet ){
@@ -215,7 +199,7 @@ $(document).ready(function() {
     $('#blocks-to-go').val('Rolling up...');
     $('.stageOutput').html('_eventBetsClosed  - call reveal func()');
     //clearInterval(_animResult);
-    getSeedAHash();
+
     showLoading();
     disableRoll();
   });
@@ -223,8 +207,6 @@ $(document).ready(function() {
   _eventBetsDecided.watch(function(error, result){
     if (!error)
 
-      getSeedA();
-    getSeedAHash();
     //update GUI
 
     updateBalance();
@@ -261,7 +243,7 @@ $(document).ready(function() {
 
   _eventResetting.watch(function(error, result){
     if (!error)
-      getSeedAHash();
+
     $('#blocks-to-go').val('Preparing new game...');
     $('.stageOutput').html('_eventReadyForNewPlayers');
     //$('#blocks-to-go').val('Accepting final bets...');
@@ -279,7 +261,6 @@ $(document).ready(function() {
 
   _eventReady.watch(function(error, result){
     if (!error)
-      $('.stageOutput').html('ready for new bets - stage 0');
     hideLoading();
     enableRoll();
   });
@@ -351,16 +332,16 @@ $(document).ready(function() {
   }
 
   //get latest getSeedAHash
-  function getSeedAHash(){
+/*  function getSeedAHash(){
     _seedAHash = etherflip.getSeedAHash.call();
     $("#seedA_hashSHA3").text(_seedAHash);
-  }
+  }*/
 
-  function getSeedA(){
+/*  function getSeedA(){
     _seedA = etherflip.getSeedA.call();
     //var theSeedA = _seedA.plus(21).toString(10);
     $("#seedA").text(_seedA);
-  }
+  }*/
 
   function loadData() {
 
