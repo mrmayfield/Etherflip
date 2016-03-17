@@ -183,7 +183,7 @@ $(document).ready(function() {
         etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _betsDecidedGas});
       }
     //update GUI
-    updateBalance();
+    //updateBalance();
     loadData();
 
     //WINNERS
@@ -231,7 +231,7 @@ $(document).ready(function() {
     $('.odometer').removeClass('red-border');
     if(_isPlayer == true) {
       etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas, data: web3.fromAscii('N: ' +  _seedB + 'R: ' + _result)});
-      updateBalance();
+      loadData();
     }
     _isPlayer = false;
   });
@@ -240,7 +240,7 @@ $(document).ready(function() {
     if (!error)
     hideLoading();
     enableRoll();
-    updateBalance();
+    loadData();
   });
 
   function showLoading(){
