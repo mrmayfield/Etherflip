@@ -336,6 +336,10 @@ contract Random is usingOraclize {
 
     uint public random;
 
+    bool public calledOraclize = false;
+
+    bool public calledBetsDecided = false;
+
 
 
     //accept new entrant
@@ -374,61 +378,72 @@ contract Random is usingOraclize {
     }
 
 
-    //generate random number
+    //rng
     function getNumber() atStage(Stages.betsClosed) returns (uint256){
+
+        // call once
+        if(calledOraclize == false){
             oraclize_query("URL", "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new", 500000);
+            calledOraclize = true;
+        }
     }
 
     function betsDecided() atStage(Stages.betsDecided){
 
-        //high result
-        if(dieResult >= 51){
+        // call once
+        if(calledBetsDecided == false){
 
-            //payWinners
-            arrayLength = funders.length;
-            uint i;
+            calledBetsDecided = true;
 
-            for (i = 0; i < arrayLength; i++) {
-                playerNumber = funders[i].Number;
-                theReward =  funders[i].amount + (funders[i].amount*98/100);
-                theAddress = funders[i].addr;
-                if(playerNumber >= 51){
-                    theAddress.send(theReward);
+            //high result
+            if(dieResult >= 51){
+
+                //payWinners
+                arrayLength = funders.length;
+                uint i;
+
+                for (i = 0; i < arrayLength; i++) {
+                    playerNumber = funders[i].Number;
+                    theReward =  funders[i].amount + (funders[i].amount*98/100);
+                    theAddress = funders[i].addr;
+                    if(playerNumber >= 51){
+                        theAddress.send(theReward);
+                    }
                 }
+
+                delete funders;
+                eventResetting();
+                nextStage();
             }
 
-            delete funders;
-            eventResetting();
-            nextStage();
-        }
+            //low result
+            if(dieResult <= 50){
 
-        //low result
-        if(dieResult <= 50){
+                //payWinners
+                arrayLength = funders.length;
+                i;
 
-            //payWinners
-            arrayLength = funders.length;
-            i;
-
-            for (i = 0; i < arrayLength; i++) {
-                playerNumber = funders[i].Number;
-                theReward =  funders[i].amount + (funders[i].amount*98/100);
-                theAddress = funders[i].addr;
-                if(playerNumber <= 50){
-                    theAddress.send(theReward);
+                for (i = 0; i < arrayLength; i++) {
+                    playerNumber = funders[i].Number;
+                    theReward =  funders[i].amount + (funders[i].amount*98/100);
+                    theAddress = funders[i].addr;
+                    if(playerNumber <= 50){
+                        theAddress.send(theReward);
+                    }
                 }
+
+                delete funders;
+                eventResetting();
+                nextStage();
             }
 
-            delete funders;
-            eventResetting();
-            nextStage();
         }
-
-
-
     }
 
 
     function resetStage() atStage(Stages.resetting) {
+        calledOraclize = false;
+        calledBetsDecided = false;
         eventReady();
         stage = Stages(uint(0));
     }
