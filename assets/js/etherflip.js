@@ -14,9 +14,9 @@ web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 $(document).ready(function() {
 
-  var _contractAddress = '0x2d87735f9253e347f534608ed0077c03bdc6ecd9';
+  var _contractAddress = '0x92f48c5c5f5854950aac1207bb516be070a4faae';
   //contract abi
-  var abi = [{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"FACTOR","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"id","type":"bytes32"},{"name":"result","type":"string"},{"name":"proof","type":"bytes"}],"name":"__callback","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"newEntrant","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"random","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"reveal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"luckyNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[],"name":"betsDecided","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"eventBetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"eventResetting","type":"event"},{"anonymous":false,"inputs":[],"name":"eventReady","type":"event"}];
+  var abi = [{"constant":true,"inputs":[],"name":"rewardValue","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"dieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getDieResult","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"id","type":"bytes32"},{"name":"result","type":"string"}],"name":"__callback","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"seedC","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"seedBUserParam","type":"uint256"}],"name":"newEntrant","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"win","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"calledOraclize","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"random","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"resetStage","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"high","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"amount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"getNumberAtPosition","type":"uint256"}],"name":"getEntrants","outputs":[{"name":"entrantInfo","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"calledBetsDecided","outputs":[{"name":"","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"luckyNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[],"name":"betsDecided","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"msgSender","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"},{"name":"Number","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"ownerResetGame","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"getNumber","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"getStage","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"inputs":[],"type":"constructor"},{"anonymous":false,"inputs":[],"name":"eventBetsOpen","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsClosed","type":"event"},{"anonymous":false,"inputs":[],"name":"eventBetsDecided","type":"event"},{"anonymous":false,"inputs":[],"name":"eventResetting","type":"event"},{"anonymous":false,"inputs":[],"name":"eventReady","type":"event"}];
 
   //creation of contract object
   var _etherFlip = web3.eth.contract(abi);
@@ -42,7 +42,8 @@ $(document).ready(function() {
 
   //gas to use
   var _stateChangeGas = 50000;
-  var _revealStageGas = 500000;
+  var _getNumberStageGas = 300000;
+  var _betsDecidedGas = 300000;
   var _resetStageGas = 90000;
 
   var _maxBet;
@@ -125,7 +126,8 @@ $(document).ready(function() {
             from: web3.eth.accounts[0],
             value: web3.toWei(_betValue, 'ether'),
             to: _contractAddress,
-            gas: 500000
+            gas: 500000,
+            data: web3.fromAscii('N: ' +  _seedB)
           }
       );
 
@@ -160,41 +162,11 @@ $(document).ready(function() {
 
   });
 
-  /*  _eventBetsOpen1.watch(function(error, result){
-   if (!error)
-   if(_isPlayer == true) {
-   etherflip.betsOpen1.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-   }
-
-   //get latest block timestamp
-   //_blockTimeStamp =  web3.eth.getBlock(_blockNumberDisplay [timestamp]);
-
-   //get latest block number
-   _blockNumberDisplay = web3.eth.blockNumber-1;
-   $('#betBlockID').text( _blockNumberDisplay);
-
-
-   $('#blocks-to-go').val('Generating 3 blocks...');
-   $('.stageOutput').html('_eventBetsOpen1');
-   getSeedAHash();
-   });
-
-   _eventBetsOpen2.watch(function(error, result){
-   if (!error)
-   if(_isPlayer == true) {
-   etherflip.betsOpen2.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-   }
-   $('#blocks-to-go').val('No more bets please...');
-   $('.stageOutput').html('_eventBetsOpen2');
-   getSeedAHash();
-   showLoading();
-   disableRoll();
-   });*/
 
   _eventBetsClosed.watch(function(error, result){
     if (!error)
       if(_isPlayer == true) {
-        etherflip.reveal.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _revealStageGas});
+        etherflip.getNumber.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _getNumberStageGas});
       }
     $('#blocks-to-go').val('Rolling up...');
     $('.stageOutput').html('_eventBetsClosed  - call reveal func()');
@@ -202,14 +174,16 @@ $(document).ready(function() {
 
     showLoading();
     disableRoll();
+    /*$('body').addClass('red-bkgd');*/
   });
 
   _eventBetsDecided.watch(function(error, result){
     if (!error)
-
+      if(_isPlayer == true) {
+        etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _betsDecidedGas});
+      }
     //update GUI
-
-    updateBalance();
+    //updateBalance();
     loadData();
 
     //WINNERS
@@ -233,18 +207,20 @@ $(document).ready(function() {
       $('.odometer').addClass('red-border');
     }
 
-    if(_isPlayer == true) {
-      etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas});
-    }
+    /*if(_isPlayer == true) {
+     etherflip.betsDecided.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _stateChangeGas, data: web3.fromAscii('N: ' +  _seedB + 'R: ' + _result)});
+     }*/
     $('#blocks-to-go').val('Paying winners...');
     $('.stageOutput').html('_eventBetsDecided  - update result and pay winners');
+    /*$('body').addClass('green-bkgd');*/
+
 
   });
 
   _eventResetting.watch(function(error, result){
     if (!error)
 
-    $('#blocks-to-go').val('Preparing new game...');
+      $('#blocks-to-go').val('Preparing new game...');
     $('.stageOutput').html('_eventReadyForNewPlayers');
     //$('#blocks-to-go').val('Accepting final bets...');
     $('.odometer').removeClass('highlight');
@@ -254,15 +230,17 @@ $(document).ready(function() {
     $('.odometer').removeClass('green-border');
     $('.odometer').removeClass('red-border');
     if(_isPlayer == true) {
-      etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas});
+      etherflip.resetStage.sendTransaction({from: web3.eth.accounts[0], to: _contractAddress, gas: _resetStageGas, data: web3.fromAscii('N: ' +  _seedB + 'R: ' + _result)});
+      loadData();
     }
     _isPlayer = false;
   });
 
   _eventReady.watch(function(error, result){
     if (!error)
-    hideLoading();
+      hideLoading();
     enableRoll();
+    loadData();
   });
 
   function showLoading(){
@@ -332,16 +310,16 @@ $(document).ready(function() {
   }
 
   //get latest getSeedAHash
-/*  function getSeedAHash(){
-    _seedAHash = etherflip.getSeedAHash.call();
-    $("#seedA_hashSHA3").text(_seedAHash);
-  }*/
+  /*  function getSeedAHash(){
+   _seedAHash = etherflip.getSeedAHash.call();
+   $("#seedA_hashSHA3").text(_seedAHash);
+   }*/
 
-/*  function getSeedA(){
-    _seedA = etherflip.getSeedA.call();
-    //var theSeedA = _seedA.plus(21).toString(10);
-    $("#seedA").text(_seedA);
-  }*/
+  /*  function getSeedA(){
+   _seedA = etherflip.getSeedA.call();
+   //var theSeedA = _seedA.plus(21).toString(10);
+   $("#seedA").text(_seedA);
+   }*/
 
   function loadData() {
 
